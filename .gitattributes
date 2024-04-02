@@ -1,6 +1,9 @@
-docs/site_libs/* linguist-vendored
-docs/*.html linguist-vendored
+./docs/site_libs/* linguist-vendored
+./docs/*.html linguist-vendored
 *.scss linguist-vendored
 *.css linguist-vendored
+/themes/* linguist-vendored
+
 *.qmd linguist-language=R
 *.Rmd linguist-language=R
+*.md linguist-language=markdown
