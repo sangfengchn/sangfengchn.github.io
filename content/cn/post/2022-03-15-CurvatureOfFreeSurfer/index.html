@@ -1,0 +1,56 @@
+---
+title: FreeSurfer笔记
+author: 桑峰
+date: 2022-03-15
+slug: blog
+output: html_document
+categories:
+  - FreeSurfer
+tags:
+  - freesurfer
+  - surface
+  - curvature
+  - vertex
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="the-measures-about-curvatures" class="section level1">
+<h1>The measures about curvatures</h1>
+<div id="mris_curvature_stats" class="section level2">
+<h2>mris_curvature_stats</h2>
+<p>?h.smoothwm.xxx.crv is the the binary-curvature files where xxx is the different measures. Detailed descriptation is as follows:</p>
+<blockquote>
+<p>k1 maximum curvature</p>
+<p>k2 minimum curvature</p>
+<p>K Gaussian = k1*k2</p>
+<p>H Mean = 0.5*(k1+k2)</p>
+<p>C Curvedness = sqrt(0.5<em>(k1</em>k1+k2*k2))</p>
+<p>S Sharpness = (k1 - k2)^2</p>
+<p>BE Bending Energy = k1<em>k1 + k2</em>k2</p>
+<p>SI Shape Index = atan((k1+k2)/(k2-k1))</p>
+<p>FI Folding Index = |k1|*(|k1| - |k2|)</p>
+</blockquote>
+<p>In each file, the corresponding measures for each vertex were saved. And you may read it by read.fs.curv() in R package “freesurferformats”.</p>
+<p><strong>Example: mris_curvature_stats -F pial/smoothwm/white -G -o xxx sub-2455 rh</strong></p>
+<p>xxx is the file to save descriptation statistical results. -F is flag of surface name, the default is smoothwm in FreeSurfer Version 7.2.0. -G is calculated a series of derived curvature values from current surface file.</p>
+</div>
+<div id="mris_curvature" class="section level2">
+<h2>mris_curvature</h2>
+<p>It calculated the mean curvature and Gaussian curvature for a surface.</p>
+<p><strong>Example: mris_curvature -w lh.white</strong></p>
+<p>This command will output the lh.white.H and lh.white.K.</p>
+<p><strong>Example: mris_curvature -w -a 10 lh.white</strong></p>
+<p>This command smooth 10 for the original outputs.</p>
+</div>
+<div id="the-integrated-rectified-meangaussian-curvature" class="section level2">
+<h2>The Integrated Rectified Mean/Gaussian Curvature</h2>
+<p>The descriptation is MeanCurv is the integral of the absolute value of H and GausCurv is the integral of the absolute value of K.</p>
+<p>It seem is taking the absolute vaule for each vertex and multi with the area, and sum for all vertex on the region. (<a href="https://www.mail-archive.com/freesurfer@nmr.mgh.harvard.edu/msg55168.html" class="uri">https://www.mail-archive.com/freesurfer@nmr.mgh.harvard.edu/msg55168.html</a>, and <a href="https://www.mail-archive.com/freesurfer@nmr.mgh.harvard.edu/msg45618.html" class="uri">https://www.mail-archive.com/freesurfer@nmr.mgh.harvard.edu/msg45618.html</a>).</p>
+</div>
+</div>
+<div id="other-measures" class="section level1">
+<h1>Other measures</h1>
+<p>The area of a the pial/white is ?h.area.pial/?h.area. The ?h.volume and ?h.thickness is the volume and thickness of cortical.</p>
+</div>

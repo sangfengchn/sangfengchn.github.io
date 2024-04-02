@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ggplot2 on Feng Sang | 桑峰</title>
+    <link>//localhost:4321/tags/ggplot2/</link>
+    <description>Recent content in Ggplot2 on Feng Sang | 桑峰</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 10 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4321/tags/ggplot2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>笔记-RMarkdown和ggplot2</title>
+      <link>//localhost:4321/cn/2022/07/blog/</link>
+      <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/cn/2022/07/blog/</guid>
+      <description>R Markdown图表交叉引用 在R Markdown中给图表添加引用是首先需要在文件的输出格式设置为以下三种之一。&#xA;output: # bookdown::word_document2: default bookdown::html_document2: default # bookdown::pdf_document2: default 其次在绘制图表时需要添加标签，如下图1所示：&#xA;Figure 1: 这是一个示例。 其中fig-demo为图片的标签。在文中引用时，输入\@ref(fig:fig-demo)即可自动添加图片引用。&#xA;ggplot2添加标签 修改坐标轴端点样式 坐标轴端点样式可以通过如下命令修改，下图2、图3和图4分别是三种端点样式的是示例图。&#xA;theme(axis.line = element_line(lineend=&amp;#39;round&amp;#39;)) Figure 2: 这是round。 Figure 3: 这是butt。 Figure 4: 这是square。 给柱状图添加标签 给柱状图每个柱子添加相应的数字标签可以通过geom_text函数完成，显示效果如图5所示。&#xA;tmpData %&amp;gt;% count(MRIAGE_group, Sex) %&amp;gt;% ggplot(aes(x = MRIAGE_group, y = n, fill = Sex, label = n)) + geom_bar(stat = &amp;#39;identity&amp;#39;, position = position_dodge()) + geom_text(position = position_dodge(width = 0.9), vjust = -0.1) + labs(x = &amp;#39;Age&amp;#39;, y = &amp;#39;Number&amp;#39;) + theme_classic(base_size = 20) + theme( axis.</description>
+    </item>
+    <item>
+      <title>Weekly summary</title>
+      <link>//localhost:4321/cn/2021/11/blog/</link>
+      <pubDate>Fri, 19 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/cn/2021/11/blog/</guid>
+      <description>自定义Colormap 在一些场景下，我们需要自己构造数字与颜色的对应关系。比如，我们在探究每个ROI随龄变化的趋势时，我们需要将回归方程中年龄的系数展示在脑图上。朴素的想法是，我构造一个关于系数与颜色的映射关系，给定某一系数，就返回相应的颜色。实现方法如下：&#xA;library(tidyverse) library(RColorBrewer) data &amp;lt;- data.frame(Val = rnorm(100)) %&amp;gt;% as_tibble() # 选择合适的颜色 colors &amp;lt;- brewer.pal(11, &amp;#39;RdBu&amp;#39;) # 考虑到数字的正负号，我们这里用差异较明显的颜色区分正负 pos.color &amp;lt;- colorRampPalette(colors[6:1])(1000 * round(max(data$Val), 3) + 1) neg.color &amp;lt;- colorRampPalette(colors[6:11])(-1000 * round(min(data$Val), 3) + 1) res &amp;lt;- rep(&amp;#39;&amp;#39;, length(data$Val)) for (i in 1:length(data$Val)) { if (round(data$Val[i], 3) &amp;lt; 0) { res[i] &amp;lt;- neg.color[1000 * round(-data$Val[i], 3)] } else if (round(data$Val[i], 3) &amp;gt; 0) { res[i] &amp;lt;- pos.color[1000 * round(data$Val[i], 3)] } else { res[i] &amp;lt;- pos.</description>
+    </item>
+    <item>
+      <title>一周小结</title>
+      <link>//localhost:4321/cn/2021/09/blog/</link>
+      <pubDate>Fri, 03 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/cn/2021/09/blog/</guid>
+      <description>Python并行处理 Python 中的concurrent包提供了对于并行运行的接口，包括进程级并行和线程级并行。下面是一个例子。&#xA;from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor def func(a, b): return a*b if __name__ == &amp;#39;__main__&amp;#39;: n_core = 4 nums = 10000 b = 2 res = [0 for _ in range(nums)] with ProcessPoolExecutor(n_core) as pool: futures = {pool.submit(func, i, b): i for i in range(1, nums)} for f in futures: res[futures[f]] = f.result() res = [0 for _ in range(nums)] with ThreadPoolExecutor(n_core) as pool: futures = {pool.submit(func, i, b): i for i in range(1, nums)} for f in futures: res[futures[f]] = f.</description>
+    </item>
+  </channel>
+</rss>

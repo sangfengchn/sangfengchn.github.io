@@ -1,0 +1,77 @@
+---
+title: Weekly summary
+author: 桑峰
+date: 2021-11-19
+slug: blog
+output: html_document
+categories:
+  - Summary
+tags:
+  - R
+  - colormap
+  - bar plot
+  - ggplot2
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="自定义colormap" class="section level2">
+<h2>自定义Colormap</h2>
+<p>在一些场景下，我们需要自己构造数字与颜色的对应关系。比如，我们在探究每个ROI随龄变化的趋势时，我们需要将回归方程中年龄的系数展示在脑图上。朴素的想法是，我构造一个关于系数与颜色的映射关系，给定某一系数，就返回相应的颜色。实现方法如下：</p>
+<pre class="r"><code>library(tidyverse)
+library(RColorBrewer)
+
+data &lt;- data.frame(Val = rnorm(100)) %&gt;% as_tibble()
+
+# 选择合适的颜色
+colors &lt;- brewer.pal(11, &#39;RdBu&#39;)
+# 考虑到数字的正负号，我们这里用差异较明显的颜色区分正负
+pos.color &lt;- colorRampPalette(colors[6:1])(1000 * round(max(data$Val), 3) + 1)
+neg.color &lt;- colorRampPalette(colors[6:11])(-1000 * round(min(data$Val), 3) + 1)
+
+res &lt;- rep(&#39;&#39;, length(data$Val))
+for (i in 1:length(data$Val)) {
+  if (round(data$Val[i], 3) &lt; 0) {
+    res[i] &lt;- neg.color[1000 * round(-data$Val[i], 3)]
+  } else if (round(data$Val[i], 3) &gt; 0) {
+    res[i] &lt;- pos.color[1000 * round(data$Val[i], 3)]
+  } else {
+    res[i] &lt;- pos.color[1]
+  }
+}
+data[&#39;Color&#39;] &lt;- res
+data[, c(&#39;Red&#39;, &#39;Green&#39;, &#39;Blue&#39;)] &lt;- t(col2rgb(res)) / 255
+
+# 演示颜色
+ggplot(data = data, aes(x = Val, y = Val)) +
+  geom_point(color = data$Color, size = 10)</code></pre>
+<p>其中，data中同一行表示数字与对应的颜色。</p>
+<p>效果如下所示：</p>
+<p><img src="img/fig_01.png" width="975" /></p>
+</div>
+<div id="带误差线的柱状图" class="section level2">
+<h2>带误差线的柱状图</h2>
+<pre class="r"><code>library(tidyverse)
+
+data &lt;- data.frame(
+  val = rnorm(10) + 5,
+  error = rnorm(10),
+  name = letters[1:10]
+)
+data %&gt;%
+  ggplot(aes(x = name, y = val)) +
+  geom_bar(stat = &#39;identity&#39;) +
+  # 添加误差线
+  geom_errorbar(aes(ymin = val - error, ymax = val + error, width = 0.2)) +
+  labs(y = &#39;Val&#39;, x = &#39;&#39;) +
+  theme_bw() + 
+  theme(legend.position = &#39;None&#39;,
+        axis.title = element_text(size = 20),
+        axis.text = element_text(size = 16, colour = &#39;black&#39;),
+        panel.border = element_rect(size = 1.5),
+        # 将x轴标签旋转一定角度
+        axis.text.x = element_text(size = 30, angle = 45, vjust = 1, hjust = 1))</code></pre>
+<p>效果如下所示：</p>
+<p><img src="img/fig_02.png" width="583" /></p>
+</div>

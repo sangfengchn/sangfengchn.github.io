@@ -1,0 +1,109 @@
+---
+title: 作图-ggplot2中的直方图和条形图
+author: 桑峰
+date: 2021-04-19
+slug: blog
+output: html_document
+categories:
+  - 作图
+tags:
+  - histogram
+  - bar
+  - r
+  - ggplot
+---
+
+
+
+<p>本文用于记录ggplot2作图相关的代码，会不定期更新。</p>
+<p>示例数据格式为</p>
+<pre class="r"><code>library(tidyverse)
+
+data &lt;- read.csv(&#39;./test.csv&#39;) %&gt;%
+  as_tibble()
+data %&gt;%
+  head() %&gt;%
+  knitr::kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">ID</th>
+<th align="left">Gender</th>
+<th align="right">Age</th>
+<th align="left">Education</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">M</td>
+<td align="right">6</td>
+<td align="left">M</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">F</td>
+<td align="right">8</td>
+<td align="left">M</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">F</td>
+<td align="right">12</td>
+<td align="left">M</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">F</td>
+<td align="right">19</td>
+<td align="left">H</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">F</td>
+<td align="right">4</td>
+<td align="left">L</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">F</td>
+<td align="right">2</td>
+<td align="left">M</td>
+</tr>
+</tbody>
+</table>
+<div id="直方图" class="section level1">
+<h1>直方图</h1>
+<p>..density..: 指明y轴为频率值，为ggplot2内置的变量。</p>
+<p>geom_vline: 添加竖直线，线与x轴的交点由xintercept指定。</p>
+<pre class="r"><code>data %&gt;%
+  ggplot(aes(x=Age, y=..density..)) +
+  geom_histogram(stat = &#39;bin&#39;) +
+  geom_vline(xintercept=mean(data$Age), linetype=&#39;dashed&#39;, color=&#39;blue&#39;) +
+  ylab(&#39;Density&#39;)</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/histogram-1.png" width="672" /></p>
+</div>
+<div id="条形图" class="section level1">
+<h1>条形图</h1>
+<p>ggplot2的条形图，每个柱子的高度直接跟输入数据中的某一列对应，其中一个值会产生一个柱子。这跟seaborn包中catplot的逻辑不太一样：它接受一组数对应一个柱子，因此可以自动生成误差线，而不用单独添加。但也可以自定义函数，将数据转换和作图封装起来，达到类似seaborn中catplot的效果</p>
+<p>geom_errorbar: 为每个柱子添加<strong>标准差线</strong>，也可以给<strong>折线图</strong>的每个点添加。</p>
+<pre class="r"><code>data %&gt;%
+  group_by(Gender) %&gt;%
+  mutate(
+    value=mean(Age),
+    sd=sd(Age)
+  ) %&gt;%
+  ggplot(aes(x=Gender, y=value, fill=Gender)) +
+  geom_col(position = &quot;dodge&quot;, width = 0.3) + 
+  geom_errorbar(aes(ymin = value-sd, ymax = value+sd), 
+                position = position_dodge(0.9), width = .05) +
+  ylab(&#39;Age&#39;)</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/barplot-1.png" width="672" /></p>
+<div id="参考" class="section level3">
+<h3>参考</h3>
+<ol style="list-style-type: decimal">
+<li><a href="https://semba-blog.netlify.app/03/25/2020/barplot-with-errorbar-in-ggplot2/" class="uri">https://semba-blog.netlify.app/03/25/2020/barplot-with-errorbar-in-ggplot2/</a></li>
+<li><a href="http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization" class="uri">http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization</a></li>
+</ol>
+</div>
+</div>

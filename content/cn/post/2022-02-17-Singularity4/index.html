@@ -1,0 +1,55 @@
+---
+title: Singularity-04-安装MATLAB
+author: 桑峰
+date: 2022-02-17
+slug: blog
+output: html_document
+categories:
+  - singularity
+tags:
+  - singularity
+  - matlab
+  - 服务器
+  - centos
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>以下是记录本人在使用学院高性能计算平台运行singularity中遇到的问题以及相应的解决方法，不一定适用于其他场景。</p>
+<div id="建立基础镜像" class="section level1">
+<h1>建立基础镜像</h1>
+<pre class="bash"><code>sudo singularity build --sandbox tmp/ docker://centos:7</code></pre>
+<p>尝试过ubuntu:20.04和18.04，在服务器上均会报告“<strong>FATAL: kernel too old</strong>”的错误。Centos6.10和7可以，但是6.10的yum源已经不再支持。因此使用Centos7作为基础镜像。</p>
+</div>
+<div id="安装matlab" class="section level1">
+<h1>安装MATLAB</h1>
+<p>这里参考：<a href="https://zhuanlan.zhihu.com/p/394298249" class="uri">https://zhuanlan.zhihu.com/p/394298249</a></p>
+<p>需要注意的是，安装之前，需要在系统里面安装一些库文件和编译器，命令如下：</p>
+<pre class="bash"><code>yum install libX11 libXmu
+yum install gcc java-11-openjdk-devel</code></pre>
+<p><em>libXmu中包含libXt.so.6。</em></p>
+</div>
+<div id="后处理" class="section level1">
+<h1>后处理</h1>
+<p>安装好MATLAB后，发现无法通过<strong>singularity exec</strong>去调用。在<strong>/environment</strong>文件中将MATLAB的安装路径添加进PATH环境变量里面也无法直接运行（可能是写入的命令格式有问题，不确定）。之后查到可以定义一个recipe文件（append.def），通过已经生成的镜像重新构建镜像。recipe文件内容如下：</p>
+<pre class="bash"><code>Bootstrap: localimage
+From: tmp/
+
+%environment
+        export PATH=/usr/local/matlab/R2020a/bin:$PATH</code></pre>
+<p>然后重新构建镜像：</p>
+<pre class="bash"><code>sudo singularity build --sandbox senv-matlab/ append.def</code></pre>
+<p>构建完成后，需要将镜像打包为可读写的格式（.img文件）。</p>
+<pre class="bash"><code>sudo singularity build --writable senv-matlab.img senv-matlab/</code></pre>
+<p>这里生成的senv-matlab.img就可在服务器上使用了，也可在服务器上将其转换为压缩格式（.sif/.sqsh/.simg文件等）。不知道为什么直接在本地（Ubuntu 21.10）压缩后，在本地无运行镜像，会报告如下错误。</p>
+<pre class="bash"><code>ERROR  : Failed to mount squashfs image in (read only): Invalid argument
+ABORT  : Retval = 255</code></pre>
+</div>
+<div id="参考" class="section level1">
+<h1>参考</h1>
+<ol style="list-style-type: decimal">
+<li><p><a href="https://zhuanlan.zhihu.com/p/394298249" class="uri">https://zhuanlan.zhihu.com/p/394298249</a></p></li>
+<li><p><a href="http://tigeroses.com/2021/05/30/singularity-container/" class="uri">http://tigeroses.com/2021/05/30/singularity-container/</a></p></li>
+</ol>
+</div>

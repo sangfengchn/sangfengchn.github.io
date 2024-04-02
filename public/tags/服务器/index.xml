@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>服务器 on Feng Sang | 桑峰</title>
+    <link>//localhost:4321/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+    <description>Recent content in 服务器 on Feng Sang | 桑峰</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 17 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4321/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Singularity-04-安装MATLAB</title>
+      <link>//localhost:4321/cn/2022/02/blog/</link>
+      <pubDate>Thu, 17 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/cn/2022/02/blog/</guid>
+      <description>以下是记录本人在使用学院高性能计算平台运行singularity中遇到的问题以及相应的解决方法，不一定适用于其他场景。&#xA;建立基础镜像 sudo singularity build --sandbox tmp/ docker://centos:7 尝试过ubuntu:20.04和18.04，在服务器上均会报告“FATAL: kernel too old”的错误。Centos6.10和7可以，但是6.10的yum源已经不再支持。因此使用Centos7作为基础镜像。&#xA;安装MATLAB 这里参考：https://zhuanlan.zhihu.com/p/394298249&#xA;需要注意的是，安装之前，需要在系统里面安装一些库文件和编译器，命令如下：&#xA;yum install libX11 libXmu yum install gcc java-11-openjdk-devel libXmu中包含libXt.so.6。&#xA;后处理 安装好MATLAB后，发现无法通过singularity exec去调用。在/environment文件中将MATLAB的安装路径添加进PATH环境变量里面也无法直接运行（可能是写入的命令格式有问题，不确定）。之后查到可以定义一个recipe文件（append.def），通过已经生成的镜像重新构建镜像。recipe文件内容如下：&#xA;Bootstrap: localimage From: tmp/ %environment export PATH=/usr/local/matlab/R2020a/bin:$PATH 然后重新构建镜像：&#xA;sudo singularity build --sandbox senv-matlab/ append.def 构建完成后，需要将镜像打包为可读写的格式（.img文件）。&#xA;sudo singularity build --writable senv-matlab.img senv-matlab/ 这里生成的senv-matlab.img就可在服务器上使用了，也可在服务器上将其转换为压缩格式（.sif/.sqsh/.simg文件等）。不知道为什么直接在本地（Ubuntu 21.10）压缩后，在本地无运行镜像，会报告如下错误。&#xA;ERROR : Failed to mount squashfs image in (read only): Invalid argument ABORT : Retval = 255 参考 https://zhuanlan.zhihu.com/p/394298249</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dicom on Feng Sang | 桑峰</title>
+    <link>//localhost:4321/tags/dicom/</link>
+    <description>Recent content in Dicom on Feng Sang | 桑峰</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 02 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4321/tags/dicom/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>医学影像技术笔记-01-DICOM文件方向</title>
+      <link>//localhost:4321/cn/2021/06/blog/</link>
+      <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/cn/2021/06/blog/</guid>
+      <description>本文为B站up主[@智能医学成像-贾广](https://space.bilibili.com/475985153?spm_id_from=333.788.b_765f7570696e666f.1)相关视频的笔记。&#xA;DICOM (Digital Imaging and Communications in Medicine) 是医学成像领域通用的数据格式，被广泛应用于各种医学成像设备当中，包括但不限于CT、超声、核磁共振等设备。&#xA;DICOM文件方向 DICOM文件以病人为中心，它的指向或朝向（orientation）通过头文件中的一些字段标识。这些字段包括：&#xA;(0x0008, 0x5100), Patient Position&#xA;(0x0020, 0x0032), Image Position&#xA;(0x0020, 0x0037), Image Orientation&#xA;(0x0028, 0x0030), Pixel Spacing&#xA;(0x0018, 0x0050), Slice Thickness&#xA;Tag: (0x0008, 0x5100) 用来记录病人进入扫描仪中的朝向或姿势。它的值为[H | F] F { [P | S] | D[R | L] }。[ ]或{ }限定取值范围，｜表示在[ ]限定的范围内二者取其一。[H | F]F表示头或脚先进入扫描仪，[P | S]表示面朝上或下，D[R | L]表示侧卧面朝右或左。例如，HFP表示病人头部先进入扫描仪，并且面朝上。&#xA;Tag: (0x0020, 0x0032) 描述图像第一个像素（左上角）的坐标(x, y, z)。这里以病人为中心，x的正方向表示病人的左边，y的正方向表示病人的后边，z的正方向表示病人的上面。&#xA;Tag: (0x0020, 0x0037) 该字段包含6个不超过16字节的数字，前三个表示图像矩阵从左往右的方向与图像坐标轴x、y和z的余弦值，后三个表示图像矩阵从上往下的方向与坐标轴x、y和z的余弦值。&#xA;例如图1，该文件在(0x0020, 0x0037)处的值为0020,0037,Image Orientation (Patient)=1e-016\1\0\0.</description>
+    </item>
+  </channel>
+</rss>

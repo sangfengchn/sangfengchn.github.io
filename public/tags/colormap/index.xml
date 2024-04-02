@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Colormap on Feng Sang | 桑峰</title>
+    <link>//localhost:4321/tags/colormap/</link>
+    <description>Recent content in Colormap on Feng Sang | 桑峰</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 19 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4321/tags/colormap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Weekly summary</title>
+      <link>//localhost:4321/cn/2021/11/blog/</link>
+      <pubDate>Fri, 19 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/cn/2021/11/blog/</guid>
+      <description>自定义Colormap 在一些场景下，我们需要自己构造数字与颜色的对应关系。比如，我们在探究每个ROI随龄变化的趋势时，我们需要将回归方程中年龄的系数展示在脑图上。朴素的想法是，我构造一个关于系数与颜色的映射关系，给定某一系数，就返回相应的颜色。实现方法如下：&#xA;library(tidyverse) library(RColorBrewer) data &amp;lt;- data.frame(Val = rnorm(100)) %&amp;gt;% as_tibble() # 选择合适的颜色 colors &amp;lt;- brewer.pal(11, &amp;#39;RdBu&amp;#39;) # 考虑到数字的正负号，我们这里用差异较明显的颜色区分正负 pos.color &amp;lt;- colorRampPalette(colors[6:1])(1000 * round(max(data$Val), 3) + 1) neg.color &amp;lt;- colorRampPalette(colors[6:11])(-1000 * round(min(data$Val), 3) + 1) res &amp;lt;- rep(&amp;#39;&amp;#39;, length(data$Val)) for (i in 1:length(data$Val)) { if (round(data$Val[i], 3) &amp;lt; 0) { res[i] &amp;lt;- neg.color[1000 * round(-data$Val[i], 3)] } else if (round(data$Val[i], 3) &amp;gt; 0) { res[i] &amp;lt;- pos.color[1000 * round(data$Val[i], 3)] } else { res[i] &amp;lt;- pos.</description>
+    </item>
+  </channel>
+</rss>

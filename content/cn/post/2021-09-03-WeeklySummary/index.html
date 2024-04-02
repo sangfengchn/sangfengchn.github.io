@@ -1,0 +1,87 @@
+---
+title: 一周小结
+author: 桑峰
+date: 2021-09-03
+slug: blog
+output: html_document
+categories:
+  - Summary
+tags:
+  - Parallel
+  - Python
+  - R
+  - annot
+  - ggplot2
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="python并行处理" class="section level2">
+<h2>Python并行处理</h2>
+<p>Python 中的concurrent包提供了对于并行运行的接口，包括进程级并行和线程级并行。下面是一个例子。</p>
+<pre class="python"><code>from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
+
+def func(a, b):
+    return a*b
+
+if __name__ == &#39;__main__&#39;:
+    n_core = 4
+    nums = 10000
+    b = 2
+
+    res = [0 for _ in range(nums)]
+    with ProcessPoolExecutor(n_core) as pool:
+        futures = {pool.submit(func, i, b): i for i in range(1, nums)}
+        for f in futures:
+            res[futures[f]] = f.result()
+    
+    res = [0 for _ in range(nums)]
+    with ThreadPoolExecutor(n_core) as pool:
+        futures = {pool.submit(func, i, b): i for i in range(1, nums)}
+        for f in futures:
+            res[futures[f]] = f.result()</code></pre>
+<p>在并行处理时，写明 <strong><em>python if <strong>name</strong> == ‘<strong>main</strong>’</em></strong> 以声明主进程。</p>
+<p>进程级并行时，各个并行进程之间独享计算资源（尤其是内存）。对于这个例子，就是会为每个进程拷贝一个 <strong>b</strong> 。这样的好处是进程之间基本不会相互影响，对于I/O型任务的效率提升较大；而缺点是会增加内存的消耗。</p>
+<p>对于线程级并行，并行线程之间可以共享变量，因此相比起进程级别的并行，消耗的内存会更少。</p>
+<blockquote>
+<p>上面的线程和进程相关的描述是笔者久远的记忆加上自己的理解，可能不准确，但代码可用。</p>
+</blockquote>
+<p><strong>futures[f]</strong> 会返回 <strong>{pool.submit(func, i, b): i for i in range(1, nums)}</strong> 里面的 <strong>i</strong>。</p>
+</div>
+<div id="r并行处理" class="section level2">
+<h2>R并行处理</h2>
+<p>R 里面的 <strong>snowfall</strong> 包提供了并行的接口。</p>
+<pre class="r"><code>library(snowfall)
+
+parallel &lt;- function(x, y) {
+  sfCat(print(x))
+  return(x * y)
+}
+
+b &lt;- 2
+sfInit(parallel = TRUE, cpus = 4, slaveOutfile = &#39;demo.log&#39;)
+sfLibrary(snowfall)
+sfExport(&#39;b&#39;)
+res &lt;- sfSapply(1:5, parallel, b)
+sfStop()</code></pre>
+<p><strong>sfInit</strong> 用于设置基础环境，其中 <strong>slaveOutfile</strong> 用来重定向并行中的输出信息，方便检测进度。</p>
+<p><strong>sfLibrary</strong> 函数导入并行函数需要的包。</p>
+<p><strong>sfExport</strong> 函数将外部变量和函数导入并行函数。</p>
+<p><strong>sfSapply</strong> 类似 R 中其他的*<strong>apply</strong>函数族，返回值类似。</p>
+<p><strong>sfCat</strong> 函数将并行过程中的信息输出。如果在 <strong>slaveOutfile</strong> 中设置了，输出信息将保存到相应的文件中。</p>
+</div>
+<div id="annot文件" class="section level2">
+<h2>annot文件</h2>
+<p><strong>FreeSurfer</strong> 中的函数可以将 <strong>.annot</strong> 文件转换为 <strong>.gii</strong> 文件，命令如下。</p>
+<pre class="bash"><code>mris_convert --annot lh.aparc.annot lh.white lh.aparc.gii</code></pre>
+</div>
+<div id="ggplot2中自定义字体" class="section level2">
+<h2>ggplot2中自定义字体</h2>
+<pre class="r"><code>library(showtext)
+
+font.add(&#39;calibri&#39;, &#39;xxx.ttf&#39;)
+showtext.auto()
+ggplot() ...</code></pre>
+<p><strong>showtext</strong> 包可以载入外部字体。利用 <strong>font.add</strong> 函数，载入字体文件。<strong>showtext.auto</strong> 函数可以在后面的绘图中自动使用载入的字体。</p>
+</div>
