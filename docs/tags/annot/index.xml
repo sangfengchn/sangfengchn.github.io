@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Annot on Feng Sang | 桑峰</title>
+    <link>/tags/annot/</link>
+    <description>Recent content in Annot on Feng Sang | 桑峰</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 03 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/annot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一周小结</title>
+      <link>/cn/2021/09/blog/</link>
+      <pubDate>Fri, 03 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>/cn/2021/09/blog/</guid>
+      <description>Python并行处理 Python 中的concurrent包提供了对于并行运行的接口，包括进程级并行和线程级并行。下面是一个例子。&#xA;from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor def func(a, b): return a*b if __name__ == &#39;__main__&#39;: n_core = 4 nums = 10000 b = 2 res = [0 for _ in range(nums)] with ProcessPoolExecutor(n_core) as pool: futures = {pool.submit(func, i, b): i for i in range(1, nums)} for f in futures: res[futures[f]] = f.result() res = [0 for _ in range(nums)] with ThreadPoolExecutor(n_core) as pool: futures = {pool.submit(func, i, b): i for i in range(1, nums)} for f in futures: res[futures[f]] = f.</description>
+    </item>
+  </channel>
+</rss>

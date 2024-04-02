@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NeuroImage on Feng Sang | 桑峰</title>
+    <link>/categories/neuroimage/</link>
+    <description>Recent content in NeuroImage on Feng Sang | 桑峰</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 07 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/categories/neuroimage/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>配准方法示例</title>
+      <link>/cn/2022/07/blog/</link>
+      <pubDate>Thu, 07 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>/cn/2022/07/blog/</guid>
+      <description>配准可以把不同空间中的脑影像进行对齐。典型地，在下面场景中就需要用到配准。&#xA;我们有一个在b空间中（例如，MNI152）的感兴趣区，可我们想的到a空间（例如，个体空间）上感兴趣区中的脑指标。大致的思路是，将b空间中的脑图像和a空间中的脑图像进行配准并保存配准的转换参数。之后将转换参数应用到b空间的感兴趣区图像上就能得到a空间中的感兴趣区图像了。&#xA;下面尝试用几种方法实现上述步骤。说明，b.nii.gz和roi.nii.gz都是在b空间中的图像，后者是感兴趣区。目的是的到a空间中的感兴趣区。&#xA;ANTs antsRegistrationSyNQuick.sh \ -d 3 \ -f a.nii.gz \ -m b.nii.gz \ -o b_space-a antsApplyTransforms -d 3 \ -i roi.nii.gz \ -r a.nii.gz \ -t b_space-a0GenericAffine.mat \ -t b_space-a1Warp.nii.gz \ -o roi_space-a.nii.gz fsl fsl在配准的时候通常要经过线性和非线性配准，用到的命令分别是flirt和fnirt。&#xA;flirt -ref a.nii.gz \ -in b.nii.gz \ -omat b2a_linWarp.mat \ -v # 很慢 fnirt --ref=a.nii.gz \ --in=b.nii.gz \ --aff=b2a_linWarp.mat \ --cout=b2a_nlinWarp \ --verbose applywarp --ref=a.nii.gz \ --in=roi.nii.gz \ --warp=b2a_nlinWarp.nii.gz \ --out=roi_space-a.nii.gz \ -v 其他一些有用的命令：</description>
+    </item>
+    <item>
+      <title>CIFTI文件的读取和可视化</title>
+      <link>/cn/2022/02/blog/</link>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>/cn/2022/02/blog/</guid>
+      <description>CIFTI (Connectivity Informatics Technology Initiative) 是HCP项目中开发的神经影像存储格式。具体可参考2016年Glasser等人发表的文章(Glasser et al., Nature neuroscience, 2015)。开发者在GitHub上提供了读写的MATLAB工具包，可在此处下载：https://github.com/Washington-University/cifti-matlab。</description>
+    </item>
+    <item>
+      <title>下载templateflow</title>
+      <link>/cn/2022/02/blog/</link>
+      <pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>/cn/2022/02/blog/</guid>
+      <description>templateflow中包含了一些典型的神经影像脑模版，可在fmriprep等工具中使用。本文主要介绍如何下载templateflow。&#xA;准备 GitHub上有它的仓库，但是那只是DataLab的索引，因此直接下载是不能下载到模版文件的。需要通过DataLab下载。&#xA;首先，安装DataLab（以Ubuntu 21.10为例）。&#xA;conda install -c conda-forge datalad # OR sudo apt-get install datalab 下载 下载索引文件，并使用DataLab下载模版。&#xA;git clone https://github.com/templateflow/templateflow.git cd templateflow # tpl-* 下载所有模版 datalad get -r tpl-fsLR 通过python下载 笔者在使用datalad下载过程中，会经常遇到进度条长时间不动的情况。而且印象当中，笔者以前用python下载成功过，速度也不是很慢。因此这里将python下载templateflow的方法也追加进来。&#xA;首先设置环境变量。&#xA;export TEMPLATEFLOW_HOME=$HOME/.templateflow 使用pip安装templateflow包。&#xA;python -m pip install -U templateflow 下载templateflow。&#xA;python -c &amp;quot;from templateflow.api import get; get([&#39;MNI152NLin2009cAsym&#39;, &#39;MNI152NLin6Asym&#39;, &#39;OASIS30ANTs&#39;, &#39;MNIPediatricAsym&#39;, &#39;MNIInfant&#39;])&amp;quot; 这里可以根据需要下载相应的模版文件。&#xA;相关链接 templateflow项目地址：https://github.com/templateflow/&#xA;DataLad网址：https://www.datalad.org/&#xA;python下载参考网址：https://fmriprep.org/en/1.5.9/spaces.html</description>
+    </item>
+    <item>
+      <title>Find clusters in a image</title>
+      <link>/cn/2022/01/blog/</link>
+      <pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>/cn/2022/01/blog/</guid>
+      <description>问题 我们在对神经影像数据做完统计后（例如ICA），会得到相应的mask二值文件。但是有些情况下，我们还需要进一步对mask中每一个cluster进行分析（例如计算mask中每个cluster之间的功能连接）。所以我们需要从mask文件中得到每一个cluster。由于没有想到有哪个现成的工具包可以解决上述的问题。因此，本文试图用自己的方式去解决上述的问题。&#xA;方法 思路一 看到这个问题的时候，最朴素的想法就是用MRIcron/GL或者ITK-SNAP手动将mask中的每一个cluster标记出来。&#xA;思路二 虽然上述手动标记的方法能解决这个问题，但是显得没那么优雅（bushi。就想换用代码解决这个问题。而且写完代码下次再碰到类似的问题，就能直接使用了（还能水一篇推送。&#xA;首先我想着先找出mask中所有非零元素的下标，然后选一个非零元素，再去判断这个元素的邻域是否是0（如果是0就意味着已经到了这个cluster的边缘）。但是在三维图像里面，要判断邻域是否到达边缘，需要写8个条件判断，这也很不优雅（主要还是找到了一个现成的轮子。&#xA;之后在找“轮子”的时候，看到了scipy包里面的一个函数可以实现上面的过程。因此通过调用它近乎完美地解决了最开始的问题（bushi。下面是相应的代码。&#xA;import nibabel as nib from scipy.ndimage import measurements import logging logging.basicConfig(level=logging.INFO) img = nib.load(&#39;test-binary.nii&#39;) data = img.get_fdata() labels, num_labels = measurements.label(data) logging.info(f&#39;The number of cluster is {num_labels}&#39;) nib.save(nib.Nifti1Image(labels, img.affine), f&#39;test_cluster-mix.nii&#39;) for i in range(num_labels): tmp_data = np.zeros(data.shape) tmp_data[labels == i + 1] = 1 nib.save(nib.Nifti1Image(tmp_data, img.affine), f&#39;test_cluster-{i+1}.nii&#39;) test-binary.nii是从Neurosynth上随便找的一个功能连接图谱，并以±0.2作为阈值得到的mask文件（Figure 1）。&#xA;Figure 1: test-binary.nii可视化结果。&#xA;上述代码运行后，对于mask中的每一个cluster会得到一个.nii文件，同时也会得到一个混合了所有cluster的.nii文件。结果如Figure 2所示。&#xA;Figure 2: 混合了所有cluster的结果，其中每个cluster用一个整数标记。&#xA;参考 https://neurosynth.org/locations/-4_24_46_6&#xA;https://stackoverflow.com/questions/52087533/how-to-find-number-of-clusters-in-a-image/52088840</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Summary on Feng Sang | 桑峰</title>
+    <link>/categories/summary/</link>
+    <description>Recent content in Summary on Feng Sang | 桑峰</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 20 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/categories/summary/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python for Neuroimage data</title>
+      <link>/cn/2021/11/blog/</link>
+      <pubDate>Sat, 20 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>/cn/2021/11/blog/</guid>
+      <description>DICOM文件 DICOM格式是医学成像设备输出的统一的文件格式，它包含数据头信息和数据信息两部分。其中头信息包含扫描设备的信息以及被试的信息等，另外还包括其他关于数据的元信息。数据部分是扫描设备采集到扫描物体的信号值。&#xA;利用Pydicom包可以使用Python操作DICOM文件，包括对DICOM文件的读写、头信息的增删改等。&#xA;安装 pip install pydicom # 或 conda install -c conda-forge pydicom 示例数据 from pydicom.data import get_testdata_file fpath = get_testdata_file(&amp;quot;CT_small.dcm&amp;quot;) fpath Out: &amp;lsquo;/Applications/miniconda3/lib/python3.9/site-packages/pydicom/data/test_files/CT_small.dcm&amp;rsquo;&#xA;读入文件 from pydicom import dcmread ds = dcmread(fpath) ds 输出：&#xA;Dataset.file_meta ------------------------------- (0002, 0000) File Meta Information Group Length UL: 192 (0002, 0001) File Meta Information Version OB: b&#39;\x00\x01&#39; (0002, 0002) Media Storage SOP Class UID UI: CT Image Storage (0002, 0003) Media Storage SOP Instance UID UI: 1.</description>
+    </item>
+    <item>
+      <title>Weekly summary</title>
+      <link>/cn/2021/11/blog/</link>
+      <pubDate>Fri, 19 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>/cn/2021/11/blog/</guid>
+      <description>自定义Colormap 在一些场景下，我们需要自己构造数字与颜色的对应关系。比如，我们在探究每个ROI随龄变化的趋势时，我们需要将回归方程中年龄的系数展示在脑图上。朴素的想法是，我构造一个关于系数与颜色的映射关系，给定某一系数，就返回相应的颜色。实现方法如下：&#xA;library(tidyverse) library(RColorBrewer) data &amp;lt;- data.frame(Val = rnorm(100)) %&amp;gt;% as_tibble() # 选择合适的颜色 colors &amp;lt;- brewer.pal(11, &#39;RdBu&#39;) # 考虑到数字的正负号，我们这里用差异较明显的颜色区分正负 pos.color &amp;lt;- colorRampPalette(colors[6:1])(1000 * round(max(data$Val), 3) + 1) neg.color &amp;lt;- colorRampPalette(colors[6:11])(-1000 * round(min(data$Val), 3) + 1) res &amp;lt;- rep(&#39;&#39;, length(data$Val)) for (i in 1:length(data$Val)) { if (round(data$Val[i], 3) &amp;lt; 0) { res[i] &amp;lt;- neg.color[1000 * round(-data$Val[i], 3)] } else if (round(data$Val[i], 3) &amp;gt; 0) { res[i] &amp;lt;- pos.color[1000 * round(data$Val[i], 3)] } else { res[i] &amp;lt;- pos.</description>
+    </item>
+    <item>
+      <title>一周小结</title>
+      <link>/cn/2021/09/blog/</link>
+      <pubDate>Fri, 03 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>/cn/2021/09/blog/</guid>
+      <description>Python并行处理 Python 中的concurrent包提供了对于并行运行的接口，包括进程级并行和线程级并行。下面是一个例子。&#xA;from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor def func(a, b): return a*b if __name__ == &#39;__main__&#39;: n_core = 4 nums = 10000 b = 2 res = [0 for _ in range(nums)] with ProcessPoolExecutor(n_core) as pool: futures = {pool.submit(func, i, b): i for i in range(1, nums)} for f in futures: res[futures[f]] = f.result() res = [0 for _ in range(nums)] with ThreadPoolExecutor(n_core) as pool: futures = {pool.submit(func, i, b): i for i in range(1, nums)} for f in futures: res[futures[f]] = f.</description>
+    </item>
+  </channel>
+</rss>
