@@ -1,5 +1,5 @@
 ./docs/site_libs/* linguist-vendored
-./docs/*.html linguist-vendored
+./docs/* linguist-vendored
 *.scss linguist-vendored
 *.css linguist-vendored
 /themes/* linguist-vendored
