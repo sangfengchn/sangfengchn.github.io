@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>T1w on Feng Sang | 桑峰</title>
-    <link>/tags/t1w/</link>
+    <link>//localhost:4321/tags/t1w/</link>
     <description>Recent content in T1w on Feng Sang | 桑峰</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Fri, 11 Mar 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/t1w/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/tags/t1w/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FreeSurfer笔记之一</title>
-      <link>/cn/2022/03/blog/</link>
+      <link>//localhost:4321/cn/2022/03/blog/</link>
       <pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>/cn/2022/03/blog/</guid>
+      <guid>//localhost:4321/cn/2022/03/blog/</guid>
       <description>Outputs FreeSurfer首先去除颅骨（stripped skull），生成brainmask.mgz文件，并进一步分出灰质、白质和皮下结构，保存在aseg.mgz文件中。与此同时，得到白质/灰质的初步估计（?h.orig），随后对分界面进行进一步的调整得到?j.white。在?h.white的基础上，分界面继续向外膨胀得到?h.pial，并进一步膨胀得到?h.inflated。?h.sphere为?h.inflated膨胀形成的球面。可以用来与其他空间图像进行配准（例如fsaverage）。&#xA;recon-all命令中的-qcache可以生成fsaverage空间中的且经过平滑后的数据。&#xA;label文件夹 .ctab文件为颜色表（color table），存储不同atlas定义脑区的颜色。.annot文件为分区信息，其中包含每个vertex所属的脑区等信息。.label文件保存所有vertex所属脑区编号和坐标。&#xA;surf文件夹 ?h.area为midthickness表面的面积，?h.area.pial为灰质（软脑膜）表面的面积。?h.sulc为沟回宽度。&#xA;stats文件夹 保存不同分区下的灰质指标。&#xA;命令 mris_preproc 将个体皮层空间中的指标文件投射到fsavergae等标准皮层空间。&#xA;Example-1 Resample abcXX-anat/surf/lh.thickness onto fsaverage:&#xA;mris_preproc --s abc01-anat \ --s abc02-anat \ --s abc03-anat \ --s abc04-anat \ --target fsaverage \ --hemi lh \ --meas thickness \ --out abc-lh-thickness.mgh Example-2 Same as #1 but smooths by 5mm fwhm:&#xA;mris_preproc --s abc01-anat \ --s abc02-anat \ --s abc03-anat \ --s abc04-anat \ --target fsaverage \ --hemi lh \ --meas thickness \ --fwhm 5 \ --out abc-lh-thickness.</description>
     </item>
   </channel>

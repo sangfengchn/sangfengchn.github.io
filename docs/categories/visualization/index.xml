@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Visualization on Feng Sang | 桑峰</title>
-    <link>/categories/visualization/</link>
+    <link>//localhost:4321/categories/visualization/</link>
     <description>Recent content in Visualization on Feng Sang | 桑峰</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 10 Jul 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>笔记-RMarkdown和ggplot2</title>
-      <link>/cn/2022/07/blog/</link>
+      <link>//localhost:4321/cn/2022/07/blog/</link>
       <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>/cn/2022/07/blog/</guid>
+      <guid>//localhost:4321/cn/2022/07/blog/</guid>
       <description>R Markdown图表交叉引用 在R Markdown中给图表添加引用是首先需要在文件的输出格式设置为以下三种之一。&#xA;output: # bookdown::word_document2: default bookdown::html_document2: default # bookdown::pdf_document2: default 其次在绘制图表时需要添加标签，如下图1所示：&#xA;Figure 1: 这是一个示例。&#xA;其中fig-demo为图片的标签。在文中引用时，输入**&amp;lt;a href=&amp;quot;#fig:fig-demo&amp;quot;&amp;gt;1**即可自动添加图片引用。&#xA;ggplot2添加标签 修改坐标轴端点样式 坐标轴端点样式可以通过如下命令修改，下图2、图3和图4分别是三种端点样式的是示例图。&#xA;theme(axis.line = element_line(lineend=&#39;round&#39;)) Figure 2: 这是round。&#xA;Figure 3: 这是butt。&#xA;Figure 4: 这是square。&#xA;给柱状图添加标签 给柱状图每个柱子添加相应的数字标签可以通过geom_text函数完成，显示效果如图5所示。&#xA;tmpData %&amp;gt;% count(MRIAGE_group, Sex) %&amp;gt;% ggplot(aes(x = MRIAGE_group, y = n, fill = Sex, label = n)) + geom_bar(stat = &#39;identity&#39;, position = position_dodge()) + geom_text(position = position_dodge(width = 0.9), vjust = -0.1) + labs(x = &#39;Age&#39;, y = &#39;Number&#39;) + theme_classic(base_size = 20) + theme( axis.</description>
     </item>
     <item>
       <title>使用CAT12可视化皮层Surface指标</title>
-      <link>/cn/2021/05/blog/</link>
+      <link>//localhost:4321/cn/2021/05/blog/</link>
       <pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate>
-      <guid>/cn/2021/05/blog/</guid>
+      <guid>//localhost:4321/cn/2021/05/blog/</guid>
       <description>CAT12作为一种常用的神经影像数据处理和分析工具包，它提供了很多实用的功能，包括但不限于完整的VBM和SBM分析模块以及相关的统计模块。这里简单记录一下笔者使用CAT12在显示皮层厚度时遇到的问题和相应的解决方法。&#xA;问题描述 CAT12的GUI窗口中有个Display Surface的按钮（图1），可以在窗口中通过选择并显示相应的.gii文件（可以显示的文件有surf/[r|l]h.[sphere|central].name.gii）。但是对于重采样后的皮层指标，例如皮层厚度thickness (文件名为surf/s[fwhm].mesh.thickness.resampled.name.gii)，却不能通过相同的方式去显示。&#xA;图1. CAT12图形化界面 解决方法 首先查询CAT12手册，但是手册中并没有相关的描述。进而在CAT12帮助界面中查找。发现在Surface tools中有关于可视化皮层数据的相关函数的介绍和演示（图2）。&#xA;图2. CAT12帮助界面 随后确定cat_surf_display函数可以进行皮层指标的可视化，同时GUI中的Display Surface按钮调用的也是这个函数。通过help cat_surf_display查看该函数的说明，确定函数的输入参数以及参数的格式。最终，用于可视化皮层厚度的代码如下：&#xA;皮层厚度文件为surf/s15.mesh.thickness.resampled.anat.gii，显示效果如图3。&#xA;cat_surf_display(struct(&#39;data&#39;, &#39;surf/s15.mesh.thickness.resampled.anat.gii&#39;, &#39;usefsaverage&#39;, 1, &#39;multisurf&#39;, 1, &#39;dpi&#39;, 1500, &#39;caxis&#39;, [0, 3], &#39;colormap&#39;, &#39;autumn&#39;)) 图3. 皮层厚度显示效果 另外，可以在弹出的绘图窗口上，右键单击来调整显示的参数和保存图片（图4）。&#xA;图4. 显示参数调节 相关连接 [1] http://141.35.69.218/cat/index.html</description>
     </item>
   </channel>

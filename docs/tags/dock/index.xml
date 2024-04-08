@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dock on Feng Sang | 桑峰</title>
-    <link>/tags/dock/</link>
+    <link>//localhost:4321/tags/dock/</link>
     <description>Recent content in Dock on Feng Sang | 桑峰</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Wed, 26 May 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/dock/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/tags/dock/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>全屏模式Dock栏不消失</title>
-      <link>/cn/2021/05/blog/</link>
+      <link>//localhost:4321/cn/2021/05/blog/</link>
       <pubDate>Wed, 26 May 2021 00:00:00 +0000</pubDate>
-      <guid>/cn/2021/05/blog/</guid>
+      <guid>//localhost:4321/cn/2021/05/blog/</guid>
       <description>环境 OS: MacOS Catalina (10.15.7)&#xA;正常情况是无论Dock是否设置自动隐藏，在全屏模式下，它都会自动隐藏。这里采取的解决方法是重置Dock的默认设置，并重启Dock栏。&#xA;操作 defaults write com.apple.dock autohide-delay -int 0 defaults write com.apple.dock autohide-time-modifier -float 1.0 killall Dock 参考 [1] https://blog.csdn.net/santa12138/article/details/111293518</description>
     </item>
   </channel>

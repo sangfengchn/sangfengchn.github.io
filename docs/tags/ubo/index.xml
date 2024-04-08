@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>UBO on Feng Sang | 桑峰</title>
-    <link>/tags/ubo/</link>
+    <link>//localhost:4321/tags/ubo/</link>
     <description>Recent content in UBO on Feng Sang | 桑峰</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 07 Nov 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/ubo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/tags/ubo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Toolbox for WMH</title>
-      <link>/cn/2021/11/blog/</link>
+      <link>//localhost:4321/cn/2021/11/blog/</link>
       <pubDate>Sun, 07 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>/cn/2021/11/blog/</guid>
+      <guid>//localhost:4321/cn/2021/11/blog/</guid>
       <description>介绍 白质高信号（white matter hyperintensity, WMH）是一种因脑白质病变导致的、在T2 Flari像上表现为高灰质值的现象。在相关研究中，确定白质高信号区域是一个基本的问题。一般认为，由专业的影像科医生或受过培训的人员手动分割的结果是金标准。然而，手动分割费时费力。因而，研究者提出了许多自动半自动的分割工具。本文将对几种常用的白质高信号自动分割工具的用法进行简单介绍。&#xA;LST LST (https://www.applied-statistics.de/lst.html) 是基于SPM的白质高信号分割工具，它包含两个分割算法：LPA和LGA。其中，LPA不需要T1数据，而LGA需要T1和Flari数据。&#xA;代码入下：&#xA;LPA 尽管LPA在分割WMH的时候不需要T1数据，然而在输入里面还是可以将T1数据输入，用来作为配准的参考图像。&#xA;% WMH segment by LPA in LST. close all; clear; clc; % Set SPM12 into Path. SPM_PATH = &#39;~/Tools/spm12&#39;; addpath(SPM_PATH); % Set root path. ROOT = &#39;Work&#39;; subs = dir(ROOT); subs = subs(3:end); for i = 1:numel(subs) % for single subject. disp(subs(i).name); sub_path = fullfile(ROOT, subs(i).name); t1_path = fullfile(sub_path, &#39;t1.nii&#39;); if ~exist(t1_path, &#39;file&#39;) % gunzip the .gz file.</description>
     </item>
   </channel>

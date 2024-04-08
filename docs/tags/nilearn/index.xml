@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nilearn on Feng Sang | 桑峰</title>
-    <link>/tags/nilearn/</link>
+    <link>//localhost:4321/tags/nilearn/</link>
     <description>Recent content in Nilearn on Feng Sang | 桑峰</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sat, 20 Nov 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/nilearn/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/tags/nilearn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python for Neuroimage data</title>
-      <link>/cn/2021/11/blog/</link>
+      <link>//localhost:4321/cn/2021/11/blog/</link>
       <pubDate>Sat, 20 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>/cn/2021/11/blog/</guid>
+      <guid>//localhost:4321/cn/2021/11/blog/</guid>
       <description>DICOM文件 DICOM格式是医学成像设备输出的统一的文件格式，它包含数据头信息和数据信息两部分。其中头信息包含扫描设备的信息以及被试的信息等，另外还包括其他关于数据的元信息。数据部分是扫描设备采集到扫描物体的信号值。&#xA;利用Pydicom包可以使用Python操作DICOM文件，包括对DICOM文件的读写、头信息的增删改等。&#xA;安装 pip install pydicom # 或 conda install -c conda-forge pydicom 示例数据 from pydicom.data import get_testdata_file fpath = get_testdata_file(&amp;quot;CT_small.dcm&amp;quot;) fpath Out: &amp;lsquo;/Applications/miniconda3/lib/python3.9/site-packages/pydicom/data/test_files/CT_small.dcm&amp;rsquo;&#xA;读入文件 from pydicom import dcmread ds = dcmread(fpath) ds 输出：&#xA;Dataset.file_meta ------------------------------- (0002, 0000) File Meta Information Group Length UL: 192 (0002, 0001) File Meta Information Version OB: b&#39;\x00\x01&#39; (0002, 0002) Media Storage SOP Class UID UI: CT Image Storage (0002, 0003) Media Storage SOP Instance UID UI: 1.</description>
     </item>
   </channel>

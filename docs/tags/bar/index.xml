@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bar on Feng Sang | 桑峰</title>
-    <link>/tags/bar/</link>
+    <link>//localhost:4321/tags/bar/</link>
     <description>Recent content in Bar on Feng Sang | 桑峰</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 19 Apr 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/bar/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/tags/bar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>作图-ggplot2中的直方图和条形图</title>
-      <link>/cn/2021/04/blog/</link>
+      <link>//localhost:4321/cn/2021/04/blog/</link>
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/cn/2021/04/blog/</guid>
+      <guid>//localhost:4321/cn/2021/04/blog/</guid>
       <description>本文用于记录ggplot2作图相关的代码，会不定期更新。&#xA;示例数据格式为&#xA;library(tidyverse) data &amp;lt;- read.csv(&#39;./test.csv&#39;) %&amp;gt;% as_tibble() data %&amp;gt;% head() %&amp;gt;% knitr::kable() ID Gender Age Education 1 M 6 M 2 F 8 M 3 F 12 M 4 F 19 H 5 F 4 L 6 F 2 M 直方图 ..density..: 指明y轴为频率值，为ggplot2内置的变量。&#xA;geom_vline: 添加竖直线，线与x轴的交点由xintercept指定。&#xA;data %&amp;gt;% ggplot(aes(x=Age, y=..density..)) + geom_histogram(stat = &#39;bin&#39;) + geom_vline(xintercept=mean(data$Age), linetype=&#39;dashed&#39;, color=&#39;blue&#39;) + ylab(&#39;Density&#39;) 条形图 ggplot2的条形图，每个柱子的高度直接跟输入数据中的某一列对应，其中一个值会产生一个柱子。这跟seaborn包中catplot的逻辑不太一样：它接受一组数对应一个柱子，因此可以自动生成误差线，而不用单独添加。但也可以自定义函数，将数据转换和作图封装起来，达到类似seaborn中catplot的效果&#xA;geom_errorbar: 为每个柱子添加标准差线，也可以给折线图的每个点添加。&#xA;data %&amp;gt;% group_by(Gender) %&amp;gt;% mutate( value=mean(Age), sd=sd(Age) ) %&amp;gt;% ggplot(aes(x=Gender, y=value, fill=Gender)) + geom_col(position = &amp;quot;dodge&amp;quot;, width = 0.</description>
     </item>
   </channel>

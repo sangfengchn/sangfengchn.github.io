@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sex Differences on Feng Sang | 桑峰</title>
-    <link>/tags/sex-differences/</link>
+    <link>//localhost:4321/tags/sex-differences/</link>
     <description>Recent content in Sex Differences on Feng Sang | 桑峰</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 18 Apr 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/sex-differences/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/tags/sex-differences/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>文献笔记-大脑功能网络中体现的左右半球和性别差异</title>
-      <link>/cn/2021/04/blog/</link>
+      <link>//localhost:4321/cn/2021/04/blog/</link>
       <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/cn/2021/04/blog/</guid>
+      <guid>//localhost:4321/cn/2021/04/blog/</guid>
       <description>Title Hemisphere- and gender-related differences in small-world brain networks: A resting-state functional MRI study&#xA;Results Male have a large normalized clustering coefficient in the right hemispheric network, but a lower clustering coefficient in the left hemispheric network.&#xA;Significant hemisphere-related differences in the regional nodal characteristics: frontal and occipital regions (leftward asymmetry), temporal regions (rightward asymmetry).&#xA;Conclustions Topological organization of human brain functional networks is associated with gender and hemispheres.&#xA;Notes Alterations of brain asymmetries are associated with behavior changes in normal aging and in various neuropsychiatric and neurological diseases such as schizophrenia, stroke and dyslexia.</description>
     </item>
   </channel>
