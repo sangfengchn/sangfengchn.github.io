@@ -2,493 +2,493 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:4321/categories/</loc>
+    <loc>/categories/</loc>
     <lastmod>2024-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/r/</loc>
+    <loc>/tags/r/</loc>
     <lastmod>2024-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2024/04/trycatchinr/</loc>
+    <loc>/cn/2024/04/trycatchinr/</loc>
     <lastmod>2024-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2024-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/%E7%BC%96%E7%A8%8B/</loc>
+    <loc>/categories/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2024-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/</loc>
+    <loc>/</loc>
     <lastmod>2024-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/about_en/</loc>
+    <loc>/about_en/</loc>
     <lastmod>2024-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/about_cn/</loc>
+    <loc>/about_cn/</loc>
     <lastmod>2024-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/cxx/</loc>
+    <loc>/tags/cxx/</loc>
     <lastmod>2022-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2022/09/blog/</loc>
+    <loc>/cn/2022/09/blog/</loc>
     <lastmod>2022-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/%E5%B7%A5%E5%85%B7%E7%B1%BB/</loc>
+    <loc>/categories/%E5%B7%A5%E5%85%B7%E7%B1%BB/</loc>
     <lastmod>2022-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/ggplot2/</loc>
+    <loc>/tags/ggplot2/</loc>
     <lastmod>2022-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/rmarkdown/</loc>
+    <loc>/tags/rmarkdown/</loc>
     <lastmod>2022-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/visualization/</loc>
+    <loc>/categories/visualization/</loc>
     <lastmod>2022-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2022/07/blog/</loc>
+    <loc>/cn/2022/07/blog/</loc>
     <lastmod>2022-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/ants/</loc>
+    <loc>/tags/ants/</loc>
     <lastmod>2022-07-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/fsl/</loc>
+    <loc>/tags/fsl/</loc>
     <lastmod>2022-07-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/neuroimage/</loc>
+    <loc>/categories/neuroimage/</loc>
     <lastmod>2022-07-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/register/</loc>
+    <loc>/tags/register/</loc>
     <lastmod>2022-07-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2022/07/blog/</loc>
+    <loc>/cn/2022/07/blog/</loc>
     <lastmod>2022-07-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/fdg/</loc>
+    <loc>/tags/fdg/</loc>
     <lastmod>2022-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/pet/</loc>
+    <loc>/tags/pet/</loc>
     <lastmod>2022-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/spm/</loc>
+    <loc>/categories/spm/</loc>
     <lastmod>2022-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2022/03/blog/</loc>
+    <loc>/cn/2022/03/blog/</loc>
     <lastmod>2022-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/curvature/</loc>
+    <loc>/tags/curvature/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/freesurfer/</loc>
+    <loc>/tags/freesurfer/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/freesurfer/</loc>
+    <loc>/categories/freesurfer/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2022/03/blog/</loc>
+    <loc>/cn/2022/03/blog/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/surface/</loc>
+    <loc>/tags/surface/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/vertex/</loc>
+    <loc>/tags/vertex/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2022/03/blog/</loc>
+    <loc>/cn/2022/03/blog/</loc>
     <lastmod>2022-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/t1w/</loc>
+    <loc>/tags/t1w/</loc>
     <lastmod>2022-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/cifti/</loc>
+    <loc>/tags/cifti/</loc>
     <lastmod>2022-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2022/02/blog/</loc>
+    <loc>/cn/2022/02/blog/</loc>
     <lastmod>2022-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/matlab/</loc>
+    <loc>/tags/matlab/</loc>
     <lastmod>2022-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/visualization/</loc>
+    <loc>/tags/visualization/</loc>
     <lastmod>2022-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/fmriprep/</loc>
+    <loc>/tags/fmriprep/</loc>
     <lastmod>2022-02-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/singularity/</loc>
+    <loc>/tags/singularity/</loc>
     <lastmod>2022-02-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/singularity/</loc>
+    <loc>/categories/singularity/</loc>
     <lastmod>2022-02-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2022/02/blog/</loc>
+    <loc>/cn/2022/02/blog/</loc>
     <lastmod>2022-02-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/templateflow/</loc>
+    <loc>/tags/templateflow/</loc>
     <lastmod>2022-02-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2022/02/blog/</loc>
+    <loc>/cn/2022/02/blog/</loc>
     <lastmod>2022-02-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/centos/</loc>
+    <loc>/tags/centos/</loc>
     <lastmod>2022-02-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2022/02/blog/</loc>
+    <loc>/cn/2022/02/blog/</loc>
     <lastmod>2022-02-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <loc>/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2022-02-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2022/01/blog/</loc>
+    <loc>/cn/2022/01/blog/</loc>
     <lastmod>2022-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/neuroimage/</loc>
+    <loc>/tags/neuroimage/</loc>
     <lastmod>2022-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/nipype/</loc>
+    <loc>/tags/nipype/</loc>
     <lastmod>2022-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/python/</loc>
+    <loc>/tags/python/</loc>
     <lastmod>2022-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/scipy/</loc>
+    <loc>/tags/scipy/</loc>
     <lastmod>2022-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/nibabel/</loc>
+    <loc>/tags/nibabel/</loc>
     <lastmod>2021-11-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/nilearn/</loc>
+    <loc>/tags/nilearn/</loc>
     <lastmod>2021-11-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/pydicom/</loc>
+    <loc>/tags/pydicom/</loc>
     <lastmod>2021-11-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/11/blog/</loc>
+    <loc>/cn/2021/11/blog/</loc>
     <lastmod>2021-11-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/summary/</loc>
+    <loc>/categories/summary/</loc>
     <lastmod>2021-11-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/bar-plot/</loc>
+    <loc>/tags/bar-plot/</loc>
     <lastmod>2021-11-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/colormap/</loc>
+    <loc>/tags/colormap/</loc>
     <lastmod>2021-11-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/11/blog/</loc>
+    <loc>/cn/2021/11/blog/</loc>
     <lastmod>2021-11-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/bianca/</loc>
+    <loc>/tags/bianca/</loc>
     <lastmod>2021-11-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/lst/</loc>
+    <loc>/tags/lst/</loc>
     <lastmod>2021-11-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/sls/</loc>
+    <loc>/tags/sls/</loc>
     <lastmod>2021-11-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/toolbox/</loc>
+    <loc>/categories/toolbox/</loc>
     <lastmod>2021-11-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/11/blog/</loc>
+    <loc>/cn/2021/11/blog/</loc>
     <lastmod>2021-11-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/ubo/</loc>
+    <loc>/tags/ubo/</loc>
     <lastmod>2021-11-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/w2mhs/</loc>
+    <loc>/tags/w2mhs/</loc>
     <lastmod>2021-11-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/wmh/</loc>
+    <loc>/tags/wmh/</loc>
     <lastmod>2021-11-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/charticulator/</loc>
+    <loc>/tags/charticulator/</loc>
     <lastmod>2021-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/visualize/</loc>
+    <loc>/categories/visualize/</loc>
     <lastmod>2021-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/%E5%92%8C%E5%BC%A6%E5%9B%BE/</loc>
+    <loc>/tags/%E5%92%8C%E5%BC%A6%E5%9B%BE/</loc>
     <lastmod>2021-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/09/blog/</loc>
+    <loc>/cn/2021/09/blog/</loc>
     <lastmod>2021-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/development/</loc>
+    <loc>/tags/development/</loc>
     <lastmod>2021-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/gam/</loc>
+    <loc>/tags/gam/</loc>
     <lastmod>2021-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/paper/</loc>
+    <loc>/categories/paper/</loc>
     <lastmod>2021-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/scn/</loc>
+    <loc>/tags/scn/</loc>
     <lastmod>2021-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/09/blog/</loc>
+    <loc>/cn/2021/09/blog/</loc>
     <lastmod>2021-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/annot/</loc>
+    <loc>/tags/annot/</loc>
     <lastmod>2021-09-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/parallel/</loc>
+    <loc>/tags/parallel/</loc>
     <lastmod>2021-09-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/09/blog/</loc>
+    <loc>/cn/2021/09/blog/</loc>
     <lastmod>2021-09-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/cat12/</loc>
+    <loc>/tags/cat12/</loc>
     <lastmod>2021-08-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/gretna/</loc>
+    <loc>/tags/gretna/</loc>
     <lastmod>2021-08-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/08/blog/</loc>
+    <loc>/cn/2021/08/blog/</loc>
     <lastmod>2021-08-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/heatmap/</loc>
+    <loc>/tags/heatmap/</loc>
     <lastmod>2021-08-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/matplotlib/</loc>
+    <loc>/tags/matplotlib/</loc>
     <lastmod>2021-08-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/python/</loc>
+    <loc>/categories/python/</loc>
     <lastmod>2021-08-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/08/blog/</loc>
+    <loc>/cn/2021/08/blog/</loc>
     <lastmod>2021-08-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/seaborn/</loc>
+    <loc>/tags/seaborn/</loc>
     <lastmod>2021-08-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/jupyter-notebook/</loc>
+    <loc>/tags/jupyter-notebook/</loc>
     <lastmod>2021-06-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/remote-server/</loc>
+    <loc>/tags/remote-server/</loc>
     <lastmod>2021-06-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/06/blog/</loc>
+    <loc>/cn/2021/06/blog/</loc>
     <lastmod>2021-06-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/06/blog/</loc>
+    <loc>/cn/2021/06/blog/</loc>
     <lastmod>2021-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/dicom/</loc>
+    <loc>/tags/dicom/</loc>
     <lastmod>2021-06-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/%E5%8C%BB%E5%AD%A6%E5%BD%B1%E5%83%8F/</loc>
+    <loc>/categories/%E5%8C%BB%E5%AD%A6%E5%BD%B1%E5%83%8F/</loc>
     <lastmod>2021-06-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/06/blog/</loc>
+    <loc>/cn/2021/06/blog/</loc>
     <lastmod>2021-06-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/06/blog/</loc>
+    <loc>/cn/2021/06/blog/</loc>
     <lastmod>2021-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/wsl/</loc>
+    <loc>/tags/wsl/</loc>
     <lastmod>2021-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <loc>/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2021-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/linux/</loc>
+    <loc>/tags/linux/</loc>
     <lastmod>2021-05-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/05/blog/</loc>
+    <loc>/cn/2021/05/blog/</loc>
     <lastmod>2021-05-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/sudo/</loc>
+    <loc>/tags/sudo/</loc>
     <lastmod>2021-05-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/thickness/</loc>
+    <loc>/tags/thickness/</loc>
     <lastmod>2021-05-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/05/blog/</loc>
+    <loc>/cn/2021/05/blog/</loc>
     <lastmod>2021-05-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/bug/</loc>
+    <loc>/tags/bug/</loc>
     <lastmod>2021-05-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/catalina/</loc>
+    <loc>/tags/catalina/</loc>
     <lastmod>2021-05-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/dock/</loc>
+    <loc>/tags/dock/</loc>
     <lastmod>2021-05-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/05/blog/</loc>
+    <loc>/cn/2021/05/blog/</loc>
     <lastmod>2021-05-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <loc>/categories/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2021-05-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/install/</loc>
+    <loc>/tags/install/</loc>
     <lastmod>2021-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/05/blog/</loc>
+    <loc>/cn/2021/05/blog/</loc>
     <lastmod>2021-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/05/blog/</loc>
+    <loc>/cn/2021/05/blog/</loc>
     <lastmod>2021-05-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/alluvial/</loc>
+    <loc>/tags/alluvial/</loc>
     <lastmod>2021-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/%E4%BD%9C%E5%9B%BE/</loc>
+    <loc>/categories/%E4%BD%9C%E5%9B%BE/</loc>
     <lastmod>2021-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/05/blog/</loc>
+    <loc>/cn/2021/05/blog/</loc>
     <lastmod>2021-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/%E5%86%B2%E5%87%BB%E5%9B%BE/</loc>
+    <loc>/tags/%E5%86%B2%E5%87%BB%E5%9B%BE/</loc>
     <lastmod>2021-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/fmri/</loc>
+    <loc>/tags/fmri/</loc>
     <lastmod>2021-05-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/segregation/</loc>
+    <loc>/tags/segregation/</loc>
     <lastmod>2021-05-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/%E6%96%87%E7%8C%AE/</loc>
+    <loc>/categories/%E6%96%87%E7%8C%AE/</loc>
     <lastmod>2021-05-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/05/blog/</loc>
+    <loc>/cn/2021/05/blog/</loc>
     <lastmod>2021-05-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/anova/</loc>
+    <loc>/tags/anova/</loc>
     <lastmod>2021-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/cor/</loc>
+    <loc>/tags/cor/</loc>
     <lastmod>2021-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/glm/</loc>
+    <loc>/tags/glm/</loc>
     <lastmod>2021-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/lm/</loc>
+    <loc>/tags/lm/</loc>
     <lastmod>2021-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/lme/</loc>
+    <loc>/tags/lme/</loc>
     <lastmod>2021-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/05/blog/</loc>
+    <loc>/cn/2021/05/blog/</loc>
     <lastmod>2021-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/t.test/</loc>
+    <loc>/tags/t.test/</loc>
     <lastmod>2021-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/%E7%BB%9F%E8%AE%A1/</loc>
+    <loc>/categories/%E7%BB%9F%E8%AE%A1/</loc>
     <lastmod>2021-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/bar/</loc>
+    <loc>/tags/bar/</loc>
     <lastmod>2021-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/ggplot/</loc>
+    <loc>/tags/ggplot/</loc>
     <lastmod>2021-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/histogram/</loc>
+    <loc>/tags/histogram/</loc>
     <lastmod>2021-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/04/blog/</loc>
+    <loc>/cn/2021/04/blog/</loc>
     <lastmod>2021-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/hemsiphere-differences/</loc>
+    <loc>/tags/hemsiphere-differences/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/rest-fmri/</loc>
+    <loc>/tags/rest-fmri/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/sex-differences/</loc>
+    <loc>/tags/sex-differences/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0/</loc>
+    <loc>/categories/%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/04/blog/</loc>
+    <loc>/cn/2021/04/blog/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/%E5%8A%9F%E8%83%BD%E7%BD%91%E7%BB%9C/</loc>
+    <loc>/tags/%E5%8A%9F%E8%83%BD%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/%E5%9B%BE%E8%AE%BA%E5%88%86%E6%9E%90/</loc>
+    <loc>/tags/%E5%9B%BE%E8%AE%BA%E5%88%86%E6%9E%90/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/%E5%B0%8F%E4%B8%96%E7%95%8C%E5%B1%9E%E6%80%A7/</loc>
+    <loc>/tags/%E5%B0%8F%E4%B8%96%E7%95%8C%E5%B1%9E%E6%80%A7/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/%E6%8A%91%E9%83%81%E7%97%87/</loc>
+    <loc>/tags/%E6%8A%91%E9%83%81%E7%97%87/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/04/blog/</loc>
+    <loc>/cn/2021/04/blog/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/codens-d/</loc>
+    <loc>/tags/codens-d/</loc>
     <lastmod>2021-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/04/blog/</loc>
+    <loc>/cn/2021/04/blog/</loc>
     <lastmod>2021-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/%E6%95%88%E5%BA%94%E9%87%8F/</loc>
+    <loc>/tags/%E6%95%88%E5%BA%94%E9%87%8F/</loc>
     <lastmod>2021-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/04/blog/</loc>
+    <loc>/cn/2021/04/blog/</loc>
     <lastmod>2021-04-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/%E5%B9%BF%E4%B9%89%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/</loc>
+    <loc>/tags/%E5%B9%BF%E4%B9%89%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/</loc>
     <lastmod>2021-04-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/%E6%96%B9%E6%B3%95/</loc>
+    <loc>/categories/%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2021-04-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/big-sur/</loc>
+    <loc>/tags/big-sur/</loc>
     <lastmod>2021-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/%E5%9B%BE%E6%A0%87/</loc>
+    <loc>/tags/%E5%9B%BE%E6%A0%87/</loc>
     <lastmod>2021-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/</loc>
+    <loc>/tags/%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/</loc>
     <lastmod>2021-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/04/blog/</loc>
+    <loc>/cn/2021/04/blog/</loc>
     <lastmod>2021-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/iterm2/</loc>
+    <loc>/tags/iterm2/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/04/blog/</loc>
+    <loc>/cn/2021/04/blog/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/blog/</loc>
+    <loc>/tags/blog/</loc>
     <lastmod>2021-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/blogdown/</loc>
+    <loc>/tags/blogdown/</loc>
     <lastmod>2021-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/2021/04/blog/</loc>
+    <loc>/cn/2021/04/blog/</loc>
     <lastmod>2021-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/en/</loc>
+    <loc>/en/</loc>
     <lastmod>2017-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/cn/</loc>
+    <loc>/cn/</loc>
     <lastmod>2017-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/en/2016/02/a-plain-markdown-post/</loc>
+    <loc>/en/2016/02/a-plain-markdown-post/</loc>
     <lastmod>2016-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/example/</loc>
+    <loc>/categories/example/</loc>
     <lastmod>2016-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/categories/hugo/</loc>
+    <loc>/categories/hugo/</loc>
     <lastmod>2016-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/markdown/</loc>
+    <loc>/tags/markdown/</loc>
     <lastmod>2016-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/mathjax/</loc>
+    <loc>/tags/mathjax/</loc>
     <lastmod>2016-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/pandoc/</loc>
+    <loc>/tags/pandoc/</loc>
     <lastmod>2016-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/rstudio/</loc>
+    <loc>/tags/rstudio/</loc>
     <lastmod>2016-02-14T00:00:00+00:00</lastmod>
   </url>
 </urlset>

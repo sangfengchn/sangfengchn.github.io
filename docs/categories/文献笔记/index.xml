@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>文献笔记 on Feng Sang | 桑峰</title>
-    <link>//localhost:4321/categories/%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0/</link>
+    <link>/categories/%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0/</link>
     <description>Recent content in 文献笔记 on Feng Sang | 桑峰</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 18 Apr 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:4321/categories/%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>文献笔记-大脑功能网络中体现的左右半球和性别差异</title>
-      <link>//localhost:4321/cn/2021/04/blog/</link>
+      <link>/cn/2021/04/blog/</link>
       <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/cn/2021/04/blog/</guid>
+      <guid>/cn/2021/04/blog/</guid>
       <description>Title Hemisphere- and gender-related differences in small-world brain networks: A resting-state functional MRI study&#xA;Results Male have a large normalized clustering coefficient in the right hemispheric network, but a lower clustering coefficient in the left hemispheric network.&#xA;Significant hemisphere-related differences in the regional nodal characteristics: frontal and occipital regions (leftward asymmetry), temporal regions (rightward asymmetry).&#xA;Conclustions Topological organization of human brain functional networks is associated with gender and hemispheres.&#xA;Notes Alterations of brain asymmetries are associated with behavior changes in normal aging and in various neuropsychiatric and neurological diseases such as schizophrenia, stroke and dyslexia.</description>
     </item>
     <item>
       <title>文献笔记-抑郁症大脑功能网络拓扑属性的改变</title>
-      <link>//localhost:4321/cn/2021/04/blog/</link>
+      <link>/cn/2021/04/blog/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/cn/2021/04/blog/</guid>
+      <guid>/cn/2021/04/blog/</guid>
       <description>Title Disrupted Brain Connectivity Networks in Drug-Naive, First-Episode Major Depressive Disorder&#xA;Results MDD患者表现出了全局属性的改变：更短的最短路径长度和更高的全局效率→朝着随机网络转变； 尾状核和默认网络脑区中心性在MDD组中增加； 枕叶、眶额和颞叶脑区中心性下降； Conclustions MDD is associated with disruptions in the topological organization of functional brain networks; Disruption in the topological organization may contribute to disturbances in mood and cognition in MDD; Notes 网络稀疏性选择标准：(1) 网络平局度&amp;gt;2*log(N)，N为网络节点数；(2) 小世界属性大于1.1； AUC指标提供了独立与单个稀疏性下的综合度量，summaried scale; NBS, Network-based statistic, 对网络中的连边进行统计的方法； Nonparametric permutation test; Combination of high local clustering and short path length supports the two fundamental organizational principles in the brain: functional segregation and functional integration; Links https://doi.</description>
     </item>
   </channel>

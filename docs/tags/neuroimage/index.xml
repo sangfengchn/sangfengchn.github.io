@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Neuroimage on Feng Sang | 桑峰</title>
-    <link>//localhost:4321/tags/neuroimage/</link>
+    <link>/tags/neuroimage/</link>
     <description>Recent content in Neuroimage on Feng Sang | 桑峰</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Wed, 19 Jan 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:4321/tags/neuroimage/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/neuroimage/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Find clusters in a image</title>
-      <link>//localhost:4321/cn/2022/01/blog/</link>
+      <link>/cn/2022/01/blog/</link>
       <pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/cn/2022/01/blog/</guid>
+      <guid>/cn/2022/01/blog/</guid>
       <description>问题 我们在对神经影像数据做完统计后（例如ICA），会得到相应的mask二值文件。但是有些情况下，我们还需要进一步对mask中每一个cluster进行分析（例如计算mask中每个cluster之间的功能连接）。所以我们需要从mask文件中得到每一个cluster。由于没有想到有哪个现成的工具包可以解决上述的问题。因此，本文试图用自己的方式去解决上述的问题。&#xA;方法 思路一 看到这个问题的时候，最朴素的想法就是用MRIcron/GL或者ITK-SNAP手动将mask中的每一个cluster标记出来。&#xA;思路二 虽然上述手动标记的方法能解决这个问题，但是显得没那么优雅（bushi。就想换用代码解决这个问题。而且写完代码下次再碰到类似的问题，就能直接使用了（还能水一篇推送。&#xA;首先我想着先找出mask中所有非零元素的下标，然后选一个非零元素，再去判断这个元素的邻域是否是0（如果是0就意味着已经到了这个cluster的边缘）。但是在三维图像里面，要判断邻域是否到达边缘，需要写8个条件判断，这也很不优雅（主要还是找到了一个现成的轮子。&#xA;之后在找“轮子”的时候，看到了scipy包里面的一个函数可以实现上面的过程。因此通过调用它近乎完美地解决了最开始的问题（bushi。下面是相应的代码。&#xA;import nibabel as nib from scipy.ndimage import measurements import logging logging.basicConfig(level=logging.INFO) img = nib.load(&#39;test-binary.nii&#39;) data = img.get_fdata() labels, num_labels = measurements.label(data) logging.info(f&#39;The number of cluster is {num_labels}&#39;) nib.save(nib.Nifti1Image(labels, img.affine), f&#39;test_cluster-mix.nii&#39;) for i in range(num_labels): tmp_data = np.zeros(data.shape) tmp_data[labels == i + 1] = 1 nib.save(nib.Nifti1Image(tmp_data, img.affine), f&#39;test_cluster-{i+1}.nii&#39;) test-binary.nii是从Neurosynth上随便找的一个功能连接图谱，并以±0.2作为阈值得到的mask文件（Figure 1）。&#xA;Figure 1: test-binary.nii可视化结果。&#xA;上述代码运行后，对于mask中的每一个cluster会得到一个.nii文件，同时也会得到一个混合了所有cluster的.nii文件。结果如Figure 2所示。&#xA;Figure 2: 混合了所有cluster的结果，其中每个cluster用一个整数标记。&#xA;参考 https://neurosynth.org/locations/-4_24_46_6&#xA;https://stackoverflow.com/questions/52087533/how-to-find-number-of-clusters-in-a-image/52088840</description>
     </item>
     <item>
       <title>Python for Neuroimage data</title>
-      <link>//localhost:4321/cn/2021/11/blog/</link>
+      <link>/cn/2021/11/blog/</link>
       <pubDate>Sat, 20 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/cn/2021/11/blog/</guid>
+      <guid>/cn/2021/11/blog/</guid>
       <description>DICOM文件 DICOM格式是医学成像设备输出的统一的文件格式，它包含数据头信息和数据信息两部分。其中头信息包含扫描设备的信息以及被试的信息等，另外还包括其他关于数据的元信息。数据部分是扫描设备采集到扫描物体的信号值。&#xA;利用Pydicom包可以使用Python操作DICOM文件，包括对DICOM文件的读写、头信息的增删改等。&#xA;安装 pip install pydicom # 或 conda install -c conda-forge pydicom 示例数据 from pydicom.data import get_testdata_file fpath = get_testdata_file(&amp;quot;CT_small.dcm&amp;quot;) fpath Out: &amp;lsquo;/Applications/miniconda3/lib/python3.9/site-packages/pydicom/data/test_files/CT_small.dcm&amp;rsquo;&#xA;读入文件 from pydicom import dcmread ds = dcmread(fpath) ds 输出：&#xA;Dataset.file_meta ------------------------------- (0002, 0000) File Meta Information Group Length UL: 192 (0002, 0001) File Meta Information Version OB: b&#39;\x00\x01&#39; (0002, 0002) Media Storage SOP Class UID UI: CT Image Storage (0002, 0003) Media Storage SOP Instance UID UI: 1.</description>
     </item>
   </channel>

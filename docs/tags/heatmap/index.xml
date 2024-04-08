@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Heatmap on Feng Sang | 桑峰</title>
-    <link>//localhost:4321/tags/heatmap/</link>
+    <link>/tags/heatmap/</link>
     <description>Recent content in Heatmap on Feng Sang | 桑峰</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 22 Aug 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:4321/tags/heatmap/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/heatmap/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python作图-Heatmap</title>
-      <link>//localhost:4321/cn/2021/08/blog/</link>
+      <link>/cn/2021/08/blog/</link>
       <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/cn/2021/08/blog/</guid>
+      <guid>/cn/2021/08/blog/</guid>
       <description>本文用于记录笔者在使用seaborn绘制heatmap中遇到的一些问题和解决方法。&#xA;完整的代码如下所示：&#xA;import numpy as np import pandas as pd import seaborn as sns import matplotlib.pyplot as plt import matplotlib.font_manager as fm import matplotlib.ticker as ticker sns.set_theme(style=&amp;quot;white&amp;quot;) mat = np.random.rand(68*68) mat = mat.reshape((68, 68)) labels = pd.DataFrame({&#39;Name&#39;: range(1, 69)}) cmap = sns.color_palette(&#39;flare&#39;, as_cmap=True) font = fm.FontProperties(fname=&#39;Resource/font/calibri.ttf&#39;) p = sns.heatmap( mat, mask=(mat==0), cmap=cmap, square=True, xticklabels=True, yticklabels=True, center=0.75, vmin=0.5) ax = p.figure.axes[0] ax.axvline(34, color=&#39;k&#39;, alpha=0.8, linestyle=&#39;-&#39;, linewidth=0.8) ax.axhline(34, color=&#39;k&#39;, alpha=0.8, linestyle=&#39;-&#39;, linewidth=0.8) ax.</description>
     </item>
   </channel>

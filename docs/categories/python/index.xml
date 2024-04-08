@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Feng Sang | 桑峰</title>
-    <link>//localhost:4321/categories/python/</link>
+    <link>/categories/python/</link>
     <description>Recent content in Python on Feng Sang | 桑峰</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 22 Aug 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:4321/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python作图-Heatmap</title>
-      <link>//localhost:4321/cn/2021/08/blog/</link>
+      <link>/cn/2021/08/blog/</link>
       <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/cn/2021/08/blog/</guid>
+      <guid>/cn/2021/08/blog/</guid>
       <description>本文用于记录笔者在使用seaborn绘制heatmap中遇到的一些问题和解决方法。&#xA;完整的代码如下所示：&#xA;import numpy as np import pandas as pd import seaborn as sns import matplotlib.pyplot as plt import matplotlib.font_manager as fm import matplotlib.ticker as ticker sns.set_theme(style=&amp;quot;white&amp;quot;) mat = np.random.rand(68*68) mat = mat.reshape((68, 68)) labels = pd.DataFrame({&#39;Name&#39;: range(1, 69)}) cmap = sns.color_palette(&#39;flare&#39;, as_cmap=True) font = fm.FontProperties(fname=&#39;Resource/font/calibri.ttf&#39;) p = sns.heatmap( mat, mask=(mat==0), cmap=cmap, square=True, xticklabels=True, yticklabels=True, center=0.75, vmin=0.5) ax = p.figure.axes[0] ax.axvline(34, color=&#39;k&#39;, alpha=0.8, linestyle=&#39;-&#39;, linewidth=0.8) ax.axhline(34, color=&#39;k&#39;, alpha=0.8, linestyle=&#39;-&#39;, linewidth=0.8) ax.</description>
     </item>
     <item>
       <title>远程Jupyter Notebook设置</title>
-      <link>//localhost:4321/cn/2021/06/blog/</link>
+      <link>/cn/2021/06/blog/</link>
       <pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/cn/2021/06/blog/</guid>
+      <guid>/cn/2021/06/blog/</guid>
       <description>通过Jupyter可以使用远端服务器的计算资源，以下是设置步骤。&#xA;安装Jupyter ## pip 安装 pip install notebook ## conda安装 conda install -c conda-forge notebook 服务器端设置 生成密码密文： jupyter notebook password Enter password: Verify password: &amp;gt; [NotebookPasswordApp] Wrote hashed password to /home/you/.jupyter/jupyter_notebook_config.json 密文保存在/home/you/.jupyter/jupyter_notebook_config.json文件中。&#xA;修改配置文件 ## 打开前面生成的配置文件 vim ~/.jupyter/jupyter_notebook_config.py ## 修改配置内容 c.NotebookApp.ip=&#39;*&#39; ## 修改成将之前生成的密文 c.NotebookApp.password = u&#39;xxx&#39; 启动Jupyter jupyter notebook --no-browser --port=8889 本地设置 打开本地终端，输入以下命令：&#xA;ssh -N -f -L localhost:8836:localhost:8889 xxx@ip 之后打开浏览器，在地址栏中输入http://localhost:8836即可。&#xA;参考 [1] https://blog.csdn.net/weixin_40641725/article/details/114636779&#xA;[2] https://zhuanlan.zhihu.com/p/166425946</description>
     </item>
     <item>
       <title>Python函数参数中的“*”</title>
-      <link>//localhost:4321/cn/2021/06/blog/</link>
+      <link>/cn/2021/06/blog/</link>
       <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/cn/2021/06/blog/</guid>
+      <guid>/cn/2021/06/blog/</guid>
       <description>Python中，*除了可用于乘法和乘方运算外，还可以把它放在函数形式参数的前面，用来传递多个参数或进行参数的拆解。下面简单介绍后者的用法。&#xA;传递多参数 示例1 def f(*x): print(x) f(1, 2, 3, 4) 输出：(1, 2, 3, 4)&#xA;可见，虽然在定义函数**f()**时，只用了一个形式参数x，但是由于*的存在，再调用该函数时，即便是传递多个参数，也会把多个参数当成一个变量x（这里当作元组处理）来处理。&#xA;示例2 def f(**x): print(x) f(a=1, b=2, c=3, d=4) 输出：{&amp;lsquo;a&amp;rsquo;: 1, &amp;lsquo;b&amp;rsquo;: 2, &amp;lsquo;c&amp;rsquo;: 3, &amp;rsquo;d&amp;rsquo;: 4}&#xA;**也可以接收多个参数，但是跟*不同的是，**接收带有key的参数，并且将多个key-value形式的参数转换成为一个字典。&#xA;拆分参数 def f(*x): print(x) # Test 1 f(1, 2) # Test 2 f((1, 2)) # Test 3 f(*(1, 2)) 三次调用的输出分别为：&#xA;Test 1: (1, 2) Test 2: ((1, 2),) Test 3: (1, 2)&#xA;Test 1的结果跟{#demo1}一样，此时的x为两个参数构成的元组。Test 2输入参数变成了一个由两个元素构成的元组，此时的x把这个元组当成一个整体作为它的第一个元素，形成了一个新的元组。Test 3在传递参数时，前面添加了*，此时函数f中的x为输入的元组本身，效果与Test 1相同。&#xA;参考 [1] https://zhuanlan.</description>
     </item>
   </channel>

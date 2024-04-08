@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vertex on Feng Sang | 桑峰</title>
-    <link>//localhost:4321/tags/vertex/</link>
+    <link>/tags/vertex/</link>
     <description>Recent content in Vertex on Feng Sang | 桑峰</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:4321/tags/vertex/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/vertex/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FreeSurfer笔记之二</title>
-      <link>//localhost:4321/cn/2022/03/blog/</link>
+      <link>/cn/2022/03/blog/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/cn/2022/03/blog/</guid>
+      <guid>/cn/2022/03/blog/</guid>
       <description>The measures about curvatures mris_curvature_stats ?h.smoothwm.xxx.crv is the the binary-curvature files where xxx is the different measures. Detailed descriptation is as follows:&#xA;k1 maximum curvature&#xA;k2 minimum curvature&#xA;K Gaussian = k1*k2&#xA;H&#x9;Mean = 0.5*(k1+k2)&#xA;C&#x9;Curvedness = sqrt(0.5*(k1k1+k2k2))&#xA;S&#x9;Sharpness = (k1 - k2)^2&#xA;BE&#x9;Bending Energy = k1k1 + k2k2&#xA;SI&#x9;Shape Index&#x9;= atan((k1+k2)/(k2-k1))&#xA;FI&#x9;Folding Index&#x9;= |k1|*(|k1| - |k2|)&#xA;In each file, the corresponding measures for each vertex were saved.</description>
     </item>
   </channel>
