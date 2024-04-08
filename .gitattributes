@@ -2,6 +2,9 @@
 ./docs/* linguist-vendored
 *.scss linguist-vendored
 *.css linguist-vendored
+*.html linguist-vendored
+*.xml linguist-vendored
+
 ./themes/* linguist-vendored
 
 *.qmd linguist-language=R
