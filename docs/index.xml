@@ -6,15 +6,8 @@
     <description>Recent content on Feng Sang | 桑峰</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 08 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>R语言中的异常处理：TryCatch</title>
-      <link>/cn/2024/04/trycatchinr/</link>
-      <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>/cn/2024/04/trycatchinr/</guid>
-      <description>因为需要在循环里面记录警告和报错对应的循环项。一开始的思路是用warnings()获取警告信息，在获取后再用warning(&#39;&#39;)清空警告信息。但在循环结束后，获取警告信息回返回包含多个元素的list，似乎清空警告信息没有生效。另外，这种方法没办法处理报错。第二种尝试是使用tryCatch()，虽然详细的原理还没弄明白，但目前也能实现一开始的需要了。因此记录一下。&#xA;tryCatch # create a function maybe raise warning or error. func &amp;lt;- function(x) { if (x %% 2 == 0) { warning(&#39;a&#39;) } else if (x %% 3 == 0) { stop(&#39;b&#39;) } } # the loop for (i in 1:10) { res &amp;lt;- tryCatch({ func(i) print(&#39;Normal&#39;) &#39;Normal&#39; }, warning = function(w){ priint(&#39;Warning&#39;) &#39;Warning&#39; }, error = function(e){ print(&#39;Error&#39;) &#39;Error&#39; }, finally = { print(&#39;Finally&#39;) }) print(sprintf(&#39;x: %d, res: %s&#39;, i, res)) } ## [1] &amp;quot;Normal&amp;quot; ## [1] &amp;quot;Finally&amp;quot; ## [1] &amp;quot;x: 1, res: Normal&amp;quot; ## [1] &amp;quot;Error&amp;quot; ## [1] &amp;quot;Finally&amp;quot; ## [1] &amp;quot;x: 2, res: Error&amp;quot; ## [1] &amp;quot;Error&amp;quot; ## [1] &amp;quot;Finally&amp;quot; ## [1] &amp;quot;x: 3, res: Error&amp;quot; ## [1] &amp;quot;Error&amp;quot; ## [1] &amp;quot;Finally&amp;quot; ## [1] &amp;quot;x: 4, res: Error&amp;quot; ## [1] &amp;quot;Normal&amp;quot; ## [1] &amp;quot;Finally&amp;quot; ## [1] &amp;quot;x: 5, res: Normal&amp;quot; ## [1] &amp;quot;Error&amp;quot; ## [1] &amp;quot;Finally&amp;quot; ## [1] &amp;quot;x: 6, res: Error&amp;quot; ## [1] &amp;quot;Normal&amp;quot; ## [1] &amp;quot;Finally&amp;quot; ## [1] &amp;quot;x: 7, res: Normal&amp;quot; ## [1] &amp;quot;Error&amp;quot; ## [1] &amp;quot;Finally&amp;quot; ## [1] &amp;quot;x: 8, res: Error&amp;quot; ## [1] &amp;quot;Error&amp;quot; ## [1] &amp;quot;Finally&amp;quot; ## [1] &amp;quot;x: 9, res: Error&amp;quot; ## [1] &amp;quot;Error&amp;quot; ## [1] &amp;quot;Finally&amp;quot; ## [1] &amp;quot;x: 10, res: Error&amp;quot; 观察输出，可以推测，先执行func(i)，如果没有异常和报错，执行之后的代码。并在tryCatch()结束前执行finally；如果有异常或者报错，则直接执行对应的代码，并在tryCatch()结束前执行finally。</description>
-    </item>
     <item>
       <title>About</title>
       <link>/about_en/</link>

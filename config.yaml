@@ -37,9 +37,15 @@ menu:
     - name: "Blog"
       url: "/en/"
       weight: 2
+    - name: "Categories"
+      url: "/categories/"
+      weight: 3
+    - name: "Tags"
+      url: "/tags/"
+      weight: 4
     - name: "中文"
       url: "/cn/"
-      weight: 3
+      weight: 5
       
   cn:
     - name: "首页"
@@ -48,9 +54,15 @@ menu:
     - name: "博客"
       url: "/cn/"
       weight: 2
+    - name: "分类"
+      url: "/categories/"
+      weight: 3
+    - name: "标签"
+      url: "/tags/"
+      weight: 4
     - name: "English"
       url: "/en/"
-      weight: 3
+      weight: 5
       
 params:
   description: "Personal website of Feng Sang; 桑峰的个人网站"
