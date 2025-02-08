@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Python for Neuroimage data - Sang Feng | 桑峰</title>
+    <meta property="og:title" content="Python for Neuroimage data - Sang Feng | 桑峰">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+    
+      
+    
+
+    
+      
+      <meta property="description" content="DICOM格式是医学成像设备输出的统一的文件格式，它包含数据头信息和数据信息两部分。其中头信息包含扫描设备的信息以及被试的信息等，另外还包括其他关于数据的元信息。数据部分是扫描设备采集到扫描物体的信号值。
+利用Pydicom包可以使用Python操作DICOM文件，包括对DICOM文件的读写、头信息的增删改等。
+[&hellip;] pip install pydicom # 或 conda &amp;hellip;">
+      <meta property="og:description" content="DICOM格式是医学成像设备输出的统一的文件格式，它包含数据头信息和数据信息两部分。其中头信息包含扫描设备的信息以及被试的信息等，另外还包括其他关于数据的元信息。数据部分是扫描设备采集到扫描物体的信号值。
+利用Pydicom包可以使用Python操作DICOM文件，包括对DICOM文件的读写、头信息的增删改等。
+[&hellip;] pip install pydicom # 或 conda &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css">
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Sang Feng | 桑峰</a></h1>
+
+<p class="tagline">Personal website of Sang Feng.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  <li><a href="/categories/">Categories</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Python for Neuroimage data</h1>
+
+
+
+<h3>
+
+桑峰
+
+
+
+
+
+
+ / 
+2021-11-20
+</h3>
+
+<hr>
+
+
+      </header>
+
+
+
+
+
+<h1 id="dicom文件">DICOM文件</h1>
+<p>DICOM格式是医学成像设备输出的统一的文件格式，它包含数据头信息和数据信息两部分。其中头信息包含扫描设备的信息以及被试的信息等，另外还包括其他关于数据的元信息。数据部分是扫描设备采集到扫描物体的信号值。</p>
+<p>利用Pydicom包可以使用Python操作DICOM文件，包括对DICOM文件的读写、头信息的增删改等。</p>
+<h2 id="安装">安装</h2>
+<pre><code class="language-{.bash}">pip install pydicom
+# 或
+conda install -c conda-forge pydicom
+</code></pre>
+<h2 id="示例数据">示例数据</h2>
+<pre><code class="language-{.python}">from pydicom.data import get_testdata_file
+fpath = get_testdata_file(&quot;CT_small.dcm&quot;)
+fpath
+</code></pre>
+<p>Out: &lsquo;/Applications/miniconda3/lib/python3.9/site-packages/pydicom/data/test_files/CT_small.dcm&rsquo;</p>
+<h2 id="读入文件">读入文件</h2>
+<pre><code class="language-python">from pydicom import dcmread
+ds = dcmread(fpath)
+ds
+</code></pre>
+<p>输出：</p>
+<pre><code>Dataset.file_meta -------------------------------
+(0002, 0000) File Meta Information Group Length  UL: 192
+(0002, 0001) File Meta Information Version       OB: b'\x00\x01'
+(0002, 0002) Media Storage SOP Class UID         UI: CT Image Storage
+(0002, 0003) Media Storage SOP Instance UID      UI: 1.3.6.1.4.1.5962.1.1.1.1.1.20040119072730.12322
+(0002, 0010) Transfer Syntax UID                 UI: Explicit VR Little Endian
+(0002, 0012) Implementation Class UID            UI: 1.3.6.1.4.1.5962.2
+(0002, 0013) Implementation Version Name         SH: 'DCTOOL100'
+(0002, 0016) Source Application Entity Title     AE: 'CLUNIE1'
+...
+</code></pre>
+<h2 id="访问数据的子元素">访问数据的子元素</h2>
+<p>可以通过两种方式访问ds中的元素，其一是利用元素的位置，即每个元素中最前面的两个两位十六进制数，如(0x0043, 0x104e)；其二是利用元素的名称访问。下面对三种方式分别进行演示。</p>
+<h3 id="按位置访问">按位置访问</h3>
+<pre><code class="language-python">elem = ds[0x0008, 0x0008]
+elem
+</code></pre>
+<p>Out: (0008, 0008) Image Type                          CS: [&lsquo;ORIGINAL&rsquo;, &lsquo;PRIMARY&rsquo;, &lsquo;AXIAL&rsquo;]</p>
+<h3 id="按名称访问">按名称访问</h3>
+<pre><code class="language-python">elem = ds['ImageType']
+elem
+</code></pre>
+<p>Out: (0008, 0008) Image Type                          CS: [&lsquo;ORIGINAL&rsquo;, &lsquo;PRIMARY&rsquo;, &lsquo;AXIAL&rsquo;]</p>
+<h3 id="访问元素的值">访问元素的值</h3>
+<pre><code class="language-python">val = ds.ImageType
+val
+
+val = ds['ImageType'].value
+val
+</code></pre>
+<p>Out: [&lsquo;ORIGINAL&rsquo;, &lsquo;PRIMARY&rsquo;, &lsquo;AXIAL&rsquo;]</p>
+<h3 id="嵌套元素">嵌套元素</h3>
+<p>头信息中包含部分嵌套的元素，这些元素的子元素不能通过位置和名称直接访问，得先获取到嵌套元素后，再按照类似数组的方式访问它里面的元素。</p>
+<pre><code class="language-python">nelem = ds['OtherPatientIDsSequence']
+nelem
+</code></pre>
+<p>Out: &lt;Sequence, length 2&gt;</p>
+<pre><code class="language-python">nelem[0]
+</code></pre>
+<p>Out: (0010, 0020) Patient ID                          LO: &lsquo;ABCD1234&rsquo;</p>
+<p>(0010, 0022) Type of Patient ID                  CS: &lsquo;TEXT&rsquo;</p>
+<h2 id="修改元素">修改元素</h2>
+<pre><code class="language-python">nelem[0]['PatientID'].value = 'TestDemo'
+# 或
+nelem[0].PatientID = 'TestDemo'
+</code></pre>
+<h2 id="删除元素">删除元素</h2>
+<pre><code class="language-python">del ds[0x0028, 0x1050]
+# 或
+del ds['PatientID']
+</code></pre>
+<h2 id="增加元素">增加元素</h2>
+<pre><code class="language-python">ds.add_new([0x0028, 0x1050], 'DS', &quot;100.0&quot;)
+# 或
+ds.WindowWidth = 500
+</code></pre>
+<h2 id="保存文件">保存文件</h2>
+<pre><code class="language-python">ds.save_as('Test.dcm')
+</code></pre>
+<h1 id="nifti文件">NIFTI文件</h1>
+<h2 id="安装-1">安装</h2>
+<pre><code class="language-bash">pip install nibabel
+</code></pre>
+<h2 id="数据获取">数据获取</h2>
+<p>以下代码会自动下载示例数据到nibabel的目录下。</p>
+<pre><code class="language-python">import os
+import numpy as np
+from nibabel.testing import data_path
+example_file = os.path.join(data_path, 'example4d.nii.gz')
+example_file
+</code></pre>
+<p>Out: &lsquo;/Applications/miniconda3/lib/python3.9/site-packages/nibabel/tests/data/example4d.nii.gz&rsquo;</p>
+<h2 id="数据读取">数据读取</h2>
+<pre><code class="language-python">import nibabel as nib
+
+img = nib.load(example_file)
+img
+</code></pre>
+<p>Out: &lt;nibabel.nifti1.Nifti1Image at 0x7fd908af12b0&gt;</p>
+<p>这里的img就是Nifti文件本身，通过它可以访问到文件的头信息和数据矩阵。</p>
+<h2 id="数据头信息">数据头信息</h2>
+<pre><code class="language-python">header = img.header
+header
+print(header)
+</code></pre>
+<p>Out: &lt;nibabel.nifti1.Nifti1Header at 0x7fd908af1460&gt;</p>
+<pre><code>&lt;class 'nibabel.nifti1.Nifti1Header'&gt; object, endian='&lt;'
+sizeof_hdr      : 348
+data_type       : b''
+db_name         : b''
+extents         : 0
+session_error   : 0
+regular         : b'r'
+dim_info        : 57
+dim             : [  4 128  96  24   2   1   1   1]
+intent_p1       : 0.0
+intent_p2       : 0.0
+intent_p3       : 0.0
+intent_code     : none
+datatype        : int16
+bitpix          : 16
+slice_start     : 0
+pixdim          : [-1.000000e+00  2.000000e+00  2.000000e+00  2.199999e+00  2.000000e+03
+  1.000000e+00  1.000000e+00  1.000000e+00]
+vox_offset      : 0.0
+...
+</code></pre>
+<h2 id="数据矩阵">数据矩阵</h2>
+<pre><code class="language-python">data = img.get_fdata()
+data.shape
+</code></pre>
+<p>Out: (128, 96, 24, 2)</p>
+<p>数据矩阵可以执行矩阵的运算等操作，可通过numpy包进行执行相关操作。</p>
+<p>img对象的slicer方法可以选择特定层的数据，并返回一个img对象。</p>
+<pre><code class="language-python">img_slice = img.slicer[32:-32, ...]
+img_slice.shape
+</code></pre>
+<p>Out: (64, 96, 24, 2)</p>
+<p>img包含一个标识矩阵方向与实际空间中方向的矩阵，较affine矩阵，可通过img.affine访问。</p>
+<p>通过函数nib.orientations.aff2axcodes(img.affine)可返回affine对应的实际空间中的方向。具体的信息请参考：https://sangfengchn.github.io/home/post/2021/06/02/blog/</p>
+<p>上面函数的返回信息为：(&lsquo;L&rsquo;, &lsquo;A&rsquo;, &lsquo;S&rsquo;)，表示矩阵x轴的正方向为被试的左边，矩阵y轴的正方向为被试的前面，z轴正方向表示被试的下面。详细描述：https://nipy.org/nibabel/coordinate_systems.html#nibabel-always-uses-an-ras-output-space</p>
+<h2 id="保存">保存</h2>
+<pre><code class="language-python">img_slice.to_filename('TestNifti.nii.gz')
+# 或
+img_save = nib.Nifti1Image(data, img.affine)
+nib.save(img_save, 'TestNifti2.nii.gz')
+</code></pre>
+<h1 id="可视化">可视化</h1>
+<p>nilearn提供了较为完备的可视化功能，同时也提供了统计功能。这里只介绍它的可视化功能。</p>
+<h2 id="加载数据">加载数据</h2>
+<pre><code class="language-python">from nilearn import datasets
+
+# one motor contrast map from NeuroVault
+motor_images = datasets.fetch_neurovault_motor_task()
+stat_img = motor_images.images[0]
+stat_img
+</code></pre>
+<p>Out: &lsquo;/Users/xxxx/nilearn_data/neurovault/collection_658/image_10426.nii.gz&rsquo;</p>
+<h2 id="演示一激活图">演示一：激活图</h2>
+<pre><code class="language-python">from nilearn import plotting
+
+plotting.plot_stat_map(stat_img, threshold=3, title=&quot;plot_stat_map&quot;, cut_coords=[36, -27, 66])
+</code></pre>
+<p><img src="./img/fig_03.png" alt=""><!-- --></p>
+<h2 id="演示二交互激活图">演示二：交互激活图</h2>
+<pre><code class="language-python">plotting.view_img(stat_img, threshold=3)
+</code></pre>
+<p><img src="./img/fig_04.png" alt=""><!-- --></p>
+<h2 id="演示三玻璃脑">演示三：玻璃脑</h2>
+<pre><code class="language-python">plotting.plot_glass_brain(stat_img, title='plot_glass_brain', threshold=3)
+</code></pre>
+<p><img src="./img/fig_05.png" alt=""><!-- --></p>
+<h2 id="演示四结构像">演示四：结构像</h2>
+<pre><code class="language-python">plotting.plot_anat('sub-1000199_ses-1_proc-facemask_T1w.nii.gz', title=&quot;plot_anat&quot;)
+</code></pre>
+<p><img src="./img/fig_06.png" alt=""><!-- --></p>
+<h1 id="数据分析">数据分析</h1>
+<p>nipype提供了常用神经影像分析工具包的接口，包括FSL、FreeSurfer、ANTs等。</p>
+<p>这里以ANTs去除非脑组织为例。ANTs去非脑组织的过程是通过配准来实现的，需要事先提供<a href="file://./file/T_template0.nii.gz">带颅骨的模版</a>和只包含<a href="file://./file/T_template0_BrainCerebellumMask.nii.gz">脑组织的模版</a>。</p>
+<pre><code class="language-python">import os
+from nipype.interfaces.ants.segmentation import BrainExtraction
+
+anatomical_image = 'sub-1000199_ses-1_proc-facemask_T1w.nii.gz'
+template = 'MICCAI2012-Multi-Atlas-Challenge-Data/T_template0.nii.gz'
+brainmask = 'MICCAI2012-Multi-Atlas-Challenge-Data/T_template0_BrainCerebellumMask.nii.gz'
+out_prefix = 'sub-1000199_ses-1_T1w_seg-brain'
+
+brain_extraction = BrainExtraction(
+    dimension=3,
+    anatomical_image=anatomical_image,
+    brain_template=template,
+    brain_probability_mask=brainmask,
+    out_prefix = out_prefix,
+    num_threads=32)
+
+brain_extraction.run()
+</code></pre>
+<p>原始图像：</p>
+<p><img src="./img/fig_01.png" alt=""><!-- --></p>
+<p>结果图像：</p>
+<p><img src="./img/fig_02.png" alt=""><!-- --></p>
+<p>另外，nipype还提供了处理流程图（workflow engine），可以方便地将不同处理工具整合进一个处理流程里面。官方文档提供了DTI、fMRI和sMRI部分处理的例子。</p>
+<h1 id="参考">参考</h1>
+<ol>
+<li>
+<p>pydicom: <a href="https://pydicom.github.io">https://pydicom.github.io</a></p>
+</li>
+<li>
+<p>nibabel: <a href="https://nipy.org/nibabel/">https://nipy.org/nibabel/</a></p>
+</li>
+<li>
+<p>nilearn: <a href="https://nilearn.github.io/stable/index.html">https://nilearn.github.io/stable/index.html</a></p>
+</li>
+<li>
+<p>nipype: <a href="https://nilearn.github.io/stable/index.html">https://nilearn.github.io/stable/index.html</a></p>
+</li>
+</ol>
+
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2021/11/19/blog/">Weekly summary</a></span>
+  <span class="nav-next"><a href="/post/2022/01/19/blog/">Find clusters in a image</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
+
+  
+
+
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/combine/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js,npm/@xiee/utils/js/load-highlight.js" defer></script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="/">Sang Feng</a> 2021 - 2025 | <a href="https://github.com/sangfengchn">Github</a></div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

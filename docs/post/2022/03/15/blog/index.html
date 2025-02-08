@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>FreeSurfer笔记之二 - Sang Feng | 桑峰</title>
+    <meta property="og:title" content="FreeSurfer笔记之二 - Sang Feng | 桑峰">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+    
+      
+    
+
+    
+      
+      <meta property="description" content="?h.smoothwm.xxx.crv is the the binary-curvature files where xxx is the different measures. Detailed descriptation is as follows:
+[&hellip;] k1 maximum curvature
+k2 minimum curvature
+K Gaussian = k1*k2 &amp;hellip;">
+      <meta property="og:description" content="?h.smoothwm.xxx.crv is the the binary-curvature files where xxx is the different measures. Detailed descriptation is as follows:
+[&hellip;] k1 maximum curvature
+k2 minimum curvature
+K Gaussian = k1*k2 &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Sang Feng | 桑峰</a></h1>
+
+<p class="tagline">Personal website of Sang Feng.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  <li><a href="/categories/">Categories</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>FreeSurfer笔记之二</h1>
+
+
+
+<h3>
+
+桑峰
+
+
+
+
+
+
+ / 
+2022-03-15
+</h3>
+
+<hr>
+
+
+      </header>
+
+
+
+
+
+<h1 id="the-measures-about-curvatures">The measures about curvatures</h1>
+<h2 id="mris_curvature_stats">mris_curvature_stats</h2>
+<p>?h.smoothwm.xxx.crv is the the binary-curvature files where xxx is the different measures. Detailed descriptation is as follows:</p>
+<blockquote>
+<p>k1 	maximum curvature</p>
+<p>k2 	minimum curvature</p>
+<p>K 	Gaussian 	= k1*k2</p>
+<p>H	Mean 		= 0.5*(k1+k2)</p>
+<p>C	Curvedness 	= sqrt(0.5*(k1<em>k1+k2</em>k2))</p>
+<p>S	Sharpness 	= (k1 - k2)^2</p>
+<p>BE	Bending Energy 	= k1<em>k1 + k2</em>k2</p>
+<p>SI	Shape Index	= atan((k1+k2)/(k2-k1))</p>
+<p>FI	Folding Index	= |k1|*(|k1| - |k2|)</p></blockquote>
+<p>In each file, the corresponding measures for each vertex were saved. And you may read it by read.fs.curv() in R package &ldquo;freesurferformats&rdquo;.</p>
+<p><strong>Example: mris_curvature_stats -F pial/smoothwm/white -G -o xxx sub-2455 rh</strong></p>
+<p>xxx is the file to save descriptation statistical results. -F is flag of surface name, the default is smoothwm in FreeSurfer Version 7.2.0. -G is calculated a series of derived curvature values from current surface file.</p>
+<h2 id="mris_curvature">mris_curvature</h2>
+<p>It calculated the mean curvature and Gaussian curvature for a surface.</p>
+<p><strong>Example: mris_curvature -w lh.white</strong></p>
+<p>This command will output the lh.white.H and lh.white.K.</p>
+<p><strong>Example: mris_curvature -w -a 10 lh.white</strong></p>
+<p>This command smooth 10 for the original outputs.</p>
+<h2 id="the-integrated-rectified-meangaussian-curvature">The Integrated Rectified Mean/Gaussian Curvature</h2>
+<p>The descriptation is MeanCurv is the integral of the absolute value of H and GausCurv is the integral of the absolute value of K.</p>
+<p>It seem is taking the absolute vaule for each vertex and multi with the area, and sum for all vertex on the region. (<a href="https://www.mail-archive.com/freesurfer@nmr.mgh.harvard.edu/msg55168.html">https://www.mail-archive.com/freesurfer@nmr.mgh.harvard.edu/msg55168.html</a>, and <a href="https://www.mail-archive.com/freesurfer@nmr.mgh.harvard.edu/msg45618.html)">https://www.mail-archive.com/freesurfer@nmr.mgh.harvard.edu/msg45618.html)</a>.</p>
+<h1 id="other-measures">Other measures</h1>
+<p>The area of a the pial/white is ?h.area.pial/?h.area. The ?h.volume and ?h.thickness is the volume and thickness of cortical.</p>
+
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2022/03/11/blog/">FreeSurfer笔记之一</a></span>
+  <span class="nav-next"><a href="/post/2022/03/24/blog/">对PET图像进行归中心处理</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
+
+  
+
+  
+  <hr>
+  <div class="copyright">© <a href="/">Sang Feng</a> 2021 - 2025 | <a href="https://github.com/sangfengchn">Github</a></div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

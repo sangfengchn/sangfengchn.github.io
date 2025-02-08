@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bug on Sang Feng | 桑峰</title>
+    <link>/tags/bug/</link>
+    <description>Recent content in Bug on Sang Feng | 桑峰</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 May 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/bug/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>全屏模式Dock栏不消失</title>
+      <link>/post/2021/05/26/blog/</link>
+      <pubDate>Wed, 26 May 2021 00:00:00 +0000</pubDate>
+      <guid>/post/2021/05/26/blog/</guid>
+      <description>&lt;h3 id=&#34;环境&#34;&gt;环境&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;OS: MacOS Catalina (10.15.7)&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;正常情况是无论Dock是否设置自动隐藏，在全屏模式下，它都会自动隐藏。这里采取的解决方法是重置Dock的默认设置，并重启Dock栏。&lt;/p&gt;&#xA;&lt;h3 id=&#34;操作&#34;&gt;操作&lt;/h3&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;defaults write com.apple.dock autohide-delay -int 0&#xA;defaults write com.apple.dock autohide-time-modifier -float 1.0&#xA;killall Dock&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h3 id=&#34;参考&#34;&gt;参考&lt;/h3&gt;&#xA;&lt;p&gt;[1] &lt;a href=&#34;https://blog.csdn.net/santa12138/article/details/111293518&#34;&gt;https://blog.csdn.net/santa12138/article/details/111293518&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>移动硬盘图标异常</title>
+      <link>/post/2021/04/08/blog/</link>
+      <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>/post/2021/04/08/blog/</guid>
+      <description>&lt;p&gt;&lt;u&gt;&lt;strong&gt;问题描述&lt;/strong&gt;&lt;/u&gt;：访达侧边栏移动硬盘的图标显示如图1，感觉是不正常的显示。图2为正常显示的图标。&lt;/p&gt;&#xA;&lt;p&gt;&lt;u&gt;&lt;strong&gt;环境&lt;/strong&gt;&lt;/u&gt;：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;macOS: Big Sur 11.2.3&#xA;移动硬盘：希捷&#xA;iRightMouse: 2.1.1&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;center&gt;&#xA;    &lt;img style=&#34;width:50%;&#34; &#xA;    src=&#34;index.assets/image-20210408131532558.png&#34;&gt;&#xA;    &lt;br&gt;&#xA;    &lt;div style=&#34;color:orange; border-bottom: 1px solid #d9d9d9;&#xA;    display: inline-block;&#xA;    color: #999;&#xA;    padding: 2px;&#34;&gt;图1. 显示异常的图标&lt;/div&gt;&#xA;&lt;/center&gt;&#xA;&lt;center&gt;&#xA;    &lt;img style=&#34;width:50%;&#34; &#xA;    src=&#34;index.assets/image-20210408131838865.png&#34;&gt;&#xA;    &lt;br&gt;&#xA;    &lt;div style=&#34;color:orange; border-bottom: 1px solid #d9d9d9;&#xA;    display: inline-block;&#xA;    color: #999;&#xA;    padding: 2px;&#34;&gt;图2. 正常显示的图标&lt;/div&gt;&#xA;&lt;/center&gt;&#xA;&lt;p&gt;&lt;u&gt;&lt;strong&gt;解决方案&lt;/strong&gt;&lt;/u&gt;：在&lt;u&gt;&lt;strong&gt;系统偏好设置&lt;/strong&gt;&lt;/u&gt;里面的&lt;u&gt;&lt;strong&gt;扩展&lt;/strong&gt;&lt;/u&gt;模块，把&lt;u&gt;&lt;strong&gt;新近安装&lt;/strong&gt;&lt;/u&gt;的访达扩展&lt;u&gt;&lt;strong&gt;取消勾选&lt;/strong&gt;&lt;/u&gt;即可（图3）。本机问题为超级右键的扩展导致的。取消勾选即可恢复正常的磁盘图标。但是取消之后，相关软件在访达里面的扩张功能也就没办法使用了。请自行斟酌。&lt;/p&gt;&#xA;&lt;center&gt;&#xA;    &lt;img style=&#34;width:50%;&#34; &#xA;    src=&#34;index.assets/image-20210408131635329.png&#34;&gt;&#xA;    &lt;br&gt;&#xA;    &lt;div style=&#34;color:orange; border-bottom: 1px solid #d9d9d9;&#xA;    display: inline-block;&#xA;    color: #999;&#xA;    padding: 2px;&#34;&gt;图3. 操作顺序&lt;/div&gt;&#xA;&lt;/center&gt;&#xA;&lt;h3 id=&#34;参考&#34;&gt;参考&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://discussionschinese.apple.com/thread/252297105&#34;&gt;https://discussionschinese.apple.com/thread/252297105&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>全屏模式下iTerm2标题栏闪动</title>
+      <link>/post/2021/04/07/blog/</link>
+      <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>/post/2021/04/07/blog/</guid>
+      <description>&lt;h2 id=&#34;起因&#34;&gt;起因&lt;/h2&gt;&#xA;&lt;p&gt;在更新&lt;strong&gt;BigSur&lt;/strong&gt;之后的某一天，突然发现&lt;strong&gt;iTerm2&lt;/strong&gt;在全屏模式下，顶部不时会出现一条白色的线闪动。后来在一个论坛里面看到有人说貌似是系统的问题。但是很奇怪，室友的电脑上就没有这样的情况。中间也试过重装系统（PS：强迫症重度患者），但还是会出现。&lt;/p&gt;&#xA;&lt;p&gt;通过排查，发现只有&lt;strong&gt;iTerm2&lt;/strong&gt;配色选择&lt;u&gt;&lt;em&gt;深色&lt;/em&gt;&lt;/u&gt;主题，并且&lt;strong&gt;系统&lt;/strong&gt;主题为&lt;u&gt;&lt;em&gt;浅色&lt;/em&gt;&lt;/u&gt;主题时，才会出现上述的问题。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;系统版本：macOS Big Sur 11.2.3&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;iTerm2版本：Build 3.4.4&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;解决&#34;&gt;解决&lt;/h2&gt;&#xA;&lt;p&gt;打开iTerm2&lt;u&gt;&lt;em&gt;偏好&lt;/em&gt;&lt;/u&gt;设置，选择&lt;u&gt;&lt;em&gt;高级&lt;/em&gt;&lt;/u&gt;。在&lt;u&gt;&lt;em&gt;文本框&lt;/em&gt;&lt;/u&gt;中输入&lt;u&gt;&lt;strong&gt;big sur&lt;/strong&gt;&lt;/u&gt;，把通用这一行改为&lt;u&gt;&lt;strong&gt;是&lt;/strong&gt;&lt;/u&gt;即可。如图1.&lt;/p&gt;&#xA;&lt;center&gt;&#xA;    &lt;img style=&#34;width:50%;&#34; &#xA;    src=&#34;index.assets/image-20210407201733987.png&#34;&gt;&#xA;    &lt;br&gt;&#xA;    &lt;div style=&#34;color:orange; border-bottom: 1px solid #d9d9d9;&#xA;    display: inline-block;&#xA;    color: #999;&#xA;    padding: 2px;&#34;&gt;图1. 操作顺序&lt;/div&gt;&#xA;&lt;/center&gt;&#xA;&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/lxyoucan/article/details/115085694&#34;&gt;https://blog.csdn.net/lxyoucan/article/details/115085694&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://gitlab.com/gnachman/iterm2/-/issues/9199&#34;&gt;https://gitlab.com/gnachman/iterm2/-/issues/9199&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+  </channel>
+</rss>

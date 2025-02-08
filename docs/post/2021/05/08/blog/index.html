@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>作图-R语言中的冲击图(Alluvial) - Sang Feng | 桑峰</title>
+    <meta property="og:title" content="作图-R语言中的冲击图(Alluvial) - Sang Feng | 桑峰">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+    
+      
+    
+
+    
+      
+      <meta property="description" content="冲击图可以非常直观地描述一组观测值的多个离散变量的情况。
+R语言中生成冲击图需要依赖包ggalluvial. 使用以下代码安装依赖包。
+install.packages(&quot;ggalluvial&quot;) 示例数据 这里用随机生成的虚拟数据作为示例数据data。data中每一行表示一个观测值。其中，每个观测值有三个维度的属性，分别是A，B和C。对于A属性，有3个水平，分别是a1，a2 &amp;hellip;">
+      <meta property="og:description" content="冲击图可以非常直观地描述一组观测值的多个离散变量的情况。
+R语言中生成冲击图需要依赖包ggalluvial. 使用以下代码安装依赖包。
+install.packages(&quot;ggalluvial&quot;) 示例数据 这里用随机生成的虚拟数据作为示例数据data。data中每一行表示一个观测值。其中，每个观测值有三个维度的属性，分别是A，B和C。对于A属性，有3个水平，分别是a1，a2 &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css">
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Sang Feng | 桑峰</a></h1>
+
+<p class="tagline">Personal website of Sang Feng.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  <li><a href="/categories/">Categories</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>作图-R语言中的冲击图(Alluvial)</h1>
+
+
+
+<h3>
+
+桑峰
+
+
+
+
+
+
+ / 
+2021-05-08
+</h3>
+
+<hr>
+
+
+      </header>
+
+
+
+
+
+<p>冲击图可以非常直观地描述一组观测值的多个离散变量的情况。</p>
+<p>R语言中生成冲击图需要依赖包<strong>ggalluvial</strong>. 使用以下代码安装依赖包。</p>
+<pre><code class="language-R">install.packages(&quot;ggalluvial&quot;)
+</code></pre>
+<h1 id="示例数据">示例数据</h1>
+<p>这里用随机生成的虚拟数据作为示例数据<strong>data</strong>。<strong>data</strong>中每一行表示一个观测值。其中，每个观测值有三个维度的属性，分别是<strong>A</strong>，<strong>B</strong>和<strong>C</strong>。对于<strong>A</strong>属性，有<strong>3</strong>个水平，分别是<strong>a1</strong>，<strong>a2</strong>和<strong>a3</strong>。<strong>B</strong>属性有<strong>2</strong>个水平，<strong>C</strong>属性有<strong>4</strong>个水平。总共包含<strong>3000</strong>个观测值。因此，<strong>data</strong>的大小为<strong>3000*3</strong>.</p>
+<pre><code class="language-r">data &lt;- data.frame(
+  id = seq(1:3000),
+  A = rep(c('a1', 'a2', 'a3'), 1000),
+  B = rep(c('b1', 'b2'), 1500),
+  C = rep(c('c1', 'c2', 'c3', 'c4'), 750)
+)
+knitr::kable(head(data))
+</code></pre>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: right">id</th>
+          <th style="text-align: left">A</th>
+          <th style="text-align: left">B</th>
+          <th style="text-align: left">C</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: right">1</td>
+          <td style="text-align: left">a1</td>
+          <td style="text-align: left">b1</td>
+          <td style="text-align: left">c1</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">2</td>
+          <td style="text-align: left">a2</td>
+          <td style="text-align: left">b2</td>
+          <td style="text-align: left">c2</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">3</td>
+          <td style="text-align: left">a3</td>
+          <td style="text-align: left">b1</td>
+          <td style="text-align: left">c3</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">4</td>
+          <td style="text-align: left">a1</td>
+          <td style="text-align: left">b2</td>
+          <td style="text-align: left">c4</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">5</td>
+          <td style="text-align: left">a2</td>
+          <td style="text-align: left">b1</td>
+          <td style="text-align: left">c1</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">6</td>
+          <td style="text-align: left">a3</td>
+          <td style="text-align: left">b2</td>
+          <td style="text-align: left">c2</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">将数据转换为长格式数据<strong>data_long</strong>。</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<pre><code class="language-r">library(tidyverse)
+
+data_long &lt;- data %&gt;%
+  as_tibble() %&gt;%
+  pivot_longer(cols=c(A, B, C), names_to = 'X', values_to = 'Response') %&gt;%
+  group_by(X, Response)
+
+data_long %&gt;%
+  head() %&gt;%
+  knitr::kable()
+</code></pre>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: right">id</th>
+          <th style="text-align: left">X</th>
+          <th style="text-align: left">Response</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: right">1</td>
+          <td style="text-align: left">A</td>
+          <td style="text-align: left">a1</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">1</td>
+          <td style="text-align: left">B</td>
+          <td style="text-align: left">b1</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">1</td>
+          <td style="text-align: left">C</td>
+          <td style="text-align: left">c1</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">2</td>
+          <td style="text-align: left">A</td>
+          <td style="text-align: left">a2</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">2</td>
+          <td style="text-align: left">B</td>
+          <td style="text-align: left">b2</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">2</td>
+          <td style="text-align: left">C</td>
+          <td style="text-align: left">c2</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">这里转换为长格式数据的目的在于将<strong>A</strong>，<strong>B</strong>和<strong>C</strong>三个属性和它们的不同水平相互组合。其中<strong>X</strong>表示不同的属性，将来在冲击图中作为<strong>x轴</strong>。<strong>Response</strong>为各属性的不同取值，在图中表示为每个柱子<strong>划分</strong>的段。原始数据中的1行在长格式数据中被拆分成了3行。</td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="绘图代码">绘图代码</h1>
+<pre><code class="language-r">library(ggalluvial)
+
+ggplot(data_long,
+       aes(x = X, stratum = Response, alluvium = id, fill = Response, label = Response)) +
+  scale_x_discrete(expand = c(.1, .1)) +
+  geom_flow() +
+  geom_stratum(alpha = .5) +
+  geom_text(stat = &quot;stratum&quot;, size = 4) +
+  ylab('Number of subjects') +
+  xlab('') +
+  theme_classic()
+</code></pre>
+<img src="/post/2021/05/08/blog/index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<h1 id="参考">参考</h1>
+<ol>
+<li><a href="https://blog.csdn.net/qq_42458954/article/details/109106860">https://blog.csdn.net/qq_42458954/article/details/109106860</a></li>
+</ol>
+
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2021/05/05/blog/">文献笔记-大脑功能网络的分离与整合</a></span>
+  <span class="nav-next"><a href="/post/2021/05/19/blog/">Singularity-01-安装</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
+
+  
+
+
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/combine/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js,npm/@xiee/utils/js/load-highlight.js" defer></script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="/">Sang Feng</a> 2021 - 2025 | <a href="https://github.com/sangfengchn">Github</a></div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

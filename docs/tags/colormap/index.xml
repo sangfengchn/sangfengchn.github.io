@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Colormap on Sang Feng | 桑峰</title>
+    <link>/tags/colormap/</link>
+    <description>Recent content in Colormap on Sang Feng | 桑峰</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/colormap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Weekly summary</title>
+      <link>/post/2021/11/19/blog/</link>
+      <pubDate>Fri, 19 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>/post/2021/11/19/blog/</guid>
+      <description>&lt;h2 id=&#34;自定义colormap&#34;&gt;自定义Colormap&lt;/h2&gt;&#xA;&lt;p&gt;在一些场景下，我们需要自己构造数字与颜色的对应关系。比如，我们在探究每个ROI随龄变化的趋势时，我们需要将回归方程中年龄的系数展示在脑图上。朴素的想法是，我构造一个关于系数与颜色的映射关系，给定某一系数，就返回相应的颜色。实现方法如下：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;library(tidyverse)&#xA;library(RColorBrewer)&#xA;&#xA;data &amp;lt;- data.frame(Val = rnorm(100)) %&amp;gt;% as_tibble()&#xA;&#xA;# 选择合适的颜色&#xA;colors &amp;lt;- brewer.pal(11, &#39;RdBu&#39;)&#xA;# 考虑到数字的正负号，我们这里用差异较明显的颜色区分正负&#xA;pos.color &amp;lt;- colorRampPalette(colors[6:1])(1000 * round(max(data$Val), 3) + 1)&#xA;neg.color &amp;lt;- colorRampPalette(colors[6:11])(-1000 * round(min(data$Val), 3) + 1)&#xA;&#xA;res &amp;lt;- rep(&#39;&#39;, length(data$Val))&#xA;for (i in 1:length(data$Val)) {&#xA;  if (round(data$Val[i], 3) &amp;lt; 0) {&#xA;    res[i] &amp;lt;- neg.color[1000 * round(-data$Val[i], 3)]&#xA;  } else if (round(data$Val[i], 3) &amp;gt; 0) {&#xA;    res[i] &amp;lt;- pos.color[1000 * round(data$Val[i], 3)]&#xA;  } else {&#xA;    res[i] &amp;lt;- pos.color[1]&#xA;  }&#xA;}&#xA;data[&#39;Color&#39;] &amp;lt;- res&#xA;data[, c(&#39;Red&#39;, &#39;Green&#39;, &#39;Blue&#39;)] &amp;lt;- t(col2rgb(res)) / 255&#xA;&#xA;# 演示颜色&#xA;ggplot(data = data, aes(x = Val, y = Val)) +&#xA;  geom_point(color = data$Color, size = 10)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;其中，data中同一行表示数字与对应的颜色。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

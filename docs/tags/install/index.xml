@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Install on Sang Feng | 桑峰</title>
+    <link>/tags/install/</link>
+    <description>Recent content in Install on Sang Feng | 桑峰</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 May 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/install/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Singularity-02-常见问题汇总</title>
+      <link>/post/2021/05/20/blog/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      <guid>/post/2021/05/20/blog/</guid>
+      <description>&lt;h3 id=&#34;error---base-home-directory-does-not-exist-within-the-container-brain&#34;&gt;ERROR  : Base home directory does not exist within the container: /brain&lt;/h3&gt;&#xA;&lt;p&gt;用沙盒模式创建镜像，然后以交互方式进入镜像后创建/brain目录。之后将沙盒格式的镜像打包为.img文件即可。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 创建沙盒镜像&#xA;singularity build --sandbox centos7 docker://centos:7&#xA;&#xA;# 以交互方式打开镜像&#xA;singularity shell --writable centos7/&#xA;Singularity: Invoking an interactive shell within container...&#xA;&#xA;# 镜像内创建缺失目录&#xA;Singularity centos7:~/envs&amp;gt; mkdir /brain&#xA;Singularity centos7:~/envs&amp;gt; exit&#xA;&#xA;# 重新打包镜像&#xA;singularity build centos7.img centos7/&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h3 id=&#34;error---home-directory-is-not-owned-by-calling-user-usrlocalsingularity-252&#34;&gt;ERROR  : Home directory is not owned by calling user: /usr/local/singularity-2.5.2&lt;/h3&gt;&#xA;&lt;p&gt;报错命令：singularity shell smriprep.simg&lt;/p&gt;&#xA;&lt;p&gt;解决方法：添加&amp;ndash;home xxx参数，这里必须是绝对路径。例如：singularity shell &amp;ndash;home /babri/sangf/Desktop/test/ smriprep.simg&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Singularity-01-安装</title>
+      <link>/post/2021/05/19/blog/</link>
+      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
+      <guid>/post/2021/05/19/blog/</guid>
+      <description>&lt;p&gt;简单来讲，Singularity是一种可以跨平台执行的小型虚拟机。在数据分析时，首先往往要搭建运行环境，比如R，python等。为了保证结果的可靠性，通常要保证跨设备环境的一致性。但是在跨运算设备之间搭建相同的环境是一项比较麻烦的事情。因此，如果只搭建一次环境，就可以在各个设备上使用，就比较轻松了。Singularity和Docker就提供了这样的功能。笔者在这里使用Singularity&lt;a href=&#34;%5Bhttps://singularity.lbl.gov/index.html%5D&#34;&gt;1&lt;/a&gt;，版本为2.4.6。&lt;/p&gt;&#xA;&lt;h2 id=&#34;安装依赖库&#34;&gt;安装依赖库&lt;/h2&gt;&#xA;&lt;h3 id=&#34;ubuntu&#34;&gt;Ubuntu&lt;/h3&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt-get update&#xA;sudo apt-get install python dh-autoreconf build-essential libarchive-dev&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h3 id=&#34;centos&#34;&gt;CentOS&lt;/h3&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo yum update&#xA;sudo yum groupinstall &#39;Development Tools&#39;&#xA;sudo yum install libarchive-devel&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h2 id=&#34;编译安装&#34;&gt;编译安装&lt;/h2&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;VER=2.4.6&#xA;wget https://github.com/singularityware/singularity/releases/download/$VER/singularity-$VER.tar.gz&#xA;tar xvf singularity-$VER.tar.gz&#xA;cd singularity-$VER&#xA;./autogen.sh&#xA;./configure --prefix=&amp;quot;/usr/local/singularity-${VER}&amp;quot;&#xA;make&#xA;sudo make install&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;将**/usr/local/singularity-2.4.6/bin&lt;strong&gt;添加进&lt;/strong&gt;$PATH**并重新加载配置文件。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;echo &amp;quot;export $PATH=/usr/local/singularity-2.4.6/bin:$PATH&amp;quot; &amp;gt; ~/.bashrc&#xA;source ~/.bashrc&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;center&gt;&#xA;    &lt;img style=&#34;width:50%;&#34;&#xA;    src=&#34;./img/iShot2021-05-19 10.37.27.png&#34;&gt;&#xA;    &lt;br&gt;&#xA;    &lt;div style=&#34;color:orange; border-bottom: 1px solid #d9d9d9;&#xA;    display: inline-block;&#xA;    color: #999;&#xA;    padding: 2px;&#34;&gt;图1. 显示singularity版本&lt;/div&gt;&#xA;&lt;/center&gt;&#xA;&lt;h3 id=&#34;参考&#34;&gt;参考&lt;/h3&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -6,6 +6,8 @@ ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 preserveTaxonomyNames: true
 footnotereturnlinkcontents: ↩
 
+publishDir: "docs"
+
 permalinks:
   note: /note/:year/:month/:day/:slug/
   post: /post/:year/:month/:day/:slug/

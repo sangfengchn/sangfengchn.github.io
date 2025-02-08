@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Seaborn on Sang Feng | 桑峰</title>
+    <link>/tags/seaborn/</link>
+    <description>Recent content in Seaborn on Sang Feng | 桑峰</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/seaborn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python作图-Heatmap</title>
+      <link>/post/2021/08/22/blog/</link>
+      <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>/post/2021/08/22/blog/</guid>
+      <description>&lt;p&gt;本文用于记录笔者在使用seaborn绘制heatmap中遇到的一些问题和解决方法。&lt;/p&gt;&#xA;&lt;p&gt;完整的代码如下所示：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np&#xA;import pandas as pd&#xA;import seaborn as sns&#xA;import matplotlib.pyplot as plt&#xA;import matplotlib.font_manager as fm&#xA;import matplotlib.ticker as ticker&#xA;sns.set_theme(style=&amp;quot;white&amp;quot;)&#xA;&#xA;mat = np.random.rand(68*68)&#xA;mat = mat.reshape((68, 68))&#xA;labels = pd.DataFrame({&#39;Name&#39;: range(1, 69)})&#xA;&#xA;&#xA;cmap = sns.color_palette(&#39;flare&#39;, as_cmap=True)&#xA;&#xA;font = fm.FontProperties(fname=&#39;Resource/font/calibri.ttf&#39;)&#xA;&#xA;p = sns.heatmap(&#xA;    mat,&#xA;    mask=(mat==0),&#xA;    cmap=cmap,&#xA;    square=True,&#xA;    xticklabels=True,&#xA;    yticklabels=True,&#xA;    center=0.75,&#xA;    vmin=0.5)&#xA;&#xA;ax = p.figure.axes[0]&#xA;ax.axvline(34, color=&#39;k&#39;, alpha=0.8, linestyle=&#39;-&#39;, linewidth=0.8)&#xA;ax.axhline(34, color=&#39;k&#39;, alpha=0.8, linestyle=&#39;-&#39;, linewidth=0.8)&#xA;ax.set_title(&#39;Title of Heatmap&#39;, fontproperties=font, fontsize=14)&#xA;ax.set_xticklabels(labels[&#39;Name&#39;], fontproperties=font, fontsize=4)&#xA;ax.set_yticklabels(labels[&#39;Name&#39;], fontproperties=font, fontsize=4)&#xA;&#xA;barax = p.figure.axes[1]&#xA;barax.set_ylabel(&#39;Mean Value&#39;, fontproperties=font, fontsize=12)&#xA;barticks = barax.get_yticks()&#xA;tickformat = &#39;{:.1f}&#39;&#xA;barax.yaxis.set_major_locator(ticker.FixedLocator(barticks))&#xA;barax.set_yticklabels([tickformat.format(x) for x in barticks], fontproperties=font, fontsize=10)&#xA;barax.tick_params(direction=&#39;in&#39;, width=0)&#xA;&#xA;plt.savefig(&#39;demo.png&#39;, bbox_inches=&#39;tight&#39;, dpi=500)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;center&gt;&#xA;    &lt;img style=&#34;width:50%;&#34; &#xA;    src=&#34;./img/fig_1.png&#34;&gt;&#xA;    &lt;br&gt;&#xA;    &lt;div style=&#34;color:orange; border-bottom: 1px solid #d9d9d9;&#xA;    display: inline-block;&#xA;    color: #999;&#xA;    padding: 2px;&#34;&gt;图1. 示例结果&lt;/div&gt;&#xA;&lt;/center&gt;&#xA;&lt;h1 id=&#34;解释&#34;&gt;解释&lt;/h1&gt;&#xA;&lt;p&gt;导入相关包：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

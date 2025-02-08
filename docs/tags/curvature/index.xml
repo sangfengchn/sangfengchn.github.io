@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Curvature on Sang Feng | 桑峰</title>
+    <link>/tags/curvature/</link>
+    <description>Recent content in Curvature on Sang Feng | 桑峰</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/curvature/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FreeSurfer笔记之二</title>
+      <link>/post/2022/03/15/blog/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>/post/2022/03/15/blog/</guid>
+      <description>&lt;h1 id=&#34;the-measures-about-curvatures&#34;&gt;The measures about curvatures&lt;/h1&gt;&#xA;&lt;h2 id=&#34;mris_curvature_stats&#34;&gt;mris_curvature_stats&lt;/h2&gt;&#xA;&lt;p&gt;?h.smoothwm.xxx.crv is the the binary-curvature files where xxx is the different measures. Detailed descriptation is as follows:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;k1 &#x9;maximum curvature&lt;/p&gt;&#xA;&lt;p&gt;k2 &#x9;minimum curvature&lt;/p&gt;&#xA;&lt;p&gt;K &#x9;Gaussian &#x9;= k1*k2&lt;/p&gt;&#xA;&lt;p&gt;H&#x9;Mean &#x9;&#x9;= 0.5*(k1+k2)&lt;/p&gt;&#xA;&lt;p&gt;C&#x9;Curvedness &#x9;= sqrt(0.5*(k1&lt;em&gt;k1+k2&lt;/em&gt;k2))&lt;/p&gt;&#xA;&lt;p&gt;S&#x9;Sharpness &#x9;= (k1 - k2)^2&lt;/p&gt;&#xA;&lt;p&gt;BE&#x9;Bending Energy &#x9;= k1&lt;em&gt;k1 + k2&lt;/em&gt;k2&lt;/p&gt;&#xA;&lt;p&gt;SI&#x9;Shape Index&#x9;= atan((k1+k2)/(k2-k1))&lt;/p&gt;&#xA;&lt;p&gt;FI&#x9;Folding Index&#x9;= |k1|*(|k1| - |k2|)&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;In each file, the corresponding measures for each vertex were saved. And you may read it by read.fs.curv() in R package &amp;ldquo;freesurferformats&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
