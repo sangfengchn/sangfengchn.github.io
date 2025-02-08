@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Singularity-04-安装MATLAB - Sang Feng | 桑峰</title>
+    <meta property="og:title" content="Singularity-04-安装MATLAB - Sang Feng | 桑峰">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+    
+      
+    
+
+    
+      
+      <meta property="description" content="以下是记录本人在使用学院高性能计算平台运行singularity中遇到的问题以及相应的解决方法，不一定适用于其他场景。
+[&hellip;] sudo singularity build --sandbox tmp/ docker://centos:7 尝试过ubuntu:20.04和18.04，在服务器上均会报告“FATAL: kernel too old”的错误。Centos6.10和7可以， &amp;hellip;">
+      <meta property="og:description" content="以下是记录本人在使用学院高性能计算平台运行singularity中遇到的问题以及相应的解决方法，不一定适用于其他场景。
+[&hellip;] sudo singularity build --sandbox tmp/ docker://centos:7 尝试过ubuntu:20.04和18.04，在服务器上均会报告“FATAL: kernel too old”的错误。Centos6.10和7可以， &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css">
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Sang Feng | 桑峰</a></h1>
+
+<p class="tagline">Personal website of Sang Feng.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  <li><a href="/categories/">Categories</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Singularity-04-安装MATLAB</h1>
+
+
+
+<h3>
+
+桑峰
+
+
+
+
+
+
+ / 
+2022-02-17
+</h3>
+
+<hr>
+
+
+      </header>
+
+
+
+
+
+<p>以下是记录本人在使用学院高性能计算平台运行singularity中遇到的问题以及相应的解决方法，不一定适用于其他场景。</p>
+<h1 id="建立基础镜像">建立基础镜像</h1>
+<pre><code class="language-bash">sudo singularity build --sandbox tmp/ docker://centos:7
+</code></pre>
+<p>尝试过ubuntu:20.04和18.04，在服务器上均会报告“<strong>FATAL: kernel too old</strong>”的错误。Centos6.10和7可以，但是6.10的yum源已经不再支持。因此使用Centos7作为基础镜像。</p>
+<h1 id="安装matlab">安装MATLAB</h1>
+<p>这里参考：https://zhuanlan.zhihu.com/p/394298249</p>
+<p>需要注意的是，安装之前，需要在系统里面安装一些库文件和编译器，命令如下：</p>
+<pre><code class="language-bash">yum install libX11 libXmu
+yum install gcc java-11-openjdk-devel
+</code></pre>
+<p><em>libXmu中包含libXt.so.6。</em></p>
+<h1 id="后处理">后处理</h1>
+<p>安装好MATLAB后，发现无法通过<strong>singularity exec</strong>去调用。在**/environment**文件中将MATLAB的安装路径添加进PATH环境变量里面也无法直接运行（可能是写入的命令格式有问题，不确定）。之后查到可以定义一个recipe文件（append.def），通过已经生成的镜像重新构建镜像。recipe文件内容如下：</p>
+<pre><code class="language-bash">Bootstrap: localimage
+From: tmp/
+
+%environment
+        export PATH=/usr/local/matlab/R2020a/bin:$PATH
+</code></pre>
+<p>然后重新构建镜像：</p>
+<pre><code class="language-bash">sudo singularity build --sandbox senv-matlab/ append.def
+</code></pre>
+<p>构建完成后，需要将镜像打包为可读写的格式（.img文件）。</p>
+<pre><code class="language-bash">sudo singularity build --writable senv-matlab.img senv-matlab/
+</code></pre>
+<p>这里生成的senv-matlab.img就可在服务器上使用了，也可在服务器上将其转换为压缩格式（.sif/.sqsh/.simg文件等）。不知道为什么直接在本地（Ubuntu 21.10）压缩后，在本地无运行镜像，会报告如下错误。</p>
+<pre><code class="language-bash">ERROR  : Failed to mount squashfs image in (read only): Invalid argument
+ABORT  : Retval = 255
+</code></pre>
+<h1 id="参考">参考</h1>
+<ol>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/394298249">https://zhuanlan.zhihu.com/p/394298249</a></p>
+</li>
+<li>
+<p><a href="http://tigeroses.com/2021/05/30/singularity-container/">http://tigeroses.com/2021/05/30/singularity-container/</a></p>
+</li>
+</ol>
+
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2022/01/19/blog/">Find clusters in a image</a></span>
+  <span class="nav-next"><a href="/post/2022/02/18/blog/">下载templateflow</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
+
+  
+
+
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/combine/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js,npm/@xiee/utils/js/load-highlight.js" defer></script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="/">Sang Feng</a> 2021 - 2025 | <a href="https://github.com/sangfengchn">Github</a></div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

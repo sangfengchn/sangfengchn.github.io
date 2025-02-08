@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Summary on Sang Feng | 桑峰</title>
+    <link>//localhost:4321/categories/summary/</link>
+    <description>Recent content in Summary on Sang Feng | 桑峰</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4321/categories/summary/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python for Neuroimage data</title>
+      <link>//localhost:4321/post/2021/11/20/blog/</link>
+      <pubDate>Sat, 20 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/post/2021/11/20/blog/</guid>
+      <description>&lt;h1 id=&#34;dicom文件&#34;&gt;DICOM文件&lt;/h1&gt;&#xA;&lt;p&gt;DICOM格式是医学成像设备输出的统一的文件格式，它包含数据头信息和数据信息两部分。其中头信息包含扫描设备的信息以及被试的信息等，另外还包括其他关于数据的元信息。数据部分是扫描设备采集到扫描物体的信号值。&lt;/p&gt;&#xA;&lt;p&gt;利用Pydicom包可以使用Python操作DICOM文件，包括对DICOM文件的读写、头信息的增删改等。&lt;/p&gt;&#xA;&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-{.bash}&#34;&gt;pip install pydicom&#xA;# 或&#xA;conda install -c conda-forge pydicom&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h2 id=&#34;示例数据&#34;&gt;示例数据&lt;/h2&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-{.python}&#34;&gt;from pydicom.data import get_testdata_file&#xA;fpath = get_testdata_file(&amp;quot;CT_small.dcm&amp;quot;)&#xA;fpath&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Out: &amp;lsquo;/Applications/miniconda3/lib/python3.9/site-packages/pydicom/data/test_files/CT_small.dcm&amp;rsquo;&lt;/p&gt;&#xA;&lt;h2 id=&#34;读入文件&#34;&gt;读入文件&lt;/h2&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from pydicom import dcmread&#xA;ds = dcmread(fpath)&#xA;ds&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;输出：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;Dataset.file_meta -------------------------------&#xA;(0002, 0000) File Meta Information Group Length  UL: 192&#xA;(0002, 0001) File Meta Information Version       OB: b&#39;\x00\x01&#39;&#xA;(0002, 0002) Media Storage SOP Class UID         UI: CT Image Storage&#xA;(0002, 0003) Media Storage SOP Instance UID      UI: 1.3.6.1.4.1.5962.1.1.1.1.1.20040119072730.12322&#xA;(0002, 0010) Transfer Syntax UID                 UI: Explicit VR Little Endian&#xA;(0002, 0012) Implementation Class UID            UI: 1.3.6.1.4.1.5962.2&#xA;(0002, 0013) Implementation Version Name         SH: &#39;DCTOOL100&#39;&#xA;(0002, 0016) Source Application Entity Title     AE: &#39;CLUNIE1&#39;&#xA;...&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h2 id=&#34;访问数据的子元素&#34;&gt;访问数据的子元素&lt;/h2&gt;&#xA;&lt;p&gt;可以通过两种方式访问ds中的元素，其一是利用元素的位置，即每个元素中最前面的两个两位十六进制数，如(0x0043, 0x104e)；其二是利用元素的名称访问。下面对三种方式分别进行演示。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Weekly summary</title>
+      <link>//localhost:4321/post/2021/11/19/blog/</link>
+      <pubDate>Fri, 19 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/post/2021/11/19/blog/</guid>
+      <description>&lt;h2 id=&#34;自定义colormap&#34;&gt;自定义Colormap&lt;/h2&gt;&#xA;&lt;p&gt;在一些场景下，我们需要自己构造数字与颜色的对应关系。比如，我们在探究每个ROI随龄变化的趋势时，我们需要将回归方程中年龄的系数展示在脑图上。朴素的想法是，我构造一个关于系数与颜色的映射关系，给定某一系数，就返回相应的颜色。实现方法如下：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;library(tidyverse)&#xA;library(RColorBrewer)&#xA;&#xA;data &amp;lt;- data.frame(Val = rnorm(100)) %&amp;gt;% as_tibble()&#xA;&#xA;# 选择合适的颜色&#xA;colors &amp;lt;- brewer.pal(11, &#39;RdBu&#39;)&#xA;# 考虑到数字的正负号，我们这里用差异较明显的颜色区分正负&#xA;pos.color &amp;lt;- colorRampPalette(colors[6:1])(1000 * round(max(data$Val), 3) + 1)&#xA;neg.color &amp;lt;- colorRampPalette(colors[6:11])(-1000 * round(min(data$Val), 3) + 1)&#xA;&#xA;res &amp;lt;- rep(&#39;&#39;, length(data$Val))&#xA;for (i in 1:length(data$Val)) {&#xA;  if (round(data$Val[i], 3) &amp;lt; 0) {&#xA;    res[i] &amp;lt;- neg.color[1000 * round(-data$Val[i], 3)]&#xA;  } else if (round(data$Val[i], 3) &amp;gt; 0) {&#xA;    res[i] &amp;lt;- pos.color[1000 * round(data$Val[i], 3)]&#xA;  } else {&#xA;    res[i] &amp;lt;- pos.color[1]&#xA;  }&#xA;}&#xA;data[&#39;Color&#39;] &amp;lt;- res&#xA;data[, c(&#39;Red&#39;, &#39;Green&#39;, &#39;Blue&#39;)] &amp;lt;- t(col2rgb(res)) / 255&#xA;&#xA;# 演示颜色&#xA;ggplot(data = data, aes(x = Val, y = Val)) +&#xA;  geom_point(color = data$Color, size = 10)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;其中，data中同一行表示数字与对应的颜色。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>一周小结</title>
+      <link>//localhost:4321/post/2021/09/03/blog/</link>
+      <pubDate>Fri, 03 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/post/2021/09/03/blog/</guid>
+      <description>&lt;h2 id=&#34;python并行处理&#34;&gt;Python并行处理&lt;/h2&gt;&#xA;&lt;p&gt;Python 中的concurrent包提供了对于并行运行的接口，包括进程级并行和线程级并行。下面是一个例子。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor&#xA;&#xA;def func(a, b):&#xA;    return a*b&#xA;&#xA;if __name__ == &#39;__main__&#39;:&#xA;    n_core = 4&#xA;    nums = 10000&#xA;    b = 2&#xA;&#xA;    res = [0 for _ in range(nums)]&#xA;    with ProcessPoolExecutor(n_core) as pool:&#xA;        futures = {pool.submit(func, i, b): i for i in range(1, nums)}&#xA;        for f in futures:&#xA;            res[futures[f]] = f.result()&#xA;    &#xA;    res = [0 for _ in range(nums)]&#xA;    with ThreadPoolExecutor(n_core) as pool:&#xA;        futures = {pool.submit(func, i, b): i for i in range(1, nums)}&#xA;        for f in futures:&#xA;            res[futures[f]] = f.result()&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;在并行处理时，写明 &lt;em&gt;&lt;strong&gt;python if &lt;strong&gt;name&lt;/strong&gt; == &amp;lsquo;&lt;strong&gt;main&lt;/strong&gt;&amp;rsquo;&lt;/strong&gt;&lt;/em&gt; 以声明主进程。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

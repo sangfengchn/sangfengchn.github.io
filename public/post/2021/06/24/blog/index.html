@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>远程Jupyter Notebook设置 - Sang Feng | 桑峰</title>
+    <meta property="og:title" content="远程Jupyter Notebook设置 - Sang Feng | 桑峰">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+    
+      
+    
+
+    
+      
+      <meta property="description" content="通过Jupyter可以使用远端服务器的计算资源，以下是设置步骤。
+[&hellip;] ## pip 安装 pip install notebook ## conda安装 conda install -c conda-forge notebook 服务器端设置 生成密码密文： jupyter notebook password Enter password: Verify password: &amp;hellip;">
+      <meta property="og:description" content="通过Jupyter可以使用远端服务器的计算资源，以下是设置步骤。
+[&hellip;] ## pip 安装 pip install notebook ## conda安装 conda install -c conda-forge notebook 服务器端设置 生成密码密文： jupyter notebook password Enter password: Verify password: &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css">
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Sang Feng | 桑峰</a></h1>
+
+<p class="tagline">Personal website of Sang Feng.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  <li><a href="/categories/">Categories</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>远程Jupyter Notebook设置</h1>
+
+
+
+<h3>
+
+桑峰
+
+
+
+
+
+
+ / 
+2021-06-24
+</h3>
+
+<hr>
+
+
+      </header>
+
+
+
+
+
+<p>通过Jupyter可以使用远端服务器的计算资源，以下是设置步骤。</p>
+<h1 id="安装jupyter">安装Jupyter</h1>
+<pre><code class="language-bash">## pip 安装
+pip install notebook
+
+## conda安装
+conda install -c conda-forge notebook
+</code></pre>
+<h1 id="服务器端设置">服务器端设置</h1>
+<h3 id="生成密码密文">生成密码密文：</h3>
+<pre><code class="language-bash">jupyter notebook password
+Enter password:  
+Verify password: 
+&gt; [NotebookPasswordApp] Wrote hashed password to /home/you/.jupyter/jupyter_notebook_config.json
+</code></pre>
+<p>密文保存在/home/you/.jupyter/jupyter_notebook_config.json文件中。</p>
+<h3 id="修改配置文件">修改配置文件</h3>
+<pre><code class="language-bash">## 打开前面生成的配置文件
+vim ~/.jupyter/jupyter_notebook_config.py
+## 修改配置内容
+c.NotebookApp.ip='*'
+## 修改成将之前生成的密文
+c.NotebookApp.password = u'xxx'
+</code></pre>
+<h3 id="启动jupyter">启动Jupyter</h3>
+<pre><code class="language-bash">jupyter notebook --no-browser --port=8889
+</code></pre>
+<h1 id="本地设置">本地设置</h1>
+<p>打开本地终端，输入以下命令：</p>
+<pre><code class="language-bash">ssh -N -f -L localhost:8836:localhost:8889 xxx@ip
+</code></pre>
+<p>之后打开浏览器，在地址栏中输入http://localhost:8836即可。</p>
+<h1 id="参考">参考</h1>
+<p>[1] <a href="https://blog.csdn.net/weixin_40641725/article/details/114636779">https://blog.csdn.net/weixin_40641725/article/details/114636779</a></p>
+<p>[2] <a href="https://zhuanlan.zhihu.com/p/166425946">https://zhuanlan.zhihu.com/p/166425946</a></p>
+
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2021/06/17/blog/">Python函数参数中的“*”</a></span>
+  <span class="nav-next"><a href="/post/2021/08/22/blog/">Python作图-Heatmap</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
+
+  
+
+
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/combine/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js,npm/@xiee/utils/js/load-highlight.js" defer></script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="/">Sang Feng</a> 2021 - 2025 | <a href="https://github.com/sangfengchn">Github</a></div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

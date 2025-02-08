@@ -1,0 +1,77 @@
+---
+title: R语言中的异常处理：TryCatch
+author: 桑峰
+date: '2024-04-08'
+slug: TryCatchInR
+categories:
+  - 编程
+tags:
+  - R
+---
+
+
+
+<p>因为需要在循环里面记录警告和报错对应的循环项。一开始的思路是用<code>warnings()</code>获取警告信息，在获取后再用<code>warning('')</code>清空警告信息。但在循环结束后，获取警告信息回返回包含多个元素的<code>list</code>，似乎清空警告信息没有生效。另外，这种方法没办法处理报错。第二种尝试是使用<code>tryCatch()</code>，虽然详细的原理还没弄明白，但目前也能实现一开始的需要了。因此记录一下。</p>
+<div id="trycatch" class="section level3">
+<h3>tryCatch</h3>
+<pre class="r"><code># create a function maybe raise warning or error.
+func &lt;- function(x) {
+  if (x %% 2 == 0) {
+    warning(&#39;a&#39;)
+  } else if (x %% 3 == 0) {
+    stop(&#39;b&#39;)
+  }
+}
+
+# the loop
+for (i in 1:10) {
+  res &lt;- tryCatch({
+    func(i)
+    print(&#39;Normal&#39;)
+    &#39;Normal&#39;
+    }, 
+    warning = function(w){
+      priint(&#39;Warning&#39;)
+     &#39;Warning&#39;
+     }, 
+   error = function(e){
+     print(&#39;Error&#39;)
+     &#39;Error&#39;
+     },
+   finally = {
+     print(&#39;Finally&#39;)
+   })
+  print(sprintf(&#39;x: %d, res: %s&#39;, i, res))
+}</code></pre>
+<pre><code>## [1] &quot;Normal&quot;
+## [1] &quot;Finally&quot;
+## [1] &quot;x: 1, res: Normal&quot;
+## [1] &quot;Error&quot;
+## [1] &quot;Finally&quot;
+## [1] &quot;x: 2, res: Error&quot;
+## [1] &quot;Error&quot;
+## [1] &quot;Finally&quot;
+## [1] &quot;x: 3, res: Error&quot;
+## [1] &quot;Error&quot;
+## [1] &quot;Finally&quot;
+## [1] &quot;x: 4, res: Error&quot;
+## [1] &quot;Normal&quot;
+## [1] &quot;Finally&quot;
+## [1] &quot;x: 5, res: Normal&quot;
+## [1] &quot;Error&quot;
+## [1] &quot;Finally&quot;
+## [1] &quot;x: 6, res: Error&quot;
+## [1] &quot;Normal&quot;
+## [1] &quot;Finally&quot;
+## [1] &quot;x: 7, res: Normal&quot;
+## [1] &quot;Error&quot;
+## [1] &quot;Finally&quot;
+## [1] &quot;x: 8, res: Error&quot;
+## [1] &quot;Error&quot;
+## [1] &quot;Finally&quot;
+## [1] &quot;x: 9, res: Error&quot;
+## [1] &quot;Error&quot;
+## [1] &quot;Finally&quot;
+## [1] &quot;x: 10, res: Error&quot;</code></pre>
+<p>观察输出，可以推测，先执行<code>func(i)</code>，如果没有异常和报错，执行之后的代码。并在<code>tryCatch()</code>结束前执行<strong>finally</strong>；如果有异常或者报错，则直接执行对应的代码，并在<code>tryCatch()</code>结束前执行<strong>finally</strong>。</p>
+</div>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Singularity-02-常见问题汇总 - Sang Feng | 桑峰</title>
+    <meta property="og:title" content="Singularity-02-常见问题汇总 - Sang Feng | 桑峰">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+    
+      
+    
+
+    
+      
+      <meta property="description" content="用沙盒模式创建镜像，然后以交互方式进入镜像后创建/brain目录。之后将沙盒格式的镜像打包为.img文件即可。
+# 创建沙盒镜像 singularity build --sandbox centos7 docker://centos:7 # 以交互方式打开镜像 singularity shell --writable centos7/ Singularity: Invoking an &amp;hellip;">
+      <meta property="og:description" content="用沙盒模式创建镜像，然后以交互方式进入镜像后创建/brain目录。之后将沙盒格式的镜像打包为.img文件即可。
+# 创建沙盒镜像 singularity build --sandbox centos7 docker://centos:7 # 以交互方式打开镜像 singularity shell --writable centos7/ Singularity: Invoking an &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css">
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Sang Feng | 桑峰</a></h1>
+
+<p class="tagline">Personal website of Sang Feng.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  <li><a href="/categories/">Categories</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Singularity-02-常见问题汇总</h1>
+
+
+
+<h3>
+
+桑峰
+
+
+
+
+
+
+ / 
+2021-05-20
+</h3>
+
+<hr>
+
+
+      </header>
+
+
+
+
+
+<h3 id="error---base-home-directory-does-not-exist-within-the-container-brain">ERROR  : Base home directory does not exist within the container: /brain</h3>
+<p>用沙盒模式创建镜像，然后以交互方式进入镜像后创建/brain目录。之后将沙盒格式的镜像打包为.img文件即可。</p>
+<pre><code class="language-bash"># 创建沙盒镜像
+singularity build --sandbox centos7 docker://centos:7
+
+# 以交互方式打开镜像
+singularity shell --writable centos7/
+Singularity: Invoking an interactive shell within container...
+
+# 镜像内创建缺失目录
+Singularity centos7:~/envs&gt; mkdir /brain
+Singularity centos7:~/envs&gt; exit
+
+# 重新打包镜像
+singularity build centos7.img centos7/
+</code></pre>
+<h3 id="error---home-directory-is-not-owned-by-calling-user-usrlocalsingularity-252">ERROR  : Home directory is not owned by calling user: /usr/local/singularity-2.5.2</h3>
+<p>报错命令：singularity shell smriprep.simg</p>
+<p>解决方法：添加&ndash;home xxx参数，这里必须是绝对路径。例如：singularity shell &ndash;home /babri/sangf/Desktop/test/ smriprep.simg</p>
+
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2021/05/19/blog/">Singularity-01-安装</a></span>
+  <span class="nav-next"><a href="/post/2021/05/26/blog/">全屏模式Dock栏不消失</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
+
+  
+
+
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/combine/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js,npm/@xiee/utils/js/load-highlight.js" defer></script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="/">Sang Feng</a> 2021 - 2025 | <a href="https://github.com/sangfengchn">Github</a></div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

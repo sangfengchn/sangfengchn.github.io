@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Linux-sudo xxx 无法找到命令 - Sang Feng | 桑峰</title>
+    <meta property="og:title" content="Linux-sudo xxx 无法找到命令 - Sang Feng | 桑峰">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+    
+      
+    
+
+    
+      
+      <meta property="description" content="安装singularity后，将其安装路径通过.bashrc文件添加进PATH，并重新载入.bashrc. 尝试运行singularity，正常可用。但运行sudo singularity时，提示无法找到此命令。
+[&hellip;] singularity version: 2.6.0-dist
+install path: /usr/local/singularity
+OS version: &amp;hellip;">
+      <meta property="og:description" content="安装singularity后，将其安装路径通过.bashrc文件添加进PATH，并重新载入.bashrc. 尝试运行singularity，正常可用。但运行sudo singularity时，提示无法找到此命令。
+[&hellip;] singularity version: 2.6.0-dist
+install path: /usr/local/singularity
+OS version: &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css">
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Sang Feng | 桑峰</a></h1>
+
+<p class="tagline">Personal website of Sang Feng.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  <li><a href="/categories/">Categories</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Linux-sudo xxx 无法找到命令</h1>
+
+
+
+<h3>
+
+桑峰
+
+
+
+
+
+
+ / 
+2021-05-31
+</h3>
+
+<hr>
+
+
+      </header>
+
+
+
+
+
+<h3 id="问题描述">问题描述</h3>
+<p>安装singularity后，将其安装路径通过.bashrc文件添加进PATH，并重新载入.bashrc. 尝试运行singularity，正常可用。但运行sudo singularity时，提示无法找到此命令。</p>
+<blockquote>
+<p>singularity version: 2.6.0-dist</p>
+<p>install path: /usr/local/singularity</p>
+<p>OS version: CentOS 7</p></blockquote>
+<h3 id="解决方法">解决方法</h3>
+<p>在/usr/bin中创建singularity的连接文件即可。</p>
+<pre><code class="language-bash">sudo ln -s /usr/local/singularity/bin/singularity /usr/bin/singularity
+</code></pre>
+<h3 id="参考">参考</h3>
+<p>[1] <a href="https://blog.csdn.net/tanmx219/article/details/86750322">https://blog.csdn.net/tanmx219/article/details/86750322</a></p>
+
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2021/05/27/blog/">使用CAT12可视化皮层Surface指标</a></span>
+  <span class="nav-next"><a href="/post/2021/06/01/blog/">Singularity-03-创建镜像</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
+
+  
+
+
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/combine/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js,npm/@xiee/utils/js/load-highlight.js" defer></script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="/">Sang Feng</a> 2021 - 2025 | <a href="https://github.com/sangfengchn">Github</a></div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

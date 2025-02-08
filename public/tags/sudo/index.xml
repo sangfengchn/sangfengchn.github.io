@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sudo on Sang Feng | 桑峰</title>
+    <link>//localhost:4321/tags/sudo/</link>
+    <description>Recent content in Sudo on Sang Feng | 桑峰</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 31 May 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4321/tags/sudo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux-sudo xxx 无法找到命令</title>
+      <link>//localhost:4321/post/2021/05/31/blog/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/post/2021/05/31/blog/</guid>
+      <description>&lt;h3 id=&#34;问题描述&#34;&gt;问题描述&lt;/h3&gt;&#xA;&lt;p&gt;安装singularity后，将其安装路径通过.bashrc文件添加进PATH，并重新载入.bashrc. 尝试运行singularity，正常可用。但运行sudo singularity时，提示无法找到此命令。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;singularity version: 2.6.0-dist&lt;/p&gt;&#xA;&lt;p&gt;install path: /usr/local/singularity&lt;/p&gt;&#xA;&lt;p&gt;OS version: CentOS 7&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;解决方法&#34;&gt;解决方法&lt;/h3&gt;&#xA;&lt;p&gt;在/usr/bin中创建singularity的连接文件即可。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo ln -s /usr/local/singularity/bin/singularity /usr/bin/singularity&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h3 id=&#34;参考&#34;&gt;参考&lt;/h3&gt;&#xA;&lt;p&gt;[1] &lt;a href=&#34;https://blog.csdn.net/tanmx219/article/details/86750322&#34;&gt;https://blog.csdn.net/tanmx219/article/details/86750322&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

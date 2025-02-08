@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>利用blogdown建立个人博客 - Sang Feng | 桑峰</title>
+    <meta property="og:title" content="利用blogdown建立个人博客 - Sang Feng | 桑峰">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+    
+      
+    
+
+    
+      
+      <meta property="description" content="安装RStudio和R包blogdown。
+[&hellip;] 在R终端中输入如下代码即可创建默认主题的博客。
+blogdown::new_site() 另外也可以在RStudio中通过图形界面创建。
+[&hellip;] 鼠标点击File -&gt; New Project&hellip; -&gt; New Directory -&gt; Website using blogdown &amp;hellip;">
+      <meta property="og:description" content="安装RStudio和R包blogdown。
+[&hellip;] 在R终端中输入如下代码即可创建默认主题的博客。
+blogdown::new_site() 另外也可以在RStudio中通过图形界面创建。
+[&hellip;] 鼠标点击File -&gt; New Project&hellip; -&gt; New Directory -&gt; Website using blogdown &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css">
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Sang Feng | 桑峰</a></h1>
+
+<p class="tagline">Personal website of Sang Feng.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  <li><a href="/categories/">Categories</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>利用blogdown建立个人博客</h1>
+
+
+
+<h3>
+
+桑峰
+
+
+
+
+
+
+ / 
+2021-04-04
+</h3>
+
+<hr>
+
+
+      </header>
+
+
+
+
+
+<h2 id="准备工作">准备工作</h2>
+<p>安装RStudio和R包blogdown。</p>
+<h2 id="创建博客">创建博客</h2>
+<p>在R终端中输入如下代码即可创建默认主题的博客。</p>
+<pre><code class="language-R">blogdown::new_site()
+</code></pre>
+<p>另外也可以在RStudio中通过图形界面创建。</p>
+<ol>
+<li>
+<p>鼠标点击File -&gt; New Project&hellip; -&gt; New Directory -&gt; Website using blogdown</p>
+</li>
+<li>
+<p>在弹出的对话框的Directory name内输入本地存放项目的目录名。Create project as subdirectory of: 为项目的父目录。之后点击Create Project 按钮。Hugo theme为博客的主题。这里我们用默认主题。其他主题参考<a href="https://themes.gohugo.io">HUGO主题页面</a>。</p>
+</li>
+</ol>
+<img src="index.assets/image-20210404173021104.png" style="width:50%;float:center;">
+<ol start="3">
+<li>在R终端中输入<code>blogdown::server_site()</code>即可在本地部署博客。</li>
+</ol>
+<h2 id="在gitee上部署博客">在Gitee上部署博客</h2>
+<ol>
+<li>首先需要在gitee上创建仓库，并将Depoly directory更改为 <strong>“.”</strong>（不带引号） 。</li>
+</ol>
+<img src="index.assets/image-20210404173840632.png" style="width:50%;float:center;">
+<ol start="2">
+<li>
+<p>在R终端中输入<code>blogdown::hugo_build(relativeURLs=TRUE)</code>并运行。可以看到在home目录下生成了public。该目录下即为生成的博客静态页面。此时点击public/index.html是可以在浏览器查看的。</p>
+</li>
+<li>
+<p>将public中的文件同步到刚创建的gitee或github仓库中。使用的命令如下：</p>
+<pre><code class="language-bash">cd public
+git init
+git add .
+git commit -m 'first commit'
+git remote add origin xxxx.git
+git push -f origin master
+</code></pre>
+</li>
+</ol>
+<p>之后就可以通过访问username.gitee.io/home访问自己的博客了。</p>
+<p>至此，我们使用blogdown创建了自己的博客，并使用hugo生成了静态页面。最后通过gitee或github发布生成的静态页面。</p>
+
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev"></span>
+  <span class="nav-next"><a href="/post/2021/04/07/blog/">全屏模式下iTerm2标题栏闪动</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
+
+  
+
+
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/combine/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js,npm/@xiee/utils/js/load-highlight.js" defer></script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="/">Sang Feng</a> 2021 - 2025 | <a href="https://github.com/sangfengchn">Github</a></div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

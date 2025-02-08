@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FreeSurfer on Sang Feng | 桑峰</title>
+    <link>//localhost:4321/categories/freesurfer/</link>
+    <description>Recent content in FreeSurfer on Sang Feng | 桑峰</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4321/categories/freesurfer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FreeSurfer笔记之二</title>
+      <link>//localhost:4321/post/2022/03/15/blog/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/post/2022/03/15/blog/</guid>
+      <description>&lt;h1 id=&#34;the-measures-about-curvatures&#34;&gt;The measures about curvatures&lt;/h1&gt;&#xA;&lt;h2 id=&#34;mris_curvature_stats&#34;&gt;mris_curvature_stats&lt;/h2&gt;&#xA;&lt;p&gt;?h.smoothwm.xxx.crv is the the binary-curvature files where xxx is the different measures. Detailed descriptation is as follows:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;k1 &#x9;maximum curvature&lt;/p&gt;&#xA;&lt;p&gt;k2 &#x9;minimum curvature&lt;/p&gt;&#xA;&lt;p&gt;K &#x9;Gaussian &#x9;= k1*k2&lt;/p&gt;&#xA;&lt;p&gt;H&#x9;Mean &#x9;&#x9;= 0.5*(k1+k2)&lt;/p&gt;&#xA;&lt;p&gt;C&#x9;Curvedness &#x9;= sqrt(0.5*(k1&lt;em&gt;k1+k2&lt;/em&gt;k2))&lt;/p&gt;&#xA;&lt;p&gt;S&#x9;Sharpness &#x9;= (k1 - k2)^2&lt;/p&gt;&#xA;&lt;p&gt;BE&#x9;Bending Energy &#x9;= k1&lt;em&gt;k1 + k2&lt;/em&gt;k2&lt;/p&gt;&#xA;&lt;p&gt;SI&#x9;Shape Index&#x9;= atan((k1+k2)/(k2-k1))&lt;/p&gt;&#xA;&lt;p&gt;FI&#x9;Folding Index&#x9;= |k1|*(|k1| - |k2|)&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;In each file, the corresponding measures for each vertex were saved. And you may read it by read.fs.curv() in R package &amp;ldquo;freesurferformats&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>FreeSurfer笔记之一</title>
+      <link>//localhost:4321/post/2022/03/11/blog/</link>
+      <pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/post/2022/03/11/blog/</guid>
+      <description>&lt;h2 id=&#34;outputs&#34;&gt;Outputs&lt;/h2&gt;&#xA;&lt;p&gt;FreeSurfer首先去除颅骨（stripped skull），生成brainmask.mgz文件，并进一步分出灰质、白质和皮下结构，保存在aseg.mgz文件中。与此同时，得到白质/灰质的初步估计（?h.orig），随后对分界面进行进一步的调整得到?j.white。在?h.white的基础上，分界面继续向外膨胀得到?h.pial，并进一步膨胀得到?h.inflated。?h.sphere为?h.inflated膨胀形成的球面。可以用来与其他空间图像进行配准（例如fsaverage）。&lt;/p&gt;&#xA;&lt;p&gt;recon-all命令中的-qcache可以生成fsaverage空间中的且经过平滑后的数据。&lt;/p&gt;&#xA;&lt;h3 id=&#34;label文件夹&#34;&gt;label文件夹&lt;/h3&gt;&#xA;&lt;p&gt;.ctab文件为颜色表（color table），存储不同atlas定义脑区的颜色。.annot文件为分区信息，其中包含每个vertex所属的脑区等信息。.label文件保存所有vertex所属脑区编号和坐标。&lt;/p&gt;&#xA;&lt;h3 id=&#34;surf文件夹&#34;&gt;surf文件夹&lt;/h3&gt;&#xA;&lt;p&gt;?h.area为midthickness表面的面积，?h.area.pial为灰质（软脑膜）表面的面积。?h.sulc为沟回宽度。&lt;/p&gt;&#xA;&lt;h3 id=&#34;stats文件夹&#34;&gt;stats文件夹&lt;/h3&gt;&#xA;&lt;p&gt;保存不同分区下的灰质指标。&lt;/p&gt;&#xA;&lt;h2 id=&#34;命令&#34;&gt;命令&lt;/h2&gt;&#xA;&lt;h3 id=&#34;mris_preproc&#34;&gt;mris_preproc&lt;/h3&gt;&#xA;&lt;p&gt;将个体皮层空间中的指标文件投射到fsavergae等标准皮层空间。&lt;/p&gt;&#xA;&lt;h4 id=&#34;example-1&#34;&gt;Example-1&lt;/h4&gt;&#xA;&lt;p&gt;Resample abcXX-anat/surf/lh.thickness onto fsaverage:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mris_preproc --s abc01-anat \&#xA;             --s abc02-anat \&#xA;             --s abc03-anat \&#xA;             --s abc04-anat \&#xA;             --target fsaverage \&#xA;             --hemi lh \&#xA;             --meas thickness \&#xA;             --out abc-lh-thickness.mgh&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h4 id=&#34;example-2&#34;&gt;Example-2&lt;/h4&gt;&#xA;&lt;p&gt;Same as #1 but smooths by 5mm fwhm:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mris_preproc --s abc01-anat \&#xA;             --s abc02-anat \&#xA;             --s abc03-anat \&#xA;             --s abc04-anat \&#xA;             --target fsaverage \&#xA;             --hemi lh \&#xA;             --meas thickness \ &#xA;             --fwhm 5 \&#xA;             --out abc-lh-thickness.sm5.mgh&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h3 id=&#34;mri_glmfit&#34;&gt;mri_glmfit&lt;/h3&gt;&#xA;&lt;p&gt;GLM建模统计。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

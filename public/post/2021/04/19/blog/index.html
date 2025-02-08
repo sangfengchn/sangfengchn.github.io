@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>作图-ggplot2中的直方图和条形图 - Sang Feng | 桑峰</title>
+    <meta property="og:title" content="作图-ggplot2中的直方图和条形图 - Sang Feng | 桑峰">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+    
+      
+    
+
+    
+      
+      <meta property="description" content="本文用于记录ggplot2作图相关的代码，会不定期更新。
+示例数据格式为
+library(tidyverse) data &lt;- read.csv(&#39;./test.csv&#39;) %&gt;% as_tibble() data %&gt;% head() %&gt;% knitr::kable() ID Gender Age Education 1 M 6 M 2 F 8 M 3 F 12 M 4 &amp;hellip;">
+      <meta property="og:description" content="本文用于记录ggplot2作图相关的代码，会不定期更新。
+示例数据格式为
+library(tidyverse) data &lt;- read.csv(&#39;./test.csv&#39;) %&gt;% as_tibble() data %&gt;% head() %&gt;% knitr::kable() ID Gender Age Education 1 M 6 M 2 F 8 M 3 F 12 M 4 &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css">
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Sang Feng | 桑峰</a></h1>
+
+<p class="tagline">Personal website of Sang Feng.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  <li><a href="/categories/">Categories</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>作图-ggplot2中的直方图和条形图</h1>
+
+
+
+<h3>
+
+桑峰
+
+
+
+
+
+
+ / 
+2021-04-19
+</h3>
+
+<hr>
+
+
+      </header>
+
+
+
+
+
+<p>本文用于记录ggplot2作图相关的代码，会不定期更新。</p>
+<p>示例数据格式为</p>
+<pre><code class="language-r">library(tidyverse)
+
+data &lt;- read.csv('./test.csv') %&gt;%
+  as_tibble()
+data %&gt;%
+  head() %&gt;%
+  knitr::kable()
+</code></pre>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: right">ID</th>
+          <th style="text-align: left">Gender</th>
+          <th style="text-align: right">Age</th>
+          <th style="text-align: left">Education</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: right">1</td>
+          <td style="text-align: left">M</td>
+          <td style="text-align: right">6</td>
+          <td style="text-align: left">M</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">2</td>
+          <td style="text-align: left">F</td>
+          <td style="text-align: right">8</td>
+          <td style="text-align: left">M</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">3</td>
+          <td style="text-align: left">F</td>
+          <td style="text-align: right">12</td>
+          <td style="text-align: left">M</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">4</td>
+          <td style="text-align: left">F</td>
+          <td style="text-align: right">19</td>
+          <td style="text-align: left">H</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">5</td>
+          <td style="text-align: left">F</td>
+          <td style="text-align: right">4</td>
+          <td style="text-align: left">L</td>
+      </tr>
+      <tr>
+          <td style="text-align: right">6</td>
+          <td style="text-align: left">F</td>
+          <td style="text-align: right">2</td>
+          <td style="text-align: left">M</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="直方图">直方图</h1>
+<p>..density..: 指明y轴为频率值，为ggplot2内置的变量。</p>
+<p>geom_vline: 添加竖直线，线与x轴的交点由xintercept指定。</p>
+<pre><code class="language-r">data %&gt;%
+  ggplot(aes(x=Age, y=..density..)) +
+  geom_histogram(stat = 'bin') +
+  geom_vline(xintercept=mean(data$Age), linetype='dashed', color='blue') +
+  ylab('Density')
+</code></pre>
+<img src="/post/2021/04/19/blog/index_files/figure-html/histogram-1.png" width="672" />
+<h1 id="条形图">条形图</h1>
+<p>ggplot2的条形图，每个柱子的高度直接跟输入数据中的某一列对应，其中一个值会产生一个柱子。这跟seaborn包中catplot的逻辑不太一样：它接受一组数对应一个柱子，因此可以自动生成误差线，而不用单独添加。但也可以自定义函数，将数据转换和作图封装起来，达到类似seaborn中catplot的效果</p>
+<p>geom_errorbar: 为每个柱子添加<strong>标准差线</strong>，也可以给<strong>折线图</strong>的每个点添加。</p>
+<pre><code class="language-r">data %&gt;%
+  group_by(Gender) %&gt;%
+  mutate(
+    value=mean(Age),
+    sd=sd(Age)
+  ) %&gt;%
+  ggplot(aes(x=Gender, y=value, fill=Gender)) +
+  geom_col(position = &quot;dodge&quot;, width = 0.3) + 
+  geom_errorbar(aes(ymin = value-sd, ymax = value+sd), 
+                position = position_dodge(0.9), width = .05) +
+  ylab('Age')
+</code></pre>
+<img src="/post/2021/04/19/blog/index_files/figure-html/barplot-1.png" width="672" />
+<h3 id="参考">参考</h3>
+<ol>
+<li><a href="https://semba-blog.netlify.app/03/25/2020/barplot-with-errorbar-in-ggplot2/">https://semba-blog.netlify.app/03/25/2020/barplot-with-errorbar-in-ggplot2/</a></li>
+<li><a href="http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization">http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization</a></li>
+</ol>
+
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2021/04/18/blog/">文献笔记-大脑功能网络中体现的左右半球和性别差异</a></span>
+  <span class="nav-next"><a href="/post/2021/05/04/blog/">R语言基本统计</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
+
+  
+
+
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/combine/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js,npm/@xiee/utils/js/load-highlight.js" defer></script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="/">Sang Feng</a> 2021 - 2025 | <a href="https://github.com/sangfengchn">Github</a></div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

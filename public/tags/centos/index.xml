@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Centos on Sang Feng | 桑峰</title>
+    <link>//localhost:4321/tags/centos/</link>
+    <description>Recent content in Centos on Sang Feng | 桑峰</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 17 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4321/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Singularity-04-安装MATLAB</title>
+      <link>//localhost:4321/post/2022/02/17/blog/</link>
+      <pubDate>Thu, 17 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/post/2022/02/17/blog/</guid>
+      <description>&lt;p&gt;以下是记录本人在使用学院高性能计算平台运行singularity中遇到的问题以及相应的解决方法，不一定适用于其他场景。&lt;/p&gt;&#xA;&lt;h1 id=&#34;建立基础镜像&#34;&gt;建立基础镜像&lt;/h1&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo singularity build --sandbox tmp/ docker://centos:7&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;尝试过ubuntu:20.04和18.04，在服务器上均会报告“&lt;strong&gt;FATAL: kernel too old&lt;/strong&gt;”的错误。Centos6.10和7可以，但是6.10的yum源已经不再支持。因此使用Centos7作为基础镜像。&lt;/p&gt;&#xA;&lt;h1 id=&#34;安装matlab&#34;&gt;安装MATLAB&lt;/h1&gt;&#xA;&lt;p&gt;这里参考：https://zhuanlan.zhihu.com/p/394298249&lt;/p&gt;&#xA;&lt;p&gt;需要注意的是，安装之前，需要在系统里面安装一些库文件和编译器，命令如下：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;yum install libX11 libXmu&#xA;yum install gcc java-11-openjdk-devel&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;&lt;em&gt;libXmu中包含libXt.so.6。&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;后处理&#34;&gt;后处理&lt;/h1&gt;&#xA;&lt;p&gt;安装好MATLAB后，发现无法通过&lt;strong&gt;singularity exec&lt;/strong&gt;去调用。在**/environment**文件中将MATLAB的安装路径添加进PATH环境变量里面也无法直接运行（可能是写入的命令格式有问题，不确定）。之后查到可以定义一个recipe文件（append.def），通过已经生成的镜像重新构建镜像。recipe文件内容如下：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Bootstrap: localimage&#xA;From: tmp/&#xA;&#xA;%environment&#xA;        export PATH=/usr/local/matlab/R2020a/bin:$PATH&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;然后重新构建镜像：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo singularity build --sandbox senv-matlab/ append.def&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;构建完成后，需要将镜像打包为可读写的格式（.img文件）。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo singularity build --writable senv-matlab.img senv-matlab/&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;这里生成的senv-matlab.img就可在服务器上使用了，也可在服务器上将其转换为压缩格式（.sif/.sqsh/.simg文件等）。不知道为什么直接在本地（Ubuntu 21.10）压缩后，在本地无运行镜像，会报告如下错误。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ERROR  : Failed to mount squashfs image in (read only): Invalid argument&#xA;ABORT  : Retval = 255&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h1 id=&#34;参考&#34;&gt;参考&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/394298249&#34;&gt;https://zhuanlan.zhihu.com/p/394298249&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
