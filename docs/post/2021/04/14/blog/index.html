@@ -1,149 +1,16 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
 
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>什么是效应量？ - Sang Feng | 桑峰</title>
-    <meta property="og:title" content="什么是效应量？ - Sang Feng | 桑峰">
-    
-    <meta name="twitter:card" content="summary">
-
-    
-    
-      
-    
-
-    
-      
-      <meta property="description" content="统计当中，假设检验和P值可以给我们提供关于假设为真的可能性。例如双样本t检验可以报告两组样本所对应总体均值存在差异的可能性。若可能性小于一个比较小的值（通常设置为0.05），那我们认为在一次试验中，小概率事件不可能发生，所以拒绝零假设成立。但是我们只是知道了这两组有多大的概率相等，并不知道两组具体有多大的差异。因此我们需要引入效应量的概念。
-[&hellip;] 简单来讲，效应量是用来量化变量之间 &amp;hellip;">
-      <meta property="og:description" content="统计当中，假设检验和P值可以给我们提供关于假设为真的可能性。例如双样本t检验可以报告两组样本所对应总体均值存在差异的可能性。若可能性小于一个比较小的值（通常设置为0.05），那我们认为在一次试验中，小概率事件不可能发生，所以拒绝零假设成立。但是我们只是知道了这两组有多大的概率相等，并不知道两组具体有多大的差异。因此我们需要引入效应量的概念。
-[&hellip;] 简单来讲，效应量是用来量化变量之间 &amp;hellip;">
-      
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
-    <link rel="stylesheet" href="/css/custom.css" />
-
-  </head>
-  <body class="post">
-    <header class="masthead">
-      <h1><a href="/">Sang Feng | 桑峰</a></h1>
-
-<p class="tagline">Personal website of Sang Feng.</p>
-
-      <nav class="menu">
-  <input id="menu-check" type="checkbox" hidden/>
-  <label id="menu-label" for="menu-check" class="unselectable" hidden>
-    <span class="icon close-icon">✕</span>
-    <span class="icon open-icon">☰</span>
-    <span class="text">Menu</span>
-  </label>
-  <ul>
-  
-  
-  <li><a href="/">Home</a></li>
-  
-  <li><a href="/about/">About</a></li>
-  
-  <li><a href="/categories/">Categories</a></li>
-  
-  <li><a href="/tags/">Tags</a></li>
-  
-  
-  </ul>
-</nav>
-
-    </header>
-
-    <article class="main">
-      <header class="title">
-      
-<h1>什么是效应量？</h1>
-
-
-
-<h3>
-
-桑峰
-
-
-
-
-
-
- / 
-2021-04-14
-</h3>
-
-<hr>
-
-
-      </header>
-
-
-
-
-
-<p>统计当中，假设检验和P值可以给我们提供关于假设为真的可能性。例如双样本t检验可以报告两组样本所对应总体均值存在差异的可能性。若可能性小于一个比较小的值（通常设置为0.05），那我们认为在<em>一次</em>试验中，小概率事件不可能发生，所以拒绝零假设成立。但是我们只是知道了这两组有多大的概率相等，并不知道两组具体有多大的差异。因此我们需要引入效应量的概念。</p>
-<h3 id="什么是效应量">什么是效应量</h3>
-<p>简单来讲，效应量是用来量化变量之间关系或差异具体有多大或多小的指标。其是通过样本计算得到的。</p>
-<h3 id="如何计算">如何计算</h3>
-<p>效应量大致分为两种类型：(1)量化变量之间<strong>关系</strong>的，也被称为<em>r family</em>, 和(2)量化变量之间<strong>差异</strong>的，也被称为<em>d family</em>。</p>
-<p><strong>R family</strong>有<em>Pearson</em>相关系数和$r^2$等。</p>
-<p><strong>D family</strong>有<em>Cohen&rsquo;s d</em>, 优势比和相对风险率等。其中<em>Cohen&rsquo;s d</em>计算公式如下，</p>
-<p>$$
-Cohen&rsquo;s d=(\mu_1-\mu_2)/s,
-$$
-$$
-s=\sqrt{\frac{(n_1-1)*s_1^2+(n_2-1)*s_2^2}{(n_1+n_2-2)}}
-$$</p>
-<p><code>\(s_1\)</code>和$s_2$分别表示两个样本的标准差。</p>
-<h3 id="参考">参考</h3>
-<ol>
-<li><a href="http://www.atyun.com/23635.html">http://www.atyun.com/23635.html</a></li>
-<li><a href="https://www.iikx.com/news/statistics/1827.html">https://www.iikx.com/news/statistics/1827.html</a></li>
-</ol>
-
-
-
-  <footer>
-  
-<nav class="post-nav">
-  <span class="nav-prev">&larr; <a href="/post/2021/04/09/blog/">fMRI上广义线性模型建模简述</a></span>
-  <span class="nav-next"><a href="/post/2021/04/16/blog/">文献笔记-抑郁症大脑功能网络拓扑属性的改变</a> &rarr;</span>
-</nav>
-
-
-
-
-
-<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
-<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-
-<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
-
-  
-
-  
-  <hr>
-  <div class="copyright">© <a href="/">Sang Feng</a> 2021 - 2025 | <a href="https://github.com/sangfengchn">Github</a></div>
-  
-  </footer>
-  </article>
-  
-  </body>
-</html>
-
+<div id="gitalk-container"></div>
+<script>
+  var gitalk = new Gitalk({
+    clientID: 'Ov23liXBepjfTRLYtzfB',
+    clientSecret: 'bbcf71660513bc096ff93797839104f36d3bc554',
+    repo: 'sangfengchn/PersonalBlogComments',
+    owner: 'sangfengchn',
+    admin: ['sangfengchn'],
+    id: location.pathname, 
+    distractionFreeMode: false
+  })
+  gitalk.render('gitalk-container')
+</script>
