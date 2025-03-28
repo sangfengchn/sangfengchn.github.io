@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ITerm2 on Sang Feng | 桑峰</title>
-    <link>/tags/iterm2/</link>
+    <link>//localhost:4321/tags/iterm2/</link>
     <description>Recent content in ITerm2 on Sang Feng | 桑峰</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/iterm2/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/tags/iterm2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>全屏模式下iTerm2标题栏闪动</title>
-      <link>/post/2021/04/07/blog/</link>
+      <link>//localhost:4321/post/2021/04/07/blog/</link>
       <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/post/2021/04/07/blog/</guid>
+      <guid>//localhost:4321/post/2021/04/07/blog/</guid>
       <description>&lt;h2 id=&#34;起因&#34;&gt;起因&lt;/h2&gt;&#xA;&lt;p&gt;在更新&lt;strong&gt;BigSur&lt;/strong&gt;之后的某一天，突然发现&lt;strong&gt;iTerm2&lt;/strong&gt;在全屏模式下，顶部不时会出现一条白色的线闪动。后来在一个论坛里面看到有人说貌似是系统的问题。但是很奇怪，室友的电脑上就没有这样的情况。中间也试过重装系统（PS：强迫症重度患者），但还是会出现。&lt;/p&gt;&#xA;&lt;p&gt;通过排查，发现只有&lt;strong&gt;iTerm2&lt;/strong&gt;配色选择&lt;u&gt;&lt;em&gt;深色&lt;/em&gt;&lt;/u&gt;主题，并且&lt;strong&gt;系统&lt;/strong&gt;主题为&lt;u&gt;&lt;em&gt;浅色&lt;/em&gt;&lt;/u&gt;主题时，才会出现上述的问题。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;系统版本：macOS Big Sur 11.2.3&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;iTerm2版本：Build 3.4.4&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;解决&#34;&gt;解决&lt;/h2&gt;&#xA;&lt;p&gt;打开iTerm2&lt;u&gt;&lt;em&gt;偏好&lt;/em&gt;&lt;/u&gt;设置，选择&lt;u&gt;&lt;em&gt;高级&lt;/em&gt;&lt;/u&gt;。在&lt;u&gt;&lt;em&gt;文本框&lt;/em&gt;&lt;/u&gt;中输入&lt;u&gt;&lt;strong&gt;big sur&lt;/strong&gt;&lt;/u&gt;，把通用这一行改为&lt;u&gt;&lt;strong&gt;是&lt;/strong&gt;&lt;/u&gt;即可。如图1.&lt;/p&gt;&#xA;&lt;center&gt;&#xA;    &lt;img style=&#34;width:50%;&#34; &#xA;    src=&#34;index.assets/image-20210407201733987.png&#34;&gt;&#xA;    &lt;br&gt;&#xA;    &lt;div style=&#34;color:orange; border-bottom: 1px solid #d9d9d9;&#xA;    display: inline-block;&#xA;    color: #999;&#xA;    padding: 2px;&#34;&gt;图1. 操作顺序&lt;/div&gt;&#xA;&lt;/center&gt;&#xA;&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/lxyoucan/article/details/115085694&#34;&gt;https://blog.csdn.net/lxyoucan/article/details/115085694&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://gitlab.com/gnachman/iterm2/-/issues/9199&#34;&gt;https://gitlab.com/gnachman/iterm2/-/issues/9199&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
   </channel>

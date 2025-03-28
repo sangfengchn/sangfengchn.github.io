@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+<script>
+  var gitalk = new Gitalk({
+    clientID: 'Ov23liXBepjfTRLYtzfB',
+    clientSecret: 'bbcf71660513bc096ff93797839104f36d3bc554',
+    repo: 'sangfengchn/PersonalBlogComments',
+    owner: 'sangfengchn',
+    admin: ['sangfengchn'],
+    id: location.pathname, 
+    distractionFreeMode: false
+  })
+  gitalk.render('gitalk-container')
+</script>

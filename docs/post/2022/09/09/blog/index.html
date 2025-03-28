@@ -1,144 +1,16 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>R包安装报错 - Sang Feng | 桑峰</title>
-    <meta property="og:title" content="R包安装报错 - Sang Feng | 桑峰">
-    
-    <meta name="twitter:card" content="summary">
-
-    
-    
-      
-    
-
-    
-      
-      <meta property="description" content="参考：https://www.zxzyl.com/archives/1283/
-升级gcc，并设置r包编译使用的gcc路径。
-设置方法：
-首先在～/.R目录下新建文件Makevars；
-将
-">
-      <meta property="og:description" content="参考：https://www.zxzyl.com/archives/1283/
-升级gcc，并设置r包编译使用的gcc路径。
-设置方法：
-首先在～/.R目录下新建文件Makevars；
-将
-">
-      
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
-    <link rel="stylesheet" href="/css/custom.css" />
-
-  </head>
-  <body class="post">
-    <header class="masthead">
-      <h1><a href="/">Sang Feng | 桑峰</a></h1>
-
-<p class="tagline">Personal website of Sang Feng.</p>
-
-      <nav class="menu">
-  <input id="menu-check" type="checkbox" hidden/>
-  <label id="menu-label" for="menu-check" class="unselectable" hidden>
-    <span class="icon close-icon">✕</span>
-    <span class="icon open-icon">☰</span>
-    <span class="text">Menu</span>
-  </label>
-  <ul>
-  
-  
-  <li><a href="/">Home</a></li>
-  
-  <li><a href="/about/">About</a></li>
-  
-  <li><a href="/categories/">Categories</a></li>
-  
-  <li><a href="/tags/">Tags</a></li>
-  
-  
-  </ul>
-</nav>
-
-    </header>
-
-    <article class="main">
-      <header class="title">
-      
-<h1>R包安装报错</h1>
-
-
-
-<h3>
-
-桑峰
-
-
-
-
-
-
- / 
-2022-09-09
-</h3>
-
-<hr>
-
-
-      </header>
-
-
-
-
-
-<h1 id="error-c14-standard-requested-but-cxx14-is-not-defined">Error: C++14 standard requested but CXX14 is not defined</h1>
-<p>参考：https://www.zxzyl.com/archives/1283/</p>
-<p>升级gcc，并设置r包编译使用的gcc路径。</p>
-<p>设置方法：</p>
-<p>首先在～/.R目录下新建文件Makevars；</p>
-<p>将</p>
-
-
-
-  <footer>
-  
-<nav class="post-nav">
-  <span class="nav-prev">&larr; <a href="/post/2022/07/10/blog/">笔记-RMarkdown和ggplot2</a></span>
-  <span class="nav-next"><a href="/post/2024/04/08/trycatchinr/">R语言中的异常处理：TryCatch</a> &rarr;</span>
-</nav>
-
-
-
-
-
-<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
-<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-
-<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
-
-  
-
-  
-  <hr>
-  <div class="copyright">© <a href="/">Sang Feng</a> 2021 - 2025 | <a href="https://github.com/sangfengchn">Github</a></div>
-  
-  </footer>
-  </article>
-  
-  </body>
-</html>
-
+<div id="gitalk-container"></div>
+<script>
+  var gitalk = new Gitalk({
+    clientID: 'Ov23liXBepjfTRLYtzfB',
+    clientSecret: 'bbcf71660513bc096ff93797839104f36d3bc554',
+    repo: 'sangfengchn/PersonalBlogComments',
+    owner: 'sangfengchn',
+    admin: ['sangfengchn'],
+    id: location.pathname, 
+    distractionFreeMode: false
+  })
+  gitalk.render('gitalk-container')
+</script>

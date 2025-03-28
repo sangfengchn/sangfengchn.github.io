@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hemsiphere Differences on Sang Feng | 桑峰</title>
-    <link>/tags/hemsiphere-differences/</link>
+    <link>//localhost:4321/tags/hemsiphere-differences/</link>
     <description>Recent content in Hemsiphere Differences on Sang Feng | 桑峰</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 18 Apr 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/hemsiphere-differences/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/tags/hemsiphere-differences/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>文献笔记-大脑功能网络中体现的左右半球和性别差异</title>
-      <link>/post/2021/04/18/blog/</link>
+      <link>//localhost:4321/post/2021/04/18/blog/</link>
       <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/post/2021/04/18/blog/</guid>
+      <guid>//localhost:4321/post/2021/04/18/blog/</guid>
       <description>&lt;h3 id=&#34;title&#34;&gt;Title&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Hemisphere- and gender-related differences in small-world brain networks: A resting-state functional MRI study&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;&#xA;&lt;p&gt;Male have a large normalized clustering coefficient in the right hemispheric network, but a lower clustering coefficient in the left hemispheric network.&lt;/p&gt;&#xA;&lt;p&gt;Significant hemisphere-related differences in the regional nodal characteristics: frontal and occipital regions (leftward asymmetry), temporal regions (rightward asymmetry).&lt;/p&gt;&#xA;&lt;h3 id=&#34;conclustions&#34;&gt;Conclustions&lt;/h3&gt;&#xA;&lt;p&gt;Topological organization of human brain functional networks is associated with gender and hemispheres.&lt;/p&gt;</description>
     </item>
   </channel>

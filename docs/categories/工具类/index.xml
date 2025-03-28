@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>工具类 on Sang Feng | 桑峰</title>
-    <link>/categories/%E5%B7%A5%E5%85%B7%E7%B1%BB/</link>
+    <link>//localhost:4321/categories/%E5%B7%A5%E5%85%B7%E7%B1%BB/</link>
     <description>Recent content in 工具类 on Sang Feng | 桑峰</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 09 Sep 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/categories/%E5%B7%A5%E5%85%B7%E7%B1%BB/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/categories/%E5%B7%A5%E5%85%B7%E7%B1%BB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>R包安装报错</title>
-      <link>/post/2022/09/09/blog/</link>
+      <link>//localhost:4321/post/2022/09/09/blog/</link>
       <pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>/post/2022/09/09/blog/</guid>
+      <guid>//localhost:4321/post/2022/09/09/blog/</guid>
       <description>&lt;h1 id=&#34;error-c14-standard-requested-but-cxx14-is-not-defined&#34;&gt;Error: C++14 standard requested but CXX14 is not defined&lt;/h1&gt;&#xA;&lt;p&gt;参考：https://www.zxzyl.com/archives/1283/&lt;/p&gt;&#xA;&lt;p&gt;升级gcc，并设置r包编译使用的gcc路径。&lt;/p&gt;&#xA;&lt;p&gt;设置方法：&lt;/p&gt;&#xA;&lt;p&gt;首先在～/.R目录下新建文件Makevars；&lt;/p&gt;&#xA;&lt;p&gt;将&lt;/p&gt;</description>
     </item>
     <item>
       <title>利用blogdown建立个人博客</title>
-      <link>/post/2021/04/04/blog/</link>
+      <link>//localhost:4321/post/2021/04/04/blog/</link>
       <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/post/2021/04/04/blog/</guid>
+      <guid>//localhost:4321/post/2021/04/04/blog/</guid>
       <description>&lt;h2 id=&#34;准备工作&#34;&gt;准备工作&lt;/h2&gt;&#xA;&lt;p&gt;安装RStudio和R包blogdown。&lt;/p&gt;&#xA;&lt;h2 id=&#34;创建博客&#34;&gt;创建博客&lt;/h2&gt;&#xA;&lt;p&gt;在R终端中输入如下代码即可创建默认主题的博客。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;blogdown::new_site()&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;另外也可以在RStudio中通过图形界面创建。&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;鼠标点击File -&amp;gt; New Project&amp;hellip; -&amp;gt; New Directory -&amp;gt; Website using blogdown&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;在弹出的对话框的Directory name内输入本地存放项目的目录名。Create project as subdirectory of: 为项目的父目录。之后点击Create Project 按钮。Hugo theme为博客的主题。这里我们用默认主题。其他主题参考&lt;a href=&#34;https://themes.gohugo.io&#34;&gt;HUGO主题页面&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;img src=&#34;index.assets/image-20210404173021104.png&#34; style=&#34;width:50%;float:center;&#34;&gt;&#xA;&lt;ol start=&#34;3&#34;&gt;&#xA;&lt;li&gt;在R终端中输入&lt;code&gt;blogdown::server_site()&lt;/code&gt;即可在本地部署博客。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;在gitee上部署博客&#34;&gt;在Gitee上部署博客&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;首先需要在gitee上创建仓库，并将Depoly directory更改为 &lt;strong&gt;“.”&lt;/strong&gt;（不带引号） 。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;img src=&#34;index.assets/image-20210404173840632.png&#34; style=&#34;width:50%;float:center;&#34;&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;在R终端中输入&lt;code&gt;blogdown::hugo_build(relativeURLs=TRUE)&lt;/code&gt;并运行。可以看到在home目录下生成了public。该目录下即为生成的博客静态页面。此时点击public/index.html是可以在浏览器查看的。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;将public中的文件同步到刚创建的gitee或github仓库中。使用的命令如下：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd public&#xA;git init&#xA;git add .&#xA;git commit -m &#39;first commit&#39;&#xA;git remote add origin xxxx.git&#xA;git push -f origin master&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;之后就可以通过访问username.gitee.io/home访问自己的博客了。&lt;/p&gt;&#xA;&lt;p&gt;至此，我们使用blogdown创建了自己的博客，并使用hugo生成了静态页面。最后通过gitee或github发布生成的静态页面。&lt;/p&gt;</description>
     </item>
   </channel>

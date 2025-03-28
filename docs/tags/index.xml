@@ -2,633 +2,633 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Sang Feng | 桑峰</title>
-    <link>/tags/</link>
+    <link>//localhost:4321/tags/</link>
     <description>Recent content in Tags on Sang Feng | 桑峰</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 08 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>R</title>
-      <link>/tags/r/</link>
+      <link>//localhost:4321/tags/r/</link>
       <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>/tags/r/</guid>
+      <guid>//localhost:4321/tags/r/</guid>
       <description></description>
     </item>
     <item>
       <title>Cxx</title>
-      <link>/tags/cxx/</link>
+      <link>//localhost:4321/tags/cxx/</link>
       <pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/cxx/</guid>
+      <guid>//localhost:4321/tags/cxx/</guid>
       <description></description>
     </item>
     <item>
       <title>Ggplot2</title>
-      <link>/tags/ggplot2/</link>
+      <link>//localhost:4321/tags/ggplot2/</link>
       <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/ggplot2/</guid>
+      <guid>//localhost:4321/tags/ggplot2/</guid>
       <description></description>
     </item>
     <item>
       <title>Rmarkdown</title>
-      <link>/tags/rmarkdown/</link>
+      <link>//localhost:4321/tags/rmarkdown/</link>
       <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/rmarkdown/</guid>
+      <guid>//localhost:4321/tags/rmarkdown/</guid>
       <description></description>
     </item>
     <item>
       <title>Ants</title>
-      <link>/tags/ants/</link>
+      <link>//localhost:4321/tags/ants/</link>
       <pubDate>Thu, 07 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/ants/</guid>
+      <guid>//localhost:4321/tags/ants/</guid>
       <description></description>
     </item>
     <item>
       <title>Fsl</title>
-      <link>/tags/fsl/</link>
+      <link>//localhost:4321/tags/fsl/</link>
       <pubDate>Thu, 07 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/fsl/</guid>
+      <guid>//localhost:4321/tags/fsl/</guid>
       <description></description>
     </item>
     <item>
       <title>Register</title>
-      <link>/tags/register/</link>
+      <link>//localhost:4321/tags/register/</link>
       <pubDate>Thu, 07 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/register/</guid>
+      <guid>//localhost:4321/tags/register/</guid>
       <description></description>
     </item>
     <item>
       <title>Fdg</title>
-      <link>/tags/fdg/</link>
+      <link>//localhost:4321/tags/fdg/</link>
       <pubDate>Thu, 24 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/fdg/</guid>
+      <guid>//localhost:4321/tags/fdg/</guid>
       <description></description>
     </item>
     <item>
       <title>Pet</title>
-      <link>/tags/pet/</link>
+      <link>//localhost:4321/tags/pet/</link>
       <pubDate>Thu, 24 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/pet/</guid>
+      <guid>//localhost:4321/tags/pet/</guid>
       <description></description>
     </item>
     <item>
       <title>Curvature</title>
-      <link>/tags/curvature/</link>
+      <link>//localhost:4321/tags/curvature/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/curvature/</guid>
+      <guid>//localhost:4321/tags/curvature/</guid>
       <description></description>
     </item>
     <item>
       <title>Freesurfer</title>
-      <link>/tags/freesurfer/</link>
+      <link>//localhost:4321/tags/freesurfer/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/freesurfer/</guid>
+      <guid>//localhost:4321/tags/freesurfer/</guid>
       <description></description>
     </item>
     <item>
       <title>Surface</title>
-      <link>/tags/surface/</link>
+      <link>//localhost:4321/tags/surface/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/surface/</guid>
+      <guid>//localhost:4321/tags/surface/</guid>
       <description></description>
     </item>
     <item>
       <title>Vertex</title>
-      <link>/tags/vertex/</link>
+      <link>//localhost:4321/tags/vertex/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/vertex/</guid>
+      <guid>//localhost:4321/tags/vertex/</guid>
       <description></description>
     </item>
     <item>
       <title>T1w</title>
-      <link>/tags/t1w/</link>
+      <link>//localhost:4321/tags/t1w/</link>
       <pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/t1w/</guid>
+      <guid>//localhost:4321/tags/t1w/</guid>
       <description></description>
     </item>
     <item>
       <title>Cifti</title>
-      <link>/tags/cifti/</link>
+      <link>//localhost:4321/tags/cifti/</link>
       <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/cifti/</guid>
+      <guid>//localhost:4321/tags/cifti/</guid>
       <description></description>
     </item>
     <item>
       <title>Matlab</title>
-      <link>/tags/matlab/</link>
+      <link>//localhost:4321/tags/matlab/</link>
       <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/matlab/</guid>
+      <guid>//localhost:4321/tags/matlab/</guid>
       <description></description>
     </item>
     <item>
       <title>Visualization</title>
-      <link>/tags/visualization/</link>
+      <link>//localhost:4321/tags/visualization/</link>
       <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/visualization/</guid>
+      <guid>//localhost:4321/tags/visualization/</guid>
       <description></description>
     </item>
     <item>
       <title>Fmriprep</title>
-      <link>/tags/fmriprep/</link>
+      <link>//localhost:4321/tags/fmriprep/</link>
       <pubDate>Mon, 21 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/fmriprep/</guid>
+      <guid>//localhost:4321/tags/fmriprep/</guid>
       <description></description>
     </item>
     <item>
       <title>Singularity</title>
-      <link>/tags/singularity/</link>
+      <link>//localhost:4321/tags/singularity/</link>
       <pubDate>Mon, 21 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/singularity/</guid>
+      <guid>//localhost:4321/tags/singularity/</guid>
       <description></description>
     </item>
     <item>
       <title>Templateflow</title>
-      <link>/tags/templateflow/</link>
+      <link>//localhost:4321/tags/templateflow/</link>
       <pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/templateflow/</guid>
+      <guid>//localhost:4321/tags/templateflow/</guid>
       <description></description>
     </item>
     <item>
       <title>Centos</title>
-      <link>/tags/centos/</link>
+      <link>//localhost:4321/tags/centos/</link>
       <pubDate>Thu, 17 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/centos/</guid>
+      <guid>//localhost:4321/tags/centos/</guid>
       <description></description>
     </item>
     <item>
       <title>服务器</title>
-      <link>/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>//localhost:4321/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Thu, 17 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>//localhost:4321/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description></description>
     </item>
     <item>
       <title>Neuroimage</title>
-      <link>/tags/neuroimage/</link>
+      <link>//localhost:4321/tags/neuroimage/</link>
       <pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/neuroimage/</guid>
+      <guid>//localhost:4321/tags/neuroimage/</guid>
       <description></description>
     </item>
     <item>
       <title>Nipype</title>
-      <link>/tags/nipype/</link>
+      <link>//localhost:4321/tags/nipype/</link>
       <pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/nipype/</guid>
+      <guid>//localhost:4321/tags/nipype/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>/tags/python/</link>
+      <link>//localhost:4321/tags/python/</link>
       <pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/python/</guid>
+      <guid>//localhost:4321/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Scipy</title>
-      <link>/tags/scipy/</link>
+      <link>//localhost:4321/tags/scipy/</link>
       <pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/scipy/</guid>
+      <guid>//localhost:4321/tags/scipy/</guid>
       <description></description>
     </item>
     <item>
       <title>Nibabel</title>
-      <link>/tags/nibabel/</link>
+      <link>//localhost:4321/tags/nibabel/</link>
       <pubDate>Sat, 20 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/nibabel/</guid>
+      <guid>//localhost:4321/tags/nibabel/</guid>
       <description></description>
     </item>
     <item>
       <title>Nilearn</title>
-      <link>/tags/nilearn/</link>
+      <link>//localhost:4321/tags/nilearn/</link>
       <pubDate>Sat, 20 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/nilearn/</guid>
+      <guid>//localhost:4321/tags/nilearn/</guid>
       <description></description>
     </item>
     <item>
       <title>Pydicom</title>
-      <link>/tags/pydicom/</link>
+      <link>//localhost:4321/tags/pydicom/</link>
       <pubDate>Sat, 20 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/pydicom/</guid>
+      <guid>//localhost:4321/tags/pydicom/</guid>
       <description></description>
     </item>
     <item>
       <title>Bar Plot</title>
-      <link>/tags/bar-plot/</link>
+      <link>//localhost:4321/tags/bar-plot/</link>
       <pubDate>Fri, 19 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/bar-plot/</guid>
+      <guid>//localhost:4321/tags/bar-plot/</guid>
       <description></description>
     </item>
     <item>
       <title>Colormap</title>
-      <link>/tags/colormap/</link>
+      <link>//localhost:4321/tags/colormap/</link>
       <pubDate>Fri, 19 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/colormap/</guid>
+      <guid>//localhost:4321/tags/colormap/</guid>
       <description></description>
     </item>
     <item>
       <title>BIANCA</title>
-      <link>/tags/bianca/</link>
+      <link>//localhost:4321/tags/bianca/</link>
       <pubDate>Sun, 07 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/bianca/</guid>
+      <guid>//localhost:4321/tags/bianca/</guid>
       <description></description>
     </item>
     <item>
       <title>LST</title>
-      <link>/tags/lst/</link>
+      <link>//localhost:4321/tags/lst/</link>
       <pubDate>Sun, 07 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/lst/</guid>
+      <guid>//localhost:4321/tags/lst/</guid>
       <description></description>
     </item>
     <item>
       <title>SLS</title>
-      <link>/tags/sls/</link>
+      <link>//localhost:4321/tags/sls/</link>
       <pubDate>Sun, 07 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/sls/</guid>
+      <guid>//localhost:4321/tags/sls/</guid>
       <description></description>
     </item>
     <item>
       <title>UBO</title>
-      <link>/tags/ubo/</link>
+      <link>//localhost:4321/tags/ubo/</link>
       <pubDate>Sun, 07 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/ubo/</guid>
+      <guid>//localhost:4321/tags/ubo/</guid>
       <description></description>
     </item>
     <item>
       <title>W2MHS</title>
-      <link>/tags/w2mhs/</link>
+      <link>//localhost:4321/tags/w2mhs/</link>
       <pubDate>Sun, 07 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/w2mhs/</guid>
+      <guid>//localhost:4321/tags/w2mhs/</guid>
       <description></description>
     </item>
     <item>
       <title>WMH</title>
-      <link>/tags/wmh/</link>
+      <link>//localhost:4321/tags/wmh/</link>
       <pubDate>Sun, 07 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/wmh/</guid>
+      <guid>//localhost:4321/tags/wmh/</guid>
       <description></description>
     </item>
     <item>
       <title>Charticulator</title>
-      <link>/tags/charticulator/</link>
+      <link>//localhost:4321/tags/charticulator/</link>
       <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/charticulator/</guid>
+      <guid>//localhost:4321/tags/charticulator/</guid>
       <description></description>
     </item>
     <item>
       <title>和弦图</title>
-      <link>/tags/%E5%92%8C%E5%BC%A6%E5%9B%BE/</link>
+      <link>//localhost:4321/tags/%E5%92%8C%E5%BC%A6%E5%9B%BE/</link>
       <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/%E5%92%8C%E5%BC%A6%E5%9B%BE/</guid>
+      <guid>//localhost:4321/tags/%E5%92%8C%E5%BC%A6%E5%9B%BE/</guid>
       <description></description>
     </item>
     <item>
       <title>Development</title>
-      <link>/tags/development/</link>
+      <link>//localhost:4321/tags/development/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/development/</guid>
+      <guid>//localhost:4321/tags/development/</guid>
       <description></description>
     </item>
     <item>
       <title>Gam</title>
-      <link>/tags/gam/</link>
+      <link>//localhost:4321/tags/gam/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/gam/</guid>
+      <guid>//localhost:4321/tags/gam/</guid>
       <description></description>
     </item>
     <item>
       <title>Scn</title>
-      <link>/tags/scn/</link>
+      <link>//localhost:4321/tags/scn/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/scn/</guid>
+      <guid>//localhost:4321/tags/scn/</guid>
       <description></description>
     </item>
     <item>
       <title>Annot</title>
-      <link>/tags/annot/</link>
+      <link>//localhost:4321/tags/annot/</link>
       <pubDate>Fri, 03 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/annot/</guid>
+      <guid>//localhost:4321/tags/annot/</guid>
       <description></description>
     </item>
     <item>
       <title>Parallel</title>
-      <link>/tags/parallel/</link>
+      <link>//localhost:4321/tags/parallel/</link>
       <pubDate>Fri, 03 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/parallel/</guid>
+      <guid>//localhost:4321/tags/parallel/</guid>
       <description></description>
     </item>
     <item>
       <title>CAT12</title>
-      <link>/tags/cat12/</link>
+      <link>//localhost:4321/tags/cat12/</link>
       <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/cat12/</guid>
+      <guid>//localhost:4321/tags/cat12/</guid>
       <description></description>
     </item>
     <item>
       <title>GRETNA</title>
-      <link>/tags/gretna/</link>
+      <link>//localhost:4321/tags/gretna/</link>
       <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/gretna/</guid>
+      <guid>//localhost:4321/tags/gretna/</guid>
       <description></description>
     </item>
     <item>
       <title>Heatmap</title>
-      <link>/tags/heatmap/</link>
+      <link>//localhost:4321/tags/heatmap/</link>
       <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/heatmap/</guid>
+      <guid>//localhost:4321/tags/heatmap/</guid>
       <description></description>
     </item>
     <item>
       <title>Matplotlib</title>
-      <link>/tags/matplotlib/</link>
+      <link>//localhost:4321/tags/matplotlib/</link>
       <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/matplotlib/</guid>
+      <guid>//localhost:4321/tags/matplotlib/</guid>
       <description></description>
     </item>
     <item>
       <title>Seaborn</title>
-      <link>/tags/seaborn/</link>
+      <link>//localhost:4321/tags/seaborn/</link>
       <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/seaborn/</guid>
+      <guid>//localhost:4321/tags/seaborn/</guid>
       <description></description>
     </item>
     <item>
       <title>Jupyter Notebook</title>
-      <link>/tags/jupyter-notebook/</link>
+      <link>//localhost:4321/tags/jupyter-notebook/</link>
       <pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/jupyter-notebook/</guid>
+      <guid>//localhost:4321/tags/jupyter-notebook/</guid>
       <description></description>
     </item>
     <item>
       <title>Remote Server</title>
-      <link>/tags/remote-server/</link>
+      <link>//localhost:4321/tags/remote-server/</link>
       <pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/remote-server/</guid>
+      <guid>//localhost:4321/tags/remote-server/</guid>
       <description></description>
     </item>
     <item>
       <title>Dicom</title>
-      <link>/tags/dicom/</link>
+      <link>//localhost:4321/tags/dicom/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/dicom/</guid>
+      <guid>//localhost:4321/tags/dicom/</guid>
       <description></description>
     </item>
     <item>
       <title>Wsl</title>
-      <link>/tags/wsl/</link>
+      <link>//localhost:4321/tags/wsl/</link>
       <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/wsl/</guid>
+      <guid>//localhost:4321/tags/wsl/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>/tags/linux/</link>
+      <link>//localhost:4321/tags/linux/</link>
       <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/linux/</guid>
+      <guid>//localhost:4321/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Sudo</title>
-      <link>/tags/sudo/</link>
+      <link>//localhost:4321/tags/sudo/</link>
       <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/sudo/</guid>
+      <guid>//localhost:4321/tags/sudo/</guid>
       <description></description>
     </item>
     <item>
       <title>Thickness</title>
-      <link>/tags/thickness/</link>
+      <link>//localhost:4321/tags/thickness/</link>
       <pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/thickness/</guid>
+      <guid>//localhost:4321/tags/thickness/</guid>
       <description></description>
     </item>
     <item>
       <title>Bug</title>
-      <link>/tags/bug/</link>
+      <link>//localhost:4321/tags/bug/</link>
       <pubDate>Wed, 26 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/bug/</guid>
+      <guid>//localhost:4321/tags/bug/</guid>
       <description></description>
     </item>
     <item>
       <title>Catalina</title>
-      <link>/tags/catalina/</link>
+      <link>//localhost:4321/tags/catalina/</link>
       <pubDate>Wed, 26 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/catalina/</guid>
+      <guid>//localhost:4321/tags/catalina/</guid>
       <description></description>
     </item>
     <item>
       <title>Dock</title>
-      <link>/tags/dock/</link>
+      <link>//localhost:4321/tags/dock/</link>
       <pubDate>Wed, 26 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/dock/</guid>
+      <guid>//localhost:4321/tags/dock/</guid>
       <description></description>
     </item>
     <item>
       <title>Install</title>
-      <link>/tags/install/</link>
+      <link>//localhost:4321/tags/install/</link>
       <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/install/</guid>
+      <guid>//localhost:4321/tags/install/</guid>
       <description></description>
     </item>
     <item>
       <title>Alluvial</title>
-      <link>/tags/alluvial/</link>
+      <link>//localhost:4321/tags/alluvial/</link>
       <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/alluvial/</guid>
+      <guid>//localhost:4321/tags/alluvial/</guid>
       <description></description>
     </item>
     <item>
       <title>冲击图</title>
-      <link>/tags/%E5%86%B2%E5%87%BB%E5%9B%BE/</link>
+      <link>//localhost:4321/tags/%E5%86%B2%E5%87%BB%E5%9B%BE/</link>
       <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/%E5%86%B2%E5%87%BB%E5%9B%BE/</guid>
+      <guid>//localhost:4321/tags/%E5%86%B2%E5%87%BB%E5%9B%BE/</guid>
       <description></description>
     </item>
     <item>
       <title>FMRI</title>
-      <link>/tags/fmri/</link>
+      <link>//localhost:4321/tags/fmri/</link>
       <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/fmri/</guid>
+      <guid>//localhost:4321/tags/fmri/</guid>
       <description></description>
     </item>
     <item>
       <title>Segregation</title>
-      <link>/tags/segregation/</link>
+      <link>//localhost:4321/tags/segregation/</link>
       <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/segregation/</guid>
+      <guid>//localhost:4321/tags/segregation/</guid>
       <description></description>
     </item>
     <item>
       <title>Anova</title>
-      <link>/tags/anova/</link>
+      <link>//localhost:4321/tags/anova/</link>
       <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/anova/</guid>
+      <guid>//localhost:4321/tags/anova/</guid>
       <description></description>
     </item>
     <item>
       <title>Cor</title>
-      <link>/tags/cor/</link>
+      <link>//localhost:4321/tags/cor/</link>
       <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/cor/</guid>
+      <guid>//localhost:4321/tags/cor/</guid>
       <description></description>
     </item>
     <item>
       <title>Glm</title>
-      <link>/tags/glm/</link>
+      <link>//localhost:4321/tags/glm/</link>
       <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/glm/</guid>
+      <guid>//localhost:4321/tags/glm/</guid>
       <description></description>
     </item>
     <item>
       <title>Lm</title>
-      <link>/tags/lm/</link>
+      <link>//localhost:4321/tags/lm/</link>
       <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/lm/</guid>
+      <guid>//localhost:4321/tags/lm/</guid>
       <description></description>
     </item>
     <item>
       <title>Lme</title>
-      <link>/tags/lme/</link>
+      <link>//localhost:4321/tags/lme/</link>
       <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/lme/</guid>
+      <guid>//localhost:4321/tags/lme/</guid>
       <description></description>
     </item>
     <item>
       <title>T.test</title>
-      <link>/tags/t.test/</link>
+      <link>//localhost:4321/tags/t.test/</link>
       <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/t.test/</guid>
+      <guid>//localhost:4321/tags/t.test/</guid>
       <description></description>
     </item>
     <item>
       <title>Bar</title>
-      <link>/tags/bar/</link>
+      <link>//localhost:4321/tags/bar/</link>
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/bar/</guid>
+      <guid>//localhost:4321/tags/bar/</guid>
       <description></description>
     </item>
     <item>
       <title>Ggplot</title>
-      <link>/tags/ggplot/</link>
+      <link>//localhost:4321/tags/ggplot/</link>
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/ggplot/</guid>
+      <guid>//localhost:4321/tags/ggplot/</guid>
       <description></description>
     </item>
     <item>
       <title>Histogram</title>
-      <link>/tags/histogram/</link>
+      <link>//localhost:4321/tags/histogram/</link>
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/histogram/</guid>
+      <guid>//localhost:4321/tags/histogram/</guid>
       <description></description>
     </item>
     <item>
       <title>Hemsiphere Differences</title>
-      <link>/tags/hemsiphere-differences/</link>
+      <link>//localhost:4321/tags/hemsiphere-differences/</link>
       <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/hemsiphere-differences/</guid>
+      <guid>//localhost:4321/tags/hemsiphere-differences/</guid>
       <description></description>
     </item>
     <item>
       <title>Rest-FMRI</title>
-      <link>/tags/rest-fmri/</link>
+      <link>//localhost:4321/tags/rest-fmri/</link>
       <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/rest-fmri/</guid>
+      <guid>//localhost:4321/tags/rest-fmri/</guid>
       <description></description>
     </item>
     <item>
       <title>Sex Differences</title>
-      <link>/tags/sex-differences/</link>
+      <link>//localhost:4321/tags/sex-differences/</link>
       <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/sex-differences/</guid>
+      <guid>//localhost:4321/tags/sex-differences/</guid>
       <description></description>
     </item>
     <item>
       <title>功能网络</title>
-      <link>/tags/%E5%8A%9F%E8%83%BD%E7%BD%91%E7%BB%9C/</link>
+      <link>//localhost:4321/tags/%E5%8A%9F%E8%83%BD%E7%BD%91%E7%BB%9C/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/%E5%8A%9F%E8%83%BD%E7%BD%91%E7%BB%9C/</guid>
+      <guid>//localhost:4321/tags/%E5%8A%9F%E8%83%BD%E7%BD%91%E7%BB%9C/</guid>
       <description></description>
     </item>
     <item>
       <title>图论分析</title>
-      <link>/tags/%E5%9B%BE%E8%AE%BA%E5%88%86%E6%9E%90/</link>
+      <link>//localhost:4321/tags/%E5%9B%BE%E8%AE%BA%E5%88%86%E6%9E%90/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/%E5%9B%BE%E8%AE%BA%E5%88%86%E6%9E%90/</guid>
+      <guid>//localhost:4321/tags/%E5%9B%BE%E8%AE%BA%E5%88%86%E6%9E%90/</guid>
       <description></description>
     </item>
     <item>
       <title>小世界属性</title>
-      <link>/tags/%E5%B0%8F%E4%B8%96%E7%95%8C%E5%B1%9E%E6%80%A7/</link>
+      <link>//localhost:4321/tags/%E5%B0%8F%E4%B8%96%E7%95%8C%E5%B1%9E%E6%80%A7/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/%E5%B0%8F%E4%B8%96%E7%95%8C%E5%B1%9E%E6%80%A7/</guid>
+      <guid>//localhost:4321/tags/%E5%B0%8F%E4%B8%96%E7%95%8C%E5%B1%9E%E6%80%A7/</guid>
       <description></description>
     </item>
     <item>
       <title>抑郁症</title>
-      <link>/tags/%E6%8A%91%E9%83%81%E7%97%87/</link>
+      <link>//localhost:4321/tags/%E6%8A%91%E9%83%81%E7%97%87/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/%E6%8A%91%E9%83%81%E7%97%87/</guid>
+      <guid>//localhost:4321/tags/%E6%8A%91%E9%83%81%E7%97%87/</guid>
       <description></description>
     </item>
     <item>
       <title>Coden&#39;s D</title>
-      <link>/tags/codens-d/</link>
+      <link>//localhost:4321/tags/codens-d/</link>
       <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/codens-d/</guid>
+      <guid>//localhost:4321/tags/codens-d/</guid>
       <description></description>
     </item>
     <item>
       <title>效应量</title>
-      <link>/tags/%E6%95%88%E5%BA%94%E9%87%8F/</link>
+      <link>//localhost:4321/tags/%E6%95%88%E5%BA%94%E9%87%8F/</link>
       <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/%E6%95%88%E5%BA%94%E9%87%8F/</guid>
+      <guid>//localhost:4321/tags/%E6%95%88%E5%BA%94%E9%87%8F/</guid>
       <description></description>
     </item>
     <item>
       <title>广义线性模型</title>
-      <link>/tags/%E5%B9%BF%E4%B9%89%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/</link>
+      <link>//localhost:4321/tags/%E5%B9%BF%E4%B9%89%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/%E5%B9%BF%E4%B9%89%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/</guid>
+      <guid>//localhost:4321/tags/%E5%B9%BF%E4%B9%89%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/</guid>
       <description></description>
     </item>
     <item>
       <title>Big Sur</title>
-      <link>/tags/big-sur/</link>
+      <link>//localhost:4321/tags/big-sur/</link>
       <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/big-sur/</guid>
+      <guid>//localhost:4321/tags/big-sur/</guid>
       <description></description>
     </item>
     <item>
       <title>图标</title>
-      <link>/tags/%E5%9B%BE%E6%A0%87/</link>
+      <link>//localhost:4321/tags/%E5%9B%BE%E6%A0%87/</link>
       <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/%E5%9B%BE%E6%A0%87/</guid>
+      <guid>//localhost:4321/tags/%E5%9B%BE%E6%A0%87/</guid>
       <description></description>
     </item>
     <item>
       <title>移动硬盘</title>
-      <link>/tags/%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/</link>
+      <link>//localhost:4321/tags/%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/</link>
       <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/</guid>
+      <guid>//localhost:4321/tags/%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/</guid>
       <description></description>
     </item>
     <item>
       <title>ITerm2</title>
-      <link>/tags/iterm2/</link>
+      <link>//localhost:4321/tags/iterm2/</link>
       <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/iterm2/</guid>
+      <guid>//localhost:4321/tags/iterm2/</guid>
       <description></description>
     </item>
     <item>
       <title>Blog</title>
-      <link>/tags/blog/</link>
+      <link>//localhost:4321/tags/blog/</link>
       <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/blog/</guid>
+      <guid>//localhost:4321/tags/blog/</guid>
       <description></description>
     </item>
     <item>
       <title>Blogdown</title>
-      <link>/tags/blogdown/</link>
+      <link>//localhost:4321/tags/blogdown/</link>
       <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/blogdown/</guid>
+      <guid>//localhost:4321/tags/blogdown/</guid>
       <description></description>
     </item>
   </channel>

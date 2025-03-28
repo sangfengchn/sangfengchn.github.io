@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>医学影像 on Sang Feng | 桑峰</title>
-    <link>/categories/%E5%8C%BB%E5%AD%A6%E5%BD%B1%E5%83%8F/</link>
+    <link>//localhost:4321/categories/%E5%8C%BB%E5%AD%A6%E5%BD%B1%E5%83%8F/</link>
     <description>Recent content in 医学影像 on Sang Feng | 桑峰</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 02 Jun 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/categories/%E5%8C%BB%E5%AD%A6%E5%BD%B1%E5%83%8F/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/categories/%E5%8C%BB%E5%AD%A6%E5%BD%B1%E5%83%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>医学影像技术笔记-01-DICOM文件方向</title>
-      <link>/post/2021/06/02/blog/</link>
+      <link>//localhost:4321/post/2021/06/02/blog/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/post/2021/06/02/blog/</guid>
+      <guid>//localhost:4321/post/2021/06/02/blog/</guid>
       <description>&lt;p&gt;本文为B站up主&lt;a href=&#34;https://space.bilibili.com/475985153?spm_id_from=333.788.b_765f7570696e666f.1&#34;&gt;@智能医学成像-贾广&lt;/a&gt;相关视频的笔记。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;DICOM&lt;/strong&gt; (Digital Imaging and Communications in Medicine) 是医学成像领域通用的数据格式，被广泛应用于各种医学成像设备当中，包括但不限于CT、超声、核磁共振等设备。&lt;/p&gt;&#xA;&lt;h1 id=&#34;dicom文件方向&#34;&gt;DICOM文件方向&lt;/h1&gt;&#xA;&lt;p&gt;DICOM文件以病人为中心，它的指向或朝向（orientation）通过头文件中的一些字段标识。这些字段包括：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;(0x0008, 0x5100), Patient Position&lt;/p&gt;&#xA;&lt;p&gt;(0x0020, 0x0032), Image Position&lt;/p&gt;&#xA;&lt;p&gt;(0x0020, 0x0037), Image Orientation&lt;/p&gt;&#xA;&lt;p&gt;(0x0028, 0x0030), Pixel Spacing&lt;/p&gt;&#xA;&lt;p&gt;(0x0018, 0x0050), Slice Thickness&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;tag-0x0008-0x5100&#34;&gt;Tag: (0x0008, 0x5100)&lt;/h3&gt;&#xA;&lt;p&gt;用来记录病人进入扫描仪中的朝向或姿势。它的值为**[H | F] F { [P | S] | D[R | L] }&lt;strong&gt;。&lt;/strong&gt;[ ]&lt;strong&gt;或&lt;/strong&gt;{ }&lt;strong&gt;限定取值范围，&lt;/strong&gt;｜&lt;strong&gt;表示在&lt;/strong&gt;[ ]&lt;strong&gt;限定的范围内二者取其一。&lt;/strong&gt;[H | F]F&lt;strong&gt;表示头或脚先进入扫描仪，&lt;/strong&gt;[P | S]**表示面朝上或下，**D[R | L]**表示侧卧面朝右或左。例如，&lt;em&gt;HFP表示病人头部先进入扫描仪，并且面朝上&lt;/em&gt;。&lt;/p&gt;&#xA;&lt;h3 id=&#34;tag-0x0020-0x0032&#34;&gt;Tag: (0x0020, 0x0032)&lt;/h3&gt;&#xA;&lt;p&gt;描述图像&lt;strong&gt;第一个像素&lt;/strong&gt;（左上角）的坐标(x, y, z)。这里以&lt;strong&gt;病人&lt;/strong&gt;为中心，x的正方向表示病人的左边，y的正方向表示病人的后边，z的正方向表示病人的上面。&lt;/p&gt;&#xA;&lt;h3 id=&#34;tag-0x0020-0x0037&#34;&gt;Tag: (0x0020, 0x0037)&lt;/h3&gt;&#xA;&lt;p&gt;该字段包含6个不超过16字节的数字，前三个表示图像矩阵从左往右的方向与图像坐标轴x、y和z的余弦值，后三个表示图像矩阵从上往下的方向与坐标轴x、y和z的余弦值。&lt;/p&gt;&#xA;&lt;p&gt;例如图1，该文件在(0x0020, 0x0037)处的值为&lt;em&gt;0020,0037,Image Orientation (Patient)=1e-016\1\0\0.00523601152635\-1e-016\-0.9999862919977&lt;/em&gt;，近似为**(0, 1, 0, 0, 0, -1)&lt;strong&gt;表示图像从左往右的方向为病人从前往后的方向，即图像的右侧为病人的后侧（第二位为+1）；图像从上往下的方向为病人从上往下的方向，及图像的下面，就是病人的下面（第六位为-1）。当然，这里的示例数据是&lt;/strong&gt;矢状位**扫描的，图像的朝向和病人位置的关系比较明显，但对于冠状位采集的影像，通过该字段可以确认影像左右与病人左右的对应关系。&lt;/p&gt;</description>
     </item>
   </channel>
