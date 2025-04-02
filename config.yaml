@@ -36,14 +36,14 @@ params:
   highlightjsTheme: "github"
   highlightjsVersion: "11.7.0"
 
-  gitalk: true
-  gitalk_clientID: "Ov23liXBepjfTRLYtzfB"
-  gitalk_clientSecret: "bbcf71660513bc096ff93797839104f36d3bc554"
-  gitalk_repo: "sangfengchn/PersonalBlogComments"
-  gitalk_owner: "sangfengchn"
-  gitalk_admin:
-    - "sangfengchn"
-  gitalk_createIssueManually: false
+  # gitalk: true
+  # gitalk_clientID: "Ov23liXBepjfTRLYtzfB"
+  # gitalk_clientSecret: "bbcf71660513bc096ff93797839104f36d3bc554"
+  # gitalk_repo: "sangfengchn/PersonalBlogComments"
+  # gitalk_owner: "sangfengchn"
+  # gitalk_admin:
+  #   - "sangfengchn"
+  # gitalk_createIssueManually: false
 
 
 markup:
