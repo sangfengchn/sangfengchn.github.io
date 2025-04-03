@@ -6,8 +6,15 @@
     <description>Recent content in Home on Sang Feng | 桑峰</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:4321/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Singularity Installation</title>
+      <link>//localhost:4321/post/2025/04/03/blog/</link>
+      <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/post/2025/04/03/blog/</guid>
+      <description>&lt;p&gt;刚发现之前写的sigularity安装步骤中，无法下载相应版本的源代码。因此，笔者尝试按照官方文档&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;的说明，尝试安装新版(&lt;strong&gt;singularityCE 4.3.0&lt;/strong&gt;)，并记录下如下步骤。&lt;/p&gt;&#xA;&lt;p&gt;说明：环境为win11的wsl，版本为ubuntu 20.04.6 LST.&lt;/p&gt;&#xA;&lt;h2 id=&#34;安装依赖&#34;&gt;安装依赖&lt;/h2&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt-get install conmon&#xA;# Ensure repositories are up-to-date&#xA;sudo apt-get update&#xA;# Install debian packages for dependencies&#xA;sudo apt-get install -y \&#xA;   autoconf \&#xA;   automake \&#xA;   cryptsetup \&#xA;   fuse2fs \&#xA;   git \&#xA;   fuse \&#xA;   libfuse-dev \&#xA;   libseccomp-dev \&#xA;   libtool \&#xA;   pkg-config \&#xA;   runc \&#xA;   squashfs-tools \&#xA;   squashfs-tools-ng \&#xA;   uidmap \&#xA;   wget \&#xA;   zlib1g-dev&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h2 id=&#34;安装go&#34;&gt;安装Go&lt;/h2&gt;&#xA;&lt;p&gt;SingularityCE是Go语言编写的，因此除上述依赖外，还需要安装Go语言。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;export VERSION=1.24.1 OS=linux ARCH=amd64 &amp;amp;&amp;amp; \&#xA;    wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz &amp;amp;&amp;amp; \&#xA;    sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz &amp;amp;&amp;amp; \&#xA;    rm go$VERSION.$OS-$ARCH.tar.gz&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;设置环境变量。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>R语言中的异常处理：TryCatch</title>
       <link>//localhost:4321/post/2024/04/08/trycatchinr/</link>

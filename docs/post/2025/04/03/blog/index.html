@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Singularity Installation - Sang Feng | 桑峰</title>
+    <meta property="og:title" content="Singularity Installation - Sang Feng | 桑峰">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+    
+      
+    
+
+    
+      
+      <meta property="description" content="刚发现之前写的sigularity安装步骤中，无法下载相应版本的源代码。因此，笔者尝试按照官方文档1的说明，尝试安装新版(singularityCE 4.3.0)，并记录下如下步骤。
+说明：环境为win11的wsl，版本为ubuntu 20.04.6 LST.
+[&hellip;] sudo apt-get install conmon # Ensure repositories are &amp;hellip;">
+      <meta property="og:description" content="刚发现之前写的sigularity安装步骤中，无法下载相应版本的源代码。因此，笔者尝试按照官方文档1的说明，尝试安装新版(singularityCE 4.3.0)，并记录下如下步骤。
+说明：环境为win11的wsl，版本为ubuntu 20.04.6 LST.
+[&hellip;] sudo apt-get install conmon # Ensure repositories are &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css">
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Sang Feng | 桑峰</a></h1>
+
+<p class="tagline">Personal website of Sang Feng.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  <li><a href="/categories/">Categories</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Singularity Installation</h1>
+
+
+
+<h3>
+
+桑峰
+
+
+
+
+
+
+ / 
+2025-04-03
+</h3>
+
+<hr>
+
+
+      </header>
+
+
+
+
+
+<p>刚发现之前写的sigularity安装步骤中，无法下载相应版本的源代码。因此，笔者尝试按照官方文档<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>的说明，尝试安装新版(<strong>singularityCE 4.3.0</strong>)，并记录下如下步骤。</p>
+<p>说明：环境为win11的wsl，版本为ubuntu 20.04.6 LST.</p>
+<h2 id="安装依赖">安装依赖</h2>
+<pre><code class="language-bash">sudo apt-get install conmon
+# Ensure repositories are up-to-date
+sudo apt-get update
+# Install debian packages for dependencies
+sudo apt-get install -y \
+   autoconf \
+   automake \
+   cryptsetup \
+   fuse2fs \
+   git \
+   fuse \
+   libfuse-dev \
+   libseccomp-dev \
+   libtool \
+   pkg-config \
+   runc \
+   squashfs-tools \
+   squashfs-tools-ng \
+   uidmap \
+   wget \
+   zlib1g-dev
+</code></pre>
+<h2 id="安装go">安装Go</h2>
+<p>SingularityCE是Go语言编写的，因此除上述依赖外，还需要安装Go语言。</p>
+<pre><code class="language-bash">export VERSION=1.24.1 OS=linux ARCH=amd64 &amp;&amp; \
+    wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz &amp;&amp; \
+    sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz &amp;&amp; \
+    rm go$VERSION.$OS-$ARCH.tar.gz
+</code></pre>
+<p>设置环境变量。</p>
+<pre><code class="language-bash">echo 'export GOPATH=${HOME}/go' &gt;&gt; ~/.bashrc &amp;&amp; \
+    echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' &gt;&gt; ~/.bashrc &amp;&amp; \
+    source ~/.bashrc
+</code></pre>
+<h2 id="编译安装sigularity">编译安装sigularity</h2>
+<pre><code class="language-bash">./mconfig --without-libsubid &amp;&amp; \
+    make -C ./builddir &amp;&amp; \
+    sudo make -C ./builddir install
+</code></pre>
+<p>笔者在生成makefile时，添加了 <strong>&ndash;without-libsubid</strong> 参数，是因为如果不添加此标记，无法生成正确的makefile。并且在该版本的系统上，无法安装libsubid-dev。</p>
+<p>至此，如果顺利的话，singularity就已经安装好了。其文件位置在 <strong>/uar/local/bin/singularity</strong> .</p>
+<h2 id="参考">参考</h2>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://docs.sylabs.io/guides/4.3/admin-guide/installation.html">https://docs.sylabs.io/guides/4.3/admin-guide/installation.html</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+  <footer>
+  
+  
+
+
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/combine/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js,npm/@xiee/utils/js/load-highlight.js" defer></script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="/">Sang Feng</a> 2021 - 2025 | <a href="https://github.com/sangfengchn">Github</a></div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+
