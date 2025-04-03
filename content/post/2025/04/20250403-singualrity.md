@@ -72,6 +72,4 @@ echo 'export GOPATH=${HOME}/go' >> ~/.bashrc && \
 
 至此，如果顺利的话，singularity就已经安装好了。其文件位置在 **/uar/local/bin/singularity** .
 
-## 参考
-
 [^1]: https://docs.sylabs.io/guides/4.3/admin-guide/installation.html
